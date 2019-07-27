@@ -3,9 +3,14 @@ import Layout from '../components/Layout'
 
 const NotFoundPage = () => (
   <Layout>
-    <div>
-      <h1>NOT FOUND</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div style={{
+      padding: '180px',
+      textAlign: 'center',
+      background: '#fafafa'
+    }}>
+      <h1 style={{fontSize: '60px'}}>404 NOT FOUND <span role="img" aria-label="ghost">👻</span></h1>
+      <p>访问路径出错，或者该页面正在建设中..</p>
+      <p>The access path is wrong, or the page is under construction..</p>
     </div>
   </Layout>
 )

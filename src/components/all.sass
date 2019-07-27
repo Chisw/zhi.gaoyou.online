@@ -75,20 +75,29 @@ $black: #222
   margin-top: 0 !important
 
 .navbar-item
+  color: #666 !important
   font-size: 14px
+
+.navbar-item:hover
+  color: #222 !important
+
+.navbar-item[aria-current]
+  color: #222 !important
+  font-weight: bold
 
 .navbar-item .icon
   color: $primary
+  width: 1.2rem
+  height: 1.2rem
 // Override for use of svg's from https://simpleicons.org/
 .icon svg
-  width: 1.5rem
-  height: 1.5rem
   fill: currentColor
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
 footer.footer
   padding: 3rem 0
-  background-color: transparent
+  background-color: #fff
+  border-top: 1px solid #efefef
 
 //Menu overrides
 $menu-item-color: $white-ter
@@ -147,7 +156,7 @@ $menu-label-color: $white-ter
 
 
 
-// index
+// --------------------------------- index ---------------------------------
 .gy-timeaxis
   position: relative
   padding: 20px 200px
@@ -175,3 +184,35 @@ $menu-label-color: $white-ter
   height: 10px
   border-radius: 10px
   background: #aaa
+
+
+// --------------------------------- sidebar ---------------------------------
+.sidebar-outline a
+  color: #666
+  font-size: 14px
+
+.sidebar-outline-items
+  margin: 8px 0
+  border-left: 1px solid #ddd
+  padding-left: 12px
+
+.sidebar-outline-items a
+  color: #787878
+  font-size: 12px
+
+.sidebar-outline-items a.active
+  color: #222
+  font-weight: bold
+
+
+.annals-tocbot ol
+  padding: 0
+      padding-inline-start: 0
+.annals-tocbot li
+  list-style: none
+
+// --------------------------------- simple ---------------------------------
+code.language-simple
+  color: #555 !important
+  font-size: 12px !important
+  font-family: kai

@@ -1,16 +1,18 @@
 ---
-templateKey: 'about-page'
+templateKey: annals-page
 path: /gyzz
-title: 高邮州志
+title: 序文
+vol: vol-00
+order: '000010'
 ---
 
-&emsp;&emsp;清·乾隆四十八年 楊宜崙修
+&emsp;&emsp;清·乾隆四十八年 楊宜崙 修
 
-&emsp;&emsp;清·嘉慶十八年 馮馨等增修
+&emsp;&emsp;清·嘉慶十八年 馮馨等 增修
 
-&emsp;&emsp;清·道光二十五年 范鳳諧等重校刊
+&emsp;&emsp;清·道光二十五年 范鳳諧等 重校刊
 
-&emsp;&emsp;嵇所偉 點校
+&emsp;&emsp;二〇一九年 高郵市民 嵇所偉 點校
 
 ### 重栞高郵州志序
     
