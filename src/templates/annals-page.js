@@ -7,9 +7,7 @@ import Wave from '../img/wave.png'
 import Sidebar from '../components/Sidebar'
 import Tocbot from '../components/Tocbot'
 
-const location = window.location
-
-export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes }) => {
+export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, location }) => {
   const PageContent = contentComponent || Content
 
   return (
@@ -49,8 +47,8 @@ AnnalsPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
 }
 
-const AnnalsPage = ({ data }) => {
-  console.log(data)
+const AnnalsPage = ({ data, location }) => {
+  // console.log(data)
   const { markdownRemark: post } = data
 
   return (
@@ -60,6 +58,7 @@ const AnnalsPage = ({ data }) => {
         title={post.frontmatter.title}
         content={post.html}
         nodes={data.allMarkdownRemark.edges}
+        location={location}
       />
     </Layout>
   )
