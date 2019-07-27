@@ -1,6 +1,6 @@
 ---
 templateKey: 'about-page'
-path: /annals
+path: /gyzz
 title: 高邮州志
 ---
 
