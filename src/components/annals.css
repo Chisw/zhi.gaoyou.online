@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+  
+/* --------------------------------- index --------------------------------- */
+
+.gy-timeaxis {
+  position: relative;
+  padding: 20px 200px;
+}
+
+.gy-timeaxis::before {
+  content: "";
+  position: absolute;
+  left: 160px;
+  margin: 20px 0;
+  border-left: 2px solid #efefef;
+  height: 100%;
+}
+
+.gy-timeaxis p {
+  position: relative;
+  margin-top: 40px;
+}
+
+.gy-timeaxis p::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 8px;
+  left: -44px;
+  border: 2px solid #fff;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #aaa;
+}
+
+
+/* --------------------------------- sidebar --------------------------------- */
+
+.sidebar-outline a {
+  color: #666;
+  font-size: 14px;
+}
+
+.sidebar-outline a:hover {
+  color: #222;
+}
+
+.sidebar-outline-items {
+  margin: 8px 0;
+  border-left: 1px solid #ddd;
+  padding-left: 20px;
+}
+
+.sidebar-outline-items a {
+  color: #787878;
+  font-size: 12px;
+}
+
+.sidebar-outline-items a.active {
+  color: #222;
+  font-weight: bold;
+}
+
+/* --------------------------------- tocbot --------------------------------- */
+
+.annals-tocbot {
+  padding-left: 20px;
+}
+
+.annals-tocbot h3 {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.toc-list-container li {
+  list-style: none;
+}
+
+.toc-list-container a {
+  color: #787878;
+  font-size: 12px;
+}
+
+.toc-list-container a:hover {
+  color: #222;
+}
+
+.toc-list-container .is-active-link {
+  color: #222;
+  font-weight: bold;
+}
+
+.toc-list a {
+  padding-left: 24px;
+}
+
+.toc-list .is-active-li a.active {
+  color: #222 !important;
+  font-weight: bold;
+  background: url('../img/link.png') no-repeat left center;
+  background-size: contain;
+}
+
+.toc-list .toc-list {
+  padding-left: 20px;
+}
+
+.tocbot-title {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ddd;
+    color: #aaa;
+}
+
+.back-to-top {
+  display: block;
+  margin: 40px 20px;
+  padding: 6px 0;
+  color: #666;
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.back-to-top:hover {
+  background: #f2f2f2;
+}
+
+
+

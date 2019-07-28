@@ -6,6 +6,7 @@ import Content, { HTMLContent } from '../components/Content'
 import Wave from '../img/wave.png'
 import Sidebar from '../components/Sidebar'
 import Tocbot from '../components/Tocbot'
+import '../components/annals.css'
 
 export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, location }) => {
   const PageContent = contentComponent || Content
@@ -15,13 +16,14 @@ export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, lo
       <div className="container">
         <div className="columns">
           <div className="column is-2">
-            <Sidebar nodes={nodes} location={location} />
+            <div style={{position: 'fixed'}}>
+              <Sidebar nodes={nodes} location={location} />
+            </div>
           </div>
           <div className="column is-7" 
             style={{
               background: '#fff', 
               boxShadow: '0 0 5px rgba(0,0,0,.02), 0 5px 22px -8px rgba(0,0,0,.1)',
-              borderRadius: '4px'
             }}
           >
             <div className="section annals-body">
@@ -35,7 +37,12 @@ export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, lo
             </div>
           </div>
           <div className="column is-3">
-            <Tocbot className="annals-tocbot" />
+            <div style={{position: 'fixed'}}>
+              <Tocbot title={title} className="annals-tocbot" />
+              <span className="back-to-top" onClick={()=> {
+                document.documentElement.scrollTop = 0
+              }}>回到顶部</span>
+            </div>
           </div>
         </div>
       </div>
