@@ -7,21 +7,22 @@
 
 .gy-timeaxis {
   position: relative;
-  padding: 20px 200px;
+  padding: 20px 100px;
+  height: 320px;
+  overflow-y: auto;
+  box-shadow: 0 0 5px rgba(0,0,0,.02), 0 5px 22px -8px rgba(0,0,0,.1);
 }
 
-.gy-timeaxis::before {
-  content: "";
-  position: absolute;
-  left: 160px;
-  margin: 20px 0;
+.gy-timeaxis .inner {
+  height: auto;
   border-left: 2px solid #efefef;
-  height: 100%;
+  padding: 20px 0 0 40px;
 }
 
 .gy-timeaxis p {
   position: relative;
-  margin-top: 40px;
+  margin-bottom: 20px;
+  font-family: kai;
 }
 
 .gy-timeaxis p::before {
@@ -29,7 +30,7 @@
   display: block;
   position: absolute;
   top: 8px;
-  left: -44px;
+  left: -46px;
   border: 2px solid #fff;
   width: 10px;
   height: 10px;
@@ -37,6 +38,21 @@
   background: #aaa;
 }
 
+.index-links {
+  text-align: center;
+}
+
+.index-links .link-card {
+  display: inline-block;
+  margin: 20px;
+  width: 280px;
+  padding: 20px 50px;
+}
+
+.index-links .link-card:hover {
+  background: #fafafa;
+  cursor: pointer;
+}
 
 /* --------------------------------- sidebar --------------------------------- */
 
