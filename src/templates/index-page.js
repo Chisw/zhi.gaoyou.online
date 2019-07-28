@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import ImgGYRB from '../img/link-gyrb.png'
 import Img720 from '../img/link-720.png'
@@ -101,32 +100,33 @@ export const IndexPageTemplate = () => (
     <section className="section section--gradient">
       <div className="index-links">
         <div class="link-card">
-          <a href="//jisuowei.com" target="_blank">
-            <img src={ImgJI} alt="Placeholder image" />
+          <a href="//jisuowei.com" target="_blank" rel="noopener noreferrer">
+            <img src={ImgJI} alt="Placeholder" />
           </a>
         </div>
         <div class="link-card">
-          <a href="//epaper.gytoday.cn" target="_blank">
-            <img src={ImgGYRB} alt="Placeholder image" />
+          <a href="//epaper.gytoday.cn" target="_blank" rel="noopener noreferrer">
+            <img src={ImgGYRB} alt="Placeholder" />
           </a>
         </div>
         <div class="link-card">
-          <a href="//720yun.com/t/567jz7ukvf2?scene_id=9813419" target="_blank">
-            <img src={Img720} alt="Placeholder image" />
+          <a href="//720yun.com/t/567jz7ukvf2?scene_id=9813419" target="_blank" rel="noopener noreferrer">
+            <img src={Img720} alt="Placeholder" />
           </a>
         </div>
         <div class="link-card">
-          <a href="//www.wenyoutai.com" target="_blank">
-            <img src={ImgWYT} alt="Placeholder image" />
+          <a href="//www.wenyoutai.com" target="_blank" rel="noopener noreferrer">
+            <img src={ImgWYT} alt="Placeholder" />
           </a>
         </div>
         <div class="link-card">
-          <a href="//www.gytoday.cn/" target="_blank">
-            <img src={ImgJRGY} alt="Placeholder image" />
+          <a href="//www.gytoday.cn/" target="_blank" rel="noopener noreferrer">
+            <img src={ImgJRGY} alt="Placeholder" />
           </a>
         </div>
       </div>
     </section>
+    🍳 🍗 🌯
   </div>
 )
 
@@ -147,28 +147,4 @@ const IndexPage = ({ data }) => {
   )
 }
 
-IndexPage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
-}
-
 export default IndexPage
-
-export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`
