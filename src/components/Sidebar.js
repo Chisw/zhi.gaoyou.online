@@ -34,9 +34,9 @@ function Sidebar({location, nodes}) {
     })
 
     nodes.forEach( node => {
-        const index = groupVols.indexOf(node.node.frontmatter.vol);
-        if ( index >= 0) {
-            groups[index].items.push({
+        const volIndex = groupVols.indexOf(node.node.frontmatter.vol);
+        if ( volIndex >= 0) {
+            groups[volIndex].items.push({
                 title: node.node.frontmatter.title,
                 link: node.node.fields.slug
             })

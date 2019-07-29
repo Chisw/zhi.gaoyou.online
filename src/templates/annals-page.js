@@ -6,6 +6,7 @@ import Content, { HTMLContent } from '../components/Content'
 import Wave from '../img/wave.png'
 import Sidebar from '../components/Sidebar'
 import Tocbot from '../components/Tocbot'
+import PrevNext from '../components/PrevNext'
 import '../components/annals.css'
 
 export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, location }) => {
@@ -24,17 +25,19 @@ export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, lo
             style={{
               background: '#fff', 
               boxShadow: '0 0 5px rgba(0,0,0,.02), 0 5px 22px -8px rgba(0,0,0,.1)',
+              padding: '0'
             }}
           >
-            <div className="section annals-body">
+            <div className="section annals-body" style={{padding: '48px 32px'}}>
               <h2
-                style={{ marginBottom: '4rem', textAlign: 'center', padding: '20px', background: `url(${Wave})`}}
+                style={{ marginBottom: '4rem', textAlign: 'center', padding: '20px', backgroundSize: '32px', backgroundImage: `url(${Wave})`}}
                 className="title is-size-3 has-text-weight-bold is-bold-light"
               >
                 {title}
               </h2>
               <PageContent className="content" content={content} />
             </div>
+            <PrevNext nodes={nodes} location={location} />
           </div>
           <div className="column is-3">
             <div style={{position: 'fixed'}}>
@@ -70,23 +73,6 @@ const AnnalsPage = ({ data, location }) => {
     </Layout>
   )
 }
-
-// AnnalsPage.propTypes = {
-//   data: PropTypes.shape({
-//     allMarkdownRemark: PropTypes.shape({
-//       edges: PropTypes.arrayOf({
-//         node: PropTypes.shape({
-//           fields: PropTypes.shape({
-//             slug: PropTypes.string
-//           }),
-//           frontmatter: PropTypes.shape({
-//             title: PropTypes.string,
-//           })
-//         })
-//       })
-//     })
-//   }),
-// }
 
 export default AnnalsPage
 

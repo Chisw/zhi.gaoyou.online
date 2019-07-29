@@ -148,4 +148,56 @@
 }
 
 
+/* --------------------------------- prev-next --------------------------------- */
 
+.prev-next-container {
+  display: flex;
+  padding: 32px;
+  border-top: 1px solid #efefef;
+  background: url('../img/stripe.png') repeat-x center top;
+  background-size: 24px;
+}
+
+.prev-next-container .container-section {
+  flex-grow: 1;
+  padding: 0 48px;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: margin .23s;
+}
+
+.prev-next-container .container-section:hover {
+  margin: 0;
+}
+
+.prev-next-container .container-section span {
+  color: #ccc;
+  font-size: 12px;
+}
+
+.prev-next-container .container-section p {
+  font-size: 18px;
+  color: #777;
+}
+
+.prev-next-container .container-section:hover p {
+  color: #222;
+}
+
+.prev-next-container .next {
+  text-align: right;
+}
+
+.prev-next-container .prev {
+  content: "";
+  display: block;
+  background: url('../img/icon/arrow-prev.svg') no-repeat left center;
+  background-size: 24px;
+}
+
+.prev-next-container .next {
+  content: "";
+  display: block;
+  background: url('../img/icon/arrow-next.svg') no-repeat right center;
+  background-size: 24px;
+}
