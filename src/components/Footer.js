@@ -1,26 +1,61 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
+import logo from '../img/logo.png'
+import QRCode from '../img/QRCode.png'
 
-const Footer = class extends React.Component {
-  render() {
+function Footer() {
+
+  const [QRCodeShow, setQRCodeShow] = useState(false);
+
+  const Modal = () => {
     return (
+      <div class="modal is-success" style={{display: QRCodeShow ? 'block' : 'none'}}>
+        <div class="modal-background" style={{background: 'rgba(0,0,0, .4)'}}></div>
+        <div class="modal-card" style={{top: '20%'}}>
+          <section class="modal-card-body">
+            <button class="delete" aria-label="close" onClick={()=>{setQRCodeShow(false)}}></button>
+            <center>
+              <img alt="weixin" src={QRCode} style={{width: '300px'}} />
+            </center>
+          </section>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <>
       <footer className="footer">
         <div className="content">
           <div className="container">
             <div className="columns">
-              <div className="column is-8">
+              <div className="column is-4" style={{alignSelf: 'center', color: '#888'}}>
                 <Link style={{color: '#888'}} to="/">首页</Link>
                 <a style={{color: '#888', marginLeft: '32px'}} href="/admin/" target="_blank" rel="noopener noreferrer">控制台</a>
+                <span 
+                  style={{color: '#888', marginLeft: '32px', cursor: 'pointer'}} target="_blank" rel="noopener noreferrer"
+                  onClick={()=>{ setQRCodeShow(true) }}
+                >
+                    微信打赏
+                </span>
               </div>
-              <div className="column is-4" style={{fontSize: '14px', textAlign: 'right', color: '#666'}}>
+              <div className="column is-4" style={{textAlign: 'center', alignSelf: 'center'}}>
+                <Link to="/">
+                  <img alt="logo" src={logo} style={{width: '120px'}} />
+                </Link>
+              </div>
+              <div className="column is-4" style={{fontSize: '14px', textAlign: 'right', color: '#666', alignSelf: 'center'}}>
                 Email: i@jisuowei.com
               </div>
             </div>
           </div>
         </div>
       </footer>
-    )
-  }
+      <Modal />
+    </>
+  )
 }
 
 export default Footer
+
+

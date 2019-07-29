@@ -59,9 +59,11 @@ export const IndexPageTemplate = () => (
             <div className="column is-10 is-offset-1">
               <div className="content">
                 <div className="columns">
-                  <div className="column is-12 ">
-                    <p>&emsp;&emsp;古代高邮史称江左名区，广陵首邑，由宋置军至清设州，有九百多年中等行政区划的经历。高邮历史上曾唤作过秦邮、三阿、幽州、神农、广邺、高沙、承州、珠湖、盂城、散州等地名。代表江淮地区东部史前龙虬文化的龙虬庄遗址，表明七千多年前境内便有人类璀璨文明。</p>
-                    <div className="gy-timeaxis">
+                  <div className="column is-12 gaoyou-introduction">
+                    <div className="introduction-item gaoyou-profile">
+                      &emsp;&emsp;古代高邮史称江左名区，广陵首邑，由宋置军至清设州，有九百多年中等行政区划的经历。高邮历史上曾唤作过秦邮、三阿、幽州、神农、广邺、高沙、承州、珠湖、盂城、散州等地名。代表江淮地区东部史前龙虬文化的龙虬庄遗址，表明七千多年前境内便有人类璀璨文明。
+                    </div>
+                    <div className="introduction-item gaoyou-timeaxis">
                       <div className="inner">
                         <p>春秋，吴邗沟地，越国并吴国后属越国。</p>
                         <p>战国，楚并越属楚。</p>
@@ -97,8 +99,6 @@ export const IndexPageTemplate = () => (
           </div>
         </div>
       </div>
-    </section>
-    <section className="section section--gradient">
       <div className="index-links">
         <div className="link-card">
           <a href="//jisuowei.com" target="_blank" rel="noopener noreferrer">

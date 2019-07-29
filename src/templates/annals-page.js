@@ -21,7 +21,7 @@ export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, lo
               <Sidebar nodes={nodes} location={location} />
             </div>
           </div>
-          <div className="column is-7" 
+          <div className="column is-8" 
             style={{
               background: '#fff', 
               boxShadow: '0 0 5px rgba(0,0,0,.02), 0 5px 22px -8px rgba(0,0,0,.1)',
@@ -39,7 +39,7 @@ export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, lo
             </div>
             <PrevNext nodes={nodes} location={location} />
           </div>
-          <div className="column is-3">
+          <div className="column is-2">
             <div style={{position: 'fixed'}}>
               <Tocbot title={title} className="annals-tocbot" />
               <span className="back-to-top" onClick={()=> {
