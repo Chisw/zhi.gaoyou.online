@@ -99,6 +99,7 @@
 
 .annals-tocbot {
   padding-left: 20px;
+  min-width: 220px;
 }
 
 .annals-tocbot h3 {
@@ -155,6 +156,7 @@
   border: 1px solid #ddd;
   text-align: center;
   border-radius: 4px;
+  width: 100px;
 }
 
 .back-to-top:hover {
