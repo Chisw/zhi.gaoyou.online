@@ -31,9 +31,11 @@ function Footer() {
             <div className="columns">
               <div className="column is-4" style={{alignSelf: 'center', color: '#888'}}>
                 <Link style={{color: '#888'}} to="/">首页</Link>
-                <a style={{color: '#888', marginLeft: '32px'}} href="/admin/" target="_blank" rel="noopener noreferrer">控制台</a>
+                &emsp;&emsp;
+                <a style={{color: '#888'}} href="/admin/" target="_blank" rel="noopener noreferrer">控制台</a>
+                &emsp;&emsp;
                 <span 
-                  style={{color: '#888', marginLeft: '32px', cursor: 'pointer'}} target="_blank" rel="noopener noreferrer"
+                  style={{color: '#888', cursor: 'pointer'}} target="_blank" rel="noopener noreferrer"
                   onClick={()=>{ setQRCodeShow(true) }}
                 >
                     微信打赏
@@ -44,8 +46,10 @@ function Footer() {
                   <img alt="logo" src={logo} style={{width: '120px'}} />
                 </Link>
               </div>
-              <div className="column is-4" style={{fontSize: '14px', textAlign: 'right', color: '#666', alignSelf: 'center'}}>
-                Email: i@jisuowei.com
+              <div className="column is-4" style={{fontSize: '12px', textAlign: 'right', color: '#666', alignSelf: 'center'}}>
+                <span>Email: i@jisuowei.com</span>
+                &emsp;&emsp;
+                <span>© Gaoyou.Online</span>
               </div>
             </div>
           </div>
