@@ -17,18 +17,15 @@ export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, lo
       <div className="container">
         <div className="columns">
           <div className="column is-2">
-            <div style={{position: 'fixed'}}>
-              <Sidebar nodes={nodes} location={location} />
-            </div>
+            <Sidebar nodes={nodes} location={location} />
           </div>
-          <div className="column is-8" 
-            style={{
+          <div className="column is-8">
+            <div             style={{
               background: '#fff', 
               boxShadow: '0 0 5px rgba(0,0,0,.02), 0 5px 22px -8px rgba(0,0,0,.1)',
               padding: '0'
-            }}
-          >
-            <div className="section annals-body" style={{padding: '48px 32px'}}>
+            }}>
+            <div className="section annals-body" style={{padding: '48px 60px'}}>
               <h2
                 style={{ marginBottom: '4rem', textAlign: 'center', padding: '20px', backgroundSize: '32px', backgroundImage: `url(${Wave})`}}
                 className="title is-size-3 has-text-weight-bold is-bold-light"
@@ -38,6 +35,7 @@ export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, lo
               <PageContent className="content" content={content} />
             </div>
             <PrevNext nodes={nodes} location={location} />
+            </div>
           </div>
           <div className="column is-2">
             <div style={{position: 'fixed'}}>

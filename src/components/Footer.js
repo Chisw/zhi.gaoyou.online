@@ -9,11 +9,11 @@ function Footer() {
 
   const Modal = () => {
     return (
-      <div class="modal is-success" style={{display: QRCodeShow ? 'block' : 'none'}}>
-        <div class="modal-background" style={{background: 'rgba(0,0,0, .4)'}}></div>
-        <div class="modal-card" style={{top: '20%'}}>
-          <section class="modal-card-body">
-            <button class="delete" aria-label="close" onClick={()=>{setQRCodeShow(false)}}></button>
+      <div className="modal is-success" style={{display: QRCodeShow ? 'block' : 'none'}}>
+        <div className="modal-background" style={{background: 'rgba(0,0,0, .4)'}}></div>
+        <div className="modal-card" style={{top: '20%'}}>
+          <section className="modal-card-body">
+            <button className="delete" aria-label="close" onClick={()=>{setQRCodeShow(false)}}></button>
             <center>
               <img alt="weixin" src={QRCode} style={{width: '300px'}} />
             </center>
@@ -49,7 +49,7 @@ function Footer() {
               <div className="column is-4" style={{fontSize: '12px', textAlign: 'right', color: '#666', alignSelf: 'center'}}>
                 <span>Email: i@jisuowei.com</span>
                 &emsp;&emsp;
-                <span>© Gaoyou.Online</span>
+                <span>© Gaoyou.online</span>
               </div>
             </div>
           </div>
