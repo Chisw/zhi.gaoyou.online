@@ -64,7 +64,7 @@
 }
 
 .index-links .link-card:hover {
-  background: #fafafa;
+  background: #fcfcfc;
   cursor: pointer;
 }
 
@@ -79,6 +79,10 @@
   color: #222;
 }
 
+.sidebar-outline h4 {
+  line-height: 24px;
+}
+
 .sidebar-outline h4 a {
   font-size: 14px;
 }
@@ -86,7 +90,7 @@
 .sidebar-outline-items {
   margin: 8px 0;
   border-left: 1px solid #ddd;
-  padding-left: 20px;
+  padding-left: 28px;
 }
 
 .sidebar-outline-items a {
@@ -220,3 +224,24 @@
   background: url('../img/icon/arrow-next.svg') no-repeat right center;
   background-size: 24px;
 }
+
+/* --------------------------------- list-icon --------------------------------- */
+.annals-icon {
+  background: url() no-repeat left center;
+  background-size: 20px;
+  padding-left: 28px;
+}
+
+.annals-icon.icon-list   {background-image: url(../img/icon/list-list.png);}
+.annals-icon.icon-layer  {background-image: url(../img/icon/list-layer.png);}
+.annals-icon.icon-river  {background-image: url(../img/icon/list-river.png);}
+.annals-icon.icon-money  {background-image: url(../img/icon/list-money.png);}
+.annals-icon.icon-bowl   {background-image: url(../img/icon/list-bowl.png);}
+.annals-icon.icon-school {background-image: url(../img/icon/list-school.png);}
+.annals-icon.icon-pray   {background-image: url(../img/icon/list-pray.png);}
+.annals-icon.icon-sword  {background-image: url(../img/icon/list-sword.png);}
+.annals-icon.icon-chair  {background-image: url(../img/icon/list-chair.png);}
+.annals-icon.icon-column {background-image: url(../img/icon/list-column.png);}
+.annals-icon.icon-people {background-image: url(../img/icon/list-people.png);}
+.annals-icon.icon-book   {background-image: url(../img/icon/list-book.png);}
+.annals-icon.icon-taiji  {background-image: url(../img/icon/list-taiji.png);}

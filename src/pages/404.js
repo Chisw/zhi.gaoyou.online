@@ -6,7 +6,7 @@ const NotFoundPage = () => (
     <div style={{
       padding: '180px',
       textAlign: 'center',
-      background: '#fafafa'
+      background: '#fcfcfc'
     }}>
       <h1 style={{fontSize: '60px'}}>404 NOT FOUND <span role="img" aria-label="ghost">👻</span></h1>
       <p>访问路径出错，或者该页面正在建设中..</p>

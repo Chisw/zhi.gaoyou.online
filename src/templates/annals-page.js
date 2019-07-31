@@ -13,7 +13,7 @@ export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, lo
   const PageContent = contentComponent || Content
 
   return (
-    <section className="section section--gradient columns is-mobile" style={{background: '#fafafa'}}>
+    <section className="section section--gradient columns is-mobile" style={{background: '#fcfcfc'}}>
       <div className="container">
         <div className="columns">
           <div className="column is-2">
