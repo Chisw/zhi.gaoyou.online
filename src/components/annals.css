@@ -68,6 +68,17 @@
   cursor: pointer;
 }
 
+/* --------------------------------- annals-page --------------------------------- */
+.annals-body p {
+  font-weight: 400;
+}
+
+.annals-body p.kai {
+  font-weight: 300;
+  font-size: 14px;
+  color: #666;
+}
+
 /* --------------------------------- sidebar --------------------------------- */
 
 .sidebar-outline a {
