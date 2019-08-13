@@ -13,7 +13,7 @@ export const IndexPageTemplate = () => (
     <div
       className="full-width-image margin-top-0"
       style={{
-        backgroundImage: `url(./img/home-jumbotron.jpg)`,
+        backgroundImage: `url(./img/banner.png)`,
         backgroundPosition: `center`,
         backgroundAttachment: `fixed`,
       }}
@@ -37,7 +37,7 @@ export const IndexPageTemplate = () => (
             textAlign: 'center'
           }}
         >
-          华夏一邮邑 神州无同类
+          華夏一郵邑 神州無同類
         </h1>
         <h3
           className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
@@ -48,7 +48,7 @@ export const IndexPageTemplate = () => (
             textAlign: 'center'
           }}
         >
-          秦王嬴政二十四年，灭楚，筑高台，置邮亭
+          秦王嬴政二十四年，滅楚，築高臺，置郵亭
         </h3>
       </div>
     </div>
