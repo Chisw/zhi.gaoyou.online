@@ -101,12 +101,12 @@ export const IndexPageTemplate = () => (
       </div>
       <div className="index-links">
         <div className="link-card">
-          <a href="//jisuowei.com" target="_blank" rel="noopener noreferrer">
+          <a href="http://jisuowei.com" target="_blank" rel="noopener noreferrer">
             <img src={ImgJI} alt="Placeholder" />
           </a>
         </div>
         <div className="link-card">
-          <a href="//epaper.gytoday.cn" target="_blank" rel="noopener noreferrer">
+          <a href="http://epaper.gytoday.cn" target="_blank" rel="noopener noreferrer">
             <img src={ImgGYRB} alt="Placeholder" />
           </a>
         </div>
@@ -116,12 +116,12 @@ export const IndexPageTemplate = () => (
           </a>
         </div>
         <div className="link-card">
-          <a href="//www.wenyoutai.com" target="_blank" rel="noopener noreferrer">
+          <a href="http://www.wenyoutai.com" target="_blank" rel="noopener noreferrer">
             <img src={ImgWYT} alt="Placeholder" />
           </a>
         </div>
         <div className="link-card">
-          <a href="//www.gytoday.cn/" target="_blank" rel="noopener noreferrer">
+          <a href="http://www.gytoday.cn/" target="_blank" rel="noopener noreferrer">
             <img src={ImgJRGY} alt="Placeholder" />
           </a>
         </div>
