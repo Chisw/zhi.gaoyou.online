@@ -14,8 +14,9 @@ export const IndexPageTemplate = () => (
       className="full-width-image margin-top-0"
       style={{
         backgroundImage: `url(./img/banner.png)`,
-        backgroundPosition: `center`,
+        backgroundPosition: `center top`,
         backgroundAttachment: `fixed`,
+        backgroundSize: '1480px'
       }}
     >
       <div
