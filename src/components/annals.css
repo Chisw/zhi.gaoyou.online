@@ -4,6 +4,9 @@
 }
   
 /* --------------------------------- index --------------------------------- */
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 0px 5px, rgba(0, 0, 0, 0.1) 0px 5px 22px -8px;
+}
 
 .gaoyou-introduction {
   display: flex;
@@ -80,7 +83,7 @@
 }
 
 .index-links .link-card:hover {
-  background: #fcfcfc;
+  background: #fafafa;
   cursor: pointer;
 }
 
@@ -117,7 +120,8 @@
 .sidebar-outline-items {
   margin: 8px 0;
   border-left: 1px solid #ddd;
-  padding-left: 28px;
+  margin-left: 10px;
+  padding-left: 17px;
 }
 
 .sidebar-outline-items a {
@@ -176,9 +180,9 @@
 }
 
 .tocbot-title {
-    padding-bottom: 12px;
-    border-bottom: 1px solid #ddd;
-    color: #aaa;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ddd;
+  color: #aaa;
 }
 
 .back-to-top {
@@ -272,3 +276,13 @@
 .annals-icon.icon-people {background-image: url(../img/icon/list-people.png);}
 .annals-icon.icon-book   {background-image: url(../img/icon/list-book.png);}
 .annals-icon.icon-taiji  {background-image: url(../img/icon/list-taiji.png);}
+
+
+/* --------------------------------- markdown style --------------------------------- */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}

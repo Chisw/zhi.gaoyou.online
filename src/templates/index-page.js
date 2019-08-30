@@ -8,26 +8,10 @@ import ImgJI from '../img/link-ji.png'
 import ImgWYT from '../img/link-wyt.png'
 import ImgJRGY from '../img/link-jrgy.png'
 import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm'
+import statistics from '../../static/statistics.data'
 
 const data = {
-  dataPoints: {
-    '1564243200': 297, // 2019/07/28
-    '1564329600': 307, // 2019/07/29
-    '1564416000': 366, // 2019/07/30
-    '1564502400': 498, // 2019/07/31
-    '1564588800': 462, // 2019/08/01
-    '1564761600': 850, // 2019/08/03
-    '1564848000': 799, // 2019/08/04
-    '1564934400': 621, // 2019/08/05
-    '1565107200': 425, // 2019/08/07
-    '1565193600': 447, // 2019/08/08
-    '1565625600': 561, // 2019/08/13
-    '1565798400': 800, // 2019/08/15
-    '1566144000': 545, // 2019/08/19
-    '1566489600': 360, // 2019/08/23
-    '1566835200': 677, // 2019/08/27
-    '1567094400': 377, // 2019/08/30
-  },
+  dataPoints: statistics,
   start: new Date(1564243200000),
   end: new Date()
 }
@@ -36,7 +20,7 @@ export const IndexPageTemplate = () => {
 
   useEffect( () => {
     new Chart("#chart", {
-      // title: '每日整理字数热力图',
+      // title: '',
       type: 'heatmap',
       discreteDomains: 0,
       data: data,
@@ -135,8 +119,14 @@ export const IndexPageTemplate = () => {
             </div>
           </div>
         </div>
-        <div className="container">
-            <div className="section" id="chart"></div>
+        <div 
+          className="container" 
+          style={{border: '1px solid #efefef', borderRadius: 4, margin: '24px auto'}}
+        >
+            <div className="section">
+              <h3 className="text-center" style={{color: '#999'}}>每日整理字数热力图</h3>
+              <div id="chart"></div>
+            </div>
         </div>
         <div className="index-links">
           <div className="link-card">
