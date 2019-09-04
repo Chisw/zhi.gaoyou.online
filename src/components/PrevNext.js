@@ -25,7 +25,7 @@ function PrevNext({ nodes, location }) {
             {
                 prev
                     ? (
-                        <Link to={prev.link} className="container-section prev">
+                        <Link to={prev.link} className="container-section prev font-kxzd">
                             <span>上一章</span>
                             <p>{prev.title}</p>
                         </Link>
@@ -37,7 +37,7 @@ function PrevNext({ nodes, location }) {
             {
                 next
                     ? (
-                        <Link to={next.link} className="container-section next">
+                        <Link to={next.link} className="container-section next font-kxzd">
                             <span>下一章</span>
                             <p>{next.title}</p>
                         </Link>

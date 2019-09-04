@@ -49,7 +49,7 @@ export const IndexPageTemplate = () => {
           }}
         >
           <h1
-            className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+            className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen font-kxzd"
             style={{
               color: 'white',
               lineHeight: '1',
@@ -60,7 +60,7 @@ export const IndexPageTemplate = () => {
             華夏一郵邑 神州無同類
           </h1>
           <h3
-            className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
+            className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen font-kxzd"
             style={{
               color: 'white',
               lineHeight: '1',
@@ -68,7 +68,7 @@ export const IndexPageTemplate = () => {
               textAlign: 'center'
             }}
           >
-            秦王嬴政二十四年，滅楚，築高臺，置郵亭
+            秦王嬴政二十四年 滅楚 築高臺 置郵亭
           </h3>
         </div>
       </div>
