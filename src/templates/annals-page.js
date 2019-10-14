@@ -29,7 +29,7 @@ export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, lo
             }}>
             <div className="section annals-body" style={{padding: '48px 60px', textAlign: 'justify'}}>
               <h2
-                style={{ marginBottom: '4rem', textAlign: 'center', padding: '20px', backgroundSize: '32px', backgroundImage: `url(${Wave})`}}
+                style={{ marginBottom: '4rem', textAlign: 'center', padding: '20px', backgroundSize: '32px', backgroundImage: `url(${Wave})`, fontWeight: 'normal'}}
                 className="title is-size-3 font-kxzd"
               >
                 {title}
