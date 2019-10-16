@@ -30,6 +30,7 @@ const data = [
   { date: '2019/10/13', count: 632 },
   { date: '2019/10/14', count: 533 },
   { date: '2019/10/15', count: 191 },
+  { date: '2019/10/16', count: 1094 },
 ]
 
 const statistics = {}
