@@ -91,6 +91,11 @@
 }
 
 /* --------------------------------- annals-page --------------------------------- */
+.annals-body .anchor {
+  margin-left: -28px;
+  padding-right: 0;
+}
+
 .annals-body p {
   font-weight: 400;
 }

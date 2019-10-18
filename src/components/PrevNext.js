@@ -13,7 +13,7 @@ function PrevNext({ nodes, location }) {
     })
   })
 
-  const arr = (location.href || '').split('/').reverse()
+  const arr = (location.href || '').split('#')[0].split('/').reverse()
   const index = arr[0] ? 0 : 1
   const currentPageLink = decodeURIComponent(`/${arr[index + 1]}/${arr[index]}/`)
 
