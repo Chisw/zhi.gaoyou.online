@@ -12,7 +12,7 @@ import statistics from '../../static/statistics.data'
 
 const data = {
   dataPoints: statistics,
-  start: new Date('2019/03/11'),
+  start: new Date('2019/07/01'),
   end: new Date()
 }
 
