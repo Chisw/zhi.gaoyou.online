@@ -23,6 +23,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 }
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  // Disable source maps
   if (stage === 'build-javascript') {
     actions.setWebpackConfig({
       devtool: false,
@@ -35,7 +36,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
       module: {
         rules: [
           {
-            test: /bad-module/,
+            test: /@antv/,
             use: loaders.null(),
           },
         ],
