@@ -29,19 +29,4 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
       devtool: false,
     })
   }
-
-  // fix bizcharts 'document'
-  if (stage === "build-html") {
-    actions.setWebpackConfig({
-      module: {
-        rules: [
-          {
-            test: /@antv/,
-            use: loaders.null(),
-          },
-        ],
-      },
-    })
-  }
-
 };

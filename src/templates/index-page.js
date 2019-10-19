@@ -2,13 +2,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Statistics from '../components/Statistics'
-
 import ImgGYRB from '../img/link-gyrb.png'
 import Img720 from '../img/link-720.png'
 import ImgJI from '../img/link-ji.png'
 import ImgWYT from '../img/link-wyt.png'
 import ImgJRGY from '../img/link-jrgy.png'
+import Loadable from 'react-loadable'
+
+const LoadableStatistics = Loadable({
+  loader: () => import('../components/Statistics'),
+  loading: (props) => {
+    if(props.error) {
+      return <div>Something wrong</div>
+    } else {
+      return <div>Loading..</div>
+    }
+  },
+});
 
 export const IndexPageTemplate = () => {
 
@@ -106,7 +116,7 @@ export const IndexPageTemplate = () => {
         </div>
         <div className="container">
           <div className="section">
-            <Statistics />
+            <LoadableStatistics />
           </div>
         </div>
         <div className="index-links">

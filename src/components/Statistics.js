@@ -1,5 +1,5 @@
 import React from 'react'
-import { Chart, Geom, Axis, Tooltip, Legend, Coord } from 'bizcharts'
+import { Chart, Geom, Axis, Tooltip } from 'bizcharts'
 
 const data = [
   { date: '2019/07/28', count: 297 },
@@ -45,10 +45,9 @@ const cols = {
 export default function Statistics() {
   return (
     <div>
-      <Chart width={1200} height={200} data={data} scale={cols}>
+      <Chart forceFit height={200} data={data} scale={cols}>
         <Axis name="count" />
         <Axis name="date" />
-        <Legend position="bottom" />
         <Tooltip />
         <Geom type="interval" position="date*count" color="#f55857" size={3} />
       </Chart>
