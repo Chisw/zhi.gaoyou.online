@@ -23,11 +23,24 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 }
 
 exports.onCreateWebpackConfig = ({ actions, stage }) => {
-  // If production JavaScript and CSS build
   if (stage === 'build-javascript') {
-    // Turn off source maps
     actions.setWebpackConfig({
       devtool: false,
     })
   }
+
+  // fix bizcharts 'document'
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /bad-module/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+
 };
