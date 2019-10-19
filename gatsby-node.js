@@ -22,7 +22,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-exports.onCreateWebpackConfig = ({ actions, stage }) => {
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === 'build-javascript') {
     actions.setWebpackConfig({
       devtool: false,
