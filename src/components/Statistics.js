@@ -1,3 +1,6 @@
+import React from 'react'
+import { Chart, Geom, Axis, Tooltip, Legend, Coord } from 'bizcharts'
+
 const data = [
   { date: '2019/07/28', count: 297 },
   { date: '2019/07/29', count: 307 },
@@ -34,10 +37,21 @@ const data = [
   { date: '2019/10/19', count: 557 },
 ]
 
-const statistics = {}
+const cols = {
+  count: { alias: '整理字数' },
+  date: { alias: '日期' }
+};
 
-data.forEach( item => {
-  statistics[new Date(item.date).getTime() / 1000] = item.count
-})
-
-export default statistics
+export default function Statistics() {
+  return (
+    <div>
+      <Chart width={1200} height={200} data={data} scale={cols}>
+        <Axis name="count" />
+        <Axis name="date" />
+        <Legend position="bottom" />
+        <Tooltip />
+        <Geom type="interval" position="date*count" color="#f55857" size={3} />
+      </Chart>
+    </div>
+  )
+}

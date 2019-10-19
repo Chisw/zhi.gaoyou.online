@@ -1,31 +1,16 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import Statistics from '../components/Statistics'
+
 import ImgGYRB from '../img/link-gyrb.png'
 import Img720 from '../img/link-720.png'
 import ImgJI from '../img/link-ji.png'
 import ImgWYT from '../img/link-wyt.png'
 import ImgJRGY from '../img/link-jrgy.png'
-import { Chart } from 'frappe-charts/dist/frappe-charts.min.esm'
-import statistics from '../../static/statistics.data'
-
-const data = {
-  dataPoints: statistics,
-  start: new Date('2019/07/01'),
-  end: new Date()
-}
 
 export const IndexPageTemplate = () => {
-
-  useEffect( () => {
-    new Chart("#chart", {
-      // title: '',
-      type: 'heatmap',
-      discreteDomains: 0,
-      data: data,
-    })
-  }, [])
 
   return (
     <div>
@@ -119,14 +104,10 @@ export const IndexPageTemplate = () => {
             </div>
           </div>
         </div>
-        <div 
-          className="container" 
-          style={{border: '1px solid #efefef', borderRadius: 4, margin: '24px auto'}}
-        >
-            <div className="section">
-              <h3 className="text-center" style={{color: '#999'}}>每日整理字数热力图</h3>
-              <div id="chart"></div>
-            </div>
+        <div className="container">
+          <div className="section">
+            <Statistics />
+          </div>
         </div>
         <div className="index-links">
           <div className="link-card">
