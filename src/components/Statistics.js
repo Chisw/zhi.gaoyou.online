@@ -40,6 +40,7 @@ const data = [
   { date: '2019/10/25', count: 272 },
   { date: '2019/10/27', count: 941 },
   { date: '2019/10/28', count: 291 },
+  { date: '2019/10/29', count: 704 },
 ]
 
 const cols = {
