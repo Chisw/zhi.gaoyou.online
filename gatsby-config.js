@@ -1,7 +1,6 @@
 var proxy = require('http-proxy-middleware')
 
 module.exports = {
-  // pathPrefix: `/i/gyz`,  // npm run clean && gatsby build --prefix-paths
   pathPrefix: `/gaoyou-annals`,  // npm run clean && gatsby build --prefix-paths
   siteMetadata: {
     title: '高邮志 - 华夏一邮邑 神州无同类',
