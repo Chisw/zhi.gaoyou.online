@@ -1,11 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
 }
 
-@font-face {font-family: 'kxzd'; src: url('../fonts/kxzd.woff') format('woff');}
-.font-kxzd {font-family: 'kxzd';}
-  
+@font-face {
+  font-family: 'kxzd';
+  src: url('../fonts/kxzd.woff') format('woff');
+}
+
+.font-kxzd {
+  font-family: 'kxzd';
+}
+
 /* --------------------------------- index --------------------------------- */
 .shadow {
   box-shadow: rgba(0, 0, 0, 0.02) 0px 0px 5px, rgba(0, 0, 0, 0.1) 0px 5px 22px -8px;
@@ -60,7 +70,7 @@
 
 .chart-container span.title {
   font-size: 12px;
-  color: rgba(255,255,255, .7);
+  color: rgba(255, 255, 255, .7);
 }
 
 .chart-container span.title strong {
@@ -271,19 +281,57 @@
   padding-left: 28px;
 }
 
-.annals-icon.icon-list   {background-image: url(../img/icon/list-list.png);}
-.annals-icon.icon-layer  {background-image: url(../img/icon/list-layer.png);}
-.annals-icon.icon-river  {background-image: url(../img/icon/list-river.png);}
-.annals-icon.icon-money  {background-image: url(../img/icon/list-money.png);}
-.annals-icon.icon-bowl   {background-image: url(../img/icon/list-bowl.png);}
-.annals-icon.icon-school {background-image: url(../img/icon/list-school.png);}
-.annals-icon.icon-pray   {background-image: url(../img/icon/list-pray.png);}
-.annals-icon.icon-sword  {background-image: url(../img/icon/list-sword.png);}
-.annals-icon.icon-chair  {background-image: url(../img/icon/list-chair.png);}
-.annals-icon.icon-column {background-image: url(../img/icon/list-column.png);}
-.annals-icon.icon-people {background-image: url(../img/icon/list-people.png);}
-.annals-icon.icon-book   {background-image: url(../img/icon/list-book.png);}
-.annals-icon.icon-taiji  {background-image: url(../img/icon/list-taiji.png);}
+.annals-icon.icon-list {
+  background-image: url(../img/icon/list-list.png);
+}
+
+.annals-icon.icon-layer {
+  background-image: url(../img/icon/list-layer.png);
+}
+
+.annals-icon.icon-river {
+  background-image: url(../img/icon/list-river.png);
+}
+
+.annals-icon.icon-money {
+  background-image: url(../img/icon/list-money.png);
+}
+
+.annals-icon.icon-bowl {
+  background-image: url(../img/icon/list-bowl.png);
+}
+
+.annals-icon.icon-school {
+  background-image: url(../img/icon/list-school.png);
+}
+
+.annals-icon.icon-pray {
+  background-image: url(../img/icon/list-pray.png);
+}
+
+.annals-icon.icon-sword {
+  background-image: url(../img/icon/list-sword.png);
+}
+
+.annals-icon.icon-chair {
+  background-image: url(../img/icon/list-chair.png);
+}
+
+.annals-icon.icon-column {
+  background-image: url(../img/icon/list-column.png);
+}
+
+.annals-icon.icon-people {
+  background-image: url(../img/icon/list-people.png);
+}
+
+.annals-icon.icon-book {
+  background-image: url(../img/icon/list-book.png);
+}
+
+.annals-icon.icon-taiji {
+  background-image: url(../img/icon/list-taiji.png);
+}
 
 
 /* --------------------------------- markdown style --------------------------------- */

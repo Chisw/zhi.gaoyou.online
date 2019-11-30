@@ -31,14 +31,11 @@ function Footer() {
             <div className="columns">
               <div className="column is-4" style={{alignSelf: 'center', color: '#888'}}>
                 <Link style={{color: '#888'}} to="/">首页</Link>
-                &emsp;&emsp;
-                <a style={{color: '#888'}} href="https://zhi.gaoyou.online/admin/" target="_blank" rel="noopener noreferrer">控制台</a>
-                &emsp;&emsp;
-                <span 
+                <span
                   style={{color: '#888', cursor: 'pointer'}} target="_blank" rel="noopener noreferrer"
                   onClick={()=>{ setQRCodeShow(true) }}
                 >
-                    微信打赏
+                  微信打赏
                 </span>
               </div>
               <div className="column is-4" style={{textAlign: 'center', alignSelf: 'center'}}>
