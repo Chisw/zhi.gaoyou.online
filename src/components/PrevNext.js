@@ -25,33 +25,31 @@ function PrevNext({ nodes, location }) {
   const next = flatSidebar[currIndex + 1] || null
 
   return (
-    <div className="prev-next-container">
+    <div className="">
       {
         prev
           ? (
-            <Link to={prev.link} className="container-section prev font-kxzd">
+            <Link to={prev.link} className="font-kxzd">
               <span>上一章</span>
               <p>{prev.title}</p>
             </Link>
           )
           : (
-            <div className="container-section"></div>
+            <div className=""></div>
           )
       }
       {
         next
           ? (
-            <Link to={next.link} className="container-section next font-kxzd">
+            <Link to={next.link} className="font-kxzd">
               <span>下一章</span>
               <p>{next.title}</p>
             </Link>
           )
           : (
-            <div className="container-section"></div>
+            <div className=""></div>
           )
       }
-
-      
     </div>
   )
 }

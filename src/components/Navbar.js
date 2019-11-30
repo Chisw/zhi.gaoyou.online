@@ -1,98 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.png'
+import Center from './Center'
 
-const Navbar = class extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      active: false,
-      navBarActiveClass: '',
-    }
+export default function Navbar() {
+
+  const [active, setActive] = useState(false)
+  const [navBarActiveClass, setNavBarActiveClass] = useState('')
+
+  const toggleHamburger = () => {
+    setActive(!active)
+    setNavBarActiveClass(active ? 'active' : '')
   }
 
-  toggleHamburger = () => {
-    // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: 'is-active',
-            })
-          : this.setState({
-              navBarActiveClass: '',
-            })
-      }
-    )
-  }
+  const navList = [
+    { name: '高郵州志', url: '/gyzz/' },
+    { name: '续增高郵州志', url: '/xzgyzz/' },
+    { name: '再续高郵州志', url: '/zxgyzz/' },
+    { name: '三续高郵州志', url: '/sxgyzz/' },
+    { name: '集志', url: '/jz/' },
+  ]
 
-  render() {
-    return (
-      <nav
-        className="navbar is-transparent"
-        role="navigation"
-        aria-label="main-navigation"
-      >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="gaoyouzhi" />
-            </Link>
-            {/* Hamburger menu */}
-            <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
-            >
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/gyzz/">
-                高郵州志
-              </Link>
-              <Link className="navbar-item" to="/xzgyzz/">
-                续增高郵州志
-              </Link>
-              <Link className="navbar-item" to="/zxgyzz/">
-                再续高郵州志
-              </Link>
-              <Link className="navbar-item" to="/sxgyzz/">
-                三续高郵州志
-              </Link>
-              <Link className="navbar-item" to="/jz/">
-                集志
-              </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
+  return (
+    <div className="fixed z-10 w-full border-b bg-white">
+      <Center>
+        <div className="h-12 flex items-center">
+          <Link to="/" className="" title="Logo">
+            <img src={logo} alt="gaoyouzhi" className="w-20" />
+          </Link>
+          <div className={`ml-10 flex items-center flex-grow ${navBarActiveClass ? '' : ''}`}>
+            {
+              navList.map(nav => (
+                <Link
+                  key={nav.url}
+                  to={nav.url}
+                  className="mr-4 font-thin text-sm text-gray-600 hover:text-gray-900"
+                >
+                  {nav.name}
+                </Link>
+              ))
+            }
+            <span className="flex justify-end flex-grow">
               <a
-                className="navbar-item"
                 href="https://github.com/chisw/gaoyou-annals"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
+                <img src={github} alt="Github" className="w-6" />
               </a>
-            </div>
+            </span>
+          </div>
+          <div
+            className={`${navBarActiveClass ? '' : ''}`}
+            onClick={toggleHamburger}
+          >
+            {/* 三 */}
           </div>
         </div>
-      </nav>
-    )
-  }
+      </Center>
+    </div>
+  )
 }
 
-export default Navbar

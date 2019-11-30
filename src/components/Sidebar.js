@@ -69,7 +69,7 @@ export default function Sidebar({location, nodes}) {
     <nav>
       {
         groups.map((group, i) => (
-          <div key={i} className="sidebar-outline">
+          <div key={i} className="">
             <h4 className={`annals-icon icon-${group.icon}`}>
               { group.items[0] && (
                   <SidebarLink link={group.items[0].link} title={group.group}/>
@@ -78,7 +78,7 @@ export default function Sidebar({location, nodes}) {
             </h4>
             {  // sub
               group.items.some(item => (item.link === currentPageLink )) && (
-                <ul className="sidebar-outline-items" key={i}>
+                <ul className="" key={i}>
                   {group.items.map((item, j) => (
                     <li key={j}>
                       <SidebarLink

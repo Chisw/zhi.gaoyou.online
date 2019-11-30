@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import logo from '../img/logo.png'
 import QRCode from '../img/QRCode.png'
+import Center from '../components/Center'
 
 function Footer() {
 
@@ -9,15 +10,12 @@ function Footer() {
 
   const Modal = () => {
     return (
-      <div className="modal is-success" style={{display: QRCodeShow ? 'block' : 'none'}}>
-        <div className="modal-background" style={{background: 'rgba(0,0,0, .4)'}}></div>
-        <div className="modal-card" style={{top: '20%'}}>
-          <section className="modal-card-body">
-            <button className="delete" aria-label="close" onClick={()=>{setQRCodeShow(false)}}></button>
-            <center>
-              <img alt="weixin" src={QRCode} style={{width: '300px'}} />
-            </center>
-          </section>
+      <div className={`fixed z-20 top-0 right-0 bottom-0 left-0 flex justify-center items-center ${QRCodeShow ? '' : 'hidden'}`} style={{ background: 'rgba(0,0,0, .4)' }}>
+        <div className="inline-block relative bg-white">
+          <span className="absolute top-0 right-0 w-8 h-8 text-center cursor-pointer" onClick={()=>{setQRCodeShow(false)}}>&times;</span>
+          <center>
+            <img alt="weixin" src={QRCode} className="w-64 rounded-lg" />
+          </center>
         </div>
       </div>
     )
@@ -25,33 +23,27 @@ function Footer() {
 
   return (
     <>
-      <footer className="footer">
-        <div className="content">
-          <div className="container">
-            <div className="columns">
-              <div className="column is-4" style={{alignSelf: 'center', color: '#888'}}>
-                <Link style={{color: '#888'}} to="/">首页</Link>
-                <span
-                  style={{color: '#888', cursor: 'pointer'}} target="_blank" rel="noopener noreferrer"
-                  onClick={()=>{ setQRCodeShow(true) }}
-                >
-                  微信打赏
-                </span>
-              </div>
-              <div className="column is-4" style={{textAlign: 'center', alignSelf: 'center'}}>
-                <Link to="/">
-                  <img alt="logo" src={logo} style={{width: '120px'}} />
-                </Link>
-              </div>
-              <div className="column is-4" style={{fontSize: '12px', textAlign: 'right', color: '#666', alignSelf: 'center'}}>
-                <span>Email: i@jisuowei.com</span>
-                &emsp;&emsp;
-                <span>© Gaoyou.online</span>
-              </div>
-            </div>
+      <div className="py-8 border-t bg-white">
+        <Center className="flex items-center text-gray-500 text-sm">
+          <div className="w-1/4">
+            <Link to="/">首页</Link>
+            <span
+              className="ml-4 cursor-pointer"
+              onClick={()=>{ setQRCodeShow(true) }}
+            >
+              微信打赏
+            </span>
           </div>
-        </div>
-      </footer>
+          <div className="w-1/2 flex justify-center">
+            <Link to="/">
+              <img alt="logo" src={logo} style={{width: '120px'}} />
+            </Link>
+          </div>
+          <div className="w-1/4 text-right">
+            <span>Email: i@jisuowei.com</span>&emsp;<span>©gaoyou.online</span>
+          </div>
+        </Center>
+      </div>
       <Modal />
     </>
   )

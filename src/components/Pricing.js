@@ -2,20 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Pricing = ({ data }) => (
-  <div className="columns">
+  <div className="">
     {data.map(price => (
-      <div key={price.plan} className="column">
-        <section className="section">
-          <h4 className="has-text-centered has-text-weight-semibold">
+      <div key={price.plan} className="">
+        <section className="">
+          <h4 className="">
             {price.plan}
           </h4>
-          <h2 className="is-size-1 has-text-weight-bold has-text-primary has-text-centered">
+          <h2 className="">
             ${price.price}
           </h2>
-          <p className="has-text-weight-semibold">{price.description}</p>
+          <p className="">{price.description}</p>
           <ul>
             {price.items.map(item => (
-              <li key={item} className="is-size-5">
+              <li key={item} className="">
                 {item}
               </li>
             ))}
