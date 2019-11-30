@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <div className="fixed z-10 w-full border-b bg-white">
       <Center>
-        <div className="h-12 flex items-center">
+        <div className="h-16 flex items-center">
           <Link to="/" className="" title="Logo">
             <img src={logo} alt="gaoyouzhi" className="w-20" />
           </Link>
@@ -35,7 +35,7 @@ export default function Navbar() {
                 <Link
                   key={nav.url}
                   to={nav.url}
-                  className="mr-4 font-thin text-sm text-gray-600 hover:text-gray-900"
+                  className="mr-4 font-thin text-base text-gray-600 hover:text-gray-900"
                 >
                   {nav.name}
                 </Link>

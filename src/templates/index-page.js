@@ -26,7 +26,7 @@ export const IndexPageTemplate = () => {
   return (
     <div>
       <div
-        className="pt-12 bg-center bg-fixed"
+        className="bg-center bg-fixed"
         style={{
           height: '100vh',
           minHeight: 400,
@@ -35,14 +35,14 @@ export const IndexPageTemplate = () => {
         }}
       >
         <Center className="w-full h-full flex justify-center items-center font-kxzd">
-          <div className="-mt-12 text-center" style={{ textShadow: '0 0 8px rgba(255, 255, 255, .9)'}}>
+          <div className="-mt-20 text-center" style={{ textShadow: '0 0 8px rgba(255, 255, 255, .9)'}}>
             <h1 className="text-6xl">華夏一郵邑 神州無同類</h1>
             <h3 className="text-2xl mt-4">秦王嬴政二十四年 滅楚 築高臺 置郵亭</h3>
           </div>
         </Center>
       </div>
-      <div>
-        <Center className="flex py-12">
+      <div className="py-16">
+        <Center className="flex">
           <div className="font-hairline pr-4">
             古代高邮史称江左名区，广陵首邑，由宋置军至清设州，有九百多年中等行政区划的经历。高邮历史上曾唤作过秦邮、三阿、幽州、神农、广邺、高沙、承州、珠湖、盂城、散州等地名。代表江淮地区东部史前龙虬文化的龙虬庄遗址，表明七千多年前境内便有人类璀璨文明。
           </div>
@@ -77,16 +77,16 @@ export const IndexPageTemplate = () => {
           </div>
         </Center>
       </div>
-      <div className="">
-        <Center className="my-12 rounded-lg shadow">
+      <div className="py-16">
+        <Center className="rounded-lg shadow">
           <LoadableStatistics />
         </Center>
       </div>
-      <div className="pb-12">
+      <div className="py-16 pb-32">
         <Center>
           <div className="-mx-2 flex">
             <a
-              className="bg-white mx-2 p-4 hover:bg-gray-100"
+              className="bg-white mx-2 p-8 hover:bg-gray-100"
               href="http://jisuowei.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -94,7 +94,7 @@ export const IndexPageTemplate = () => {
               <img src={ImgJI} alt="Placeholder" />
             </a>
             <a
-              className="bg-white mx-2 p-4 hover:bg-gray-100"
+              className="bg-white mx-2 p-8 hover:bg-gray-100"
               href="http://epaper.gytoday.cn"
               target="_blank"
               rel="noopener noreferrer"
@@ -102,7 +102,7 @@ export const IndexPageTemplate = () => {
               <img src={ImgGYRB} alt="Placeholder" />
             </a>
             <a
-              className="bg-white mx-2 p-4 hover:bg-gray-100"
+              className="bg-white mx-2 p-8 hover:bg-gray-100"
               href="//720yun.com/t/567jz7ukvf2?scene_id=9813419"
               target="_blank"
               rel="noopener noreferrer"
@@ -110,7 +110,7 @@ export const IndexPageTemplate = () => {
               <img src={Img720} alt="Placeholder" />
             </a>
             <a
-              className="bg-white mx-2 p-4 hover:bg-gray-100"
+              className="bg-white mx-2 p-8 hover:bg-gray-100"
               href="http://www.wenyoutai.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -118,7 +118,7 @@ export const IndexPageTemplate = () => {
               <img src={ImgWYT} alt="Placeholder" />
             </a>
             <a
-              className="bg-white mx-2 p-4 hover:bg-gray-100"
+              className="bg-white mx-2 p-8 hover:bg-gray-100"
               href="http://www.gytoday.cn/"
               target="_blank"
               rel="noopener noreferrer"

@@ -39,7 +39,7 @@ function Footer() {
               <img alt="logo" src={logo} style={{width: '120px'}} />
             </Link>
           </div>
-          <div className="w-1/4 text-right">
+          <div className="w-1/4 text-right font-thin">
             <span>Email: i@jisuowei.com</span>&emsp;<span>©gaoyou.online</span>
           </div>
         </Center>

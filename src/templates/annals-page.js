@@ -7,46 +7,43 @@ import Sidebar from '../components/Sidebar'
 import Tocbot from '../components/Tocbot'
 import PrevNext from '../components/PrevNext'
 import Wave from '../img/wave.png'
+import Center from '../components/Center'
 
 export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, location }) => {
   const PageContent = contentComponent || Content
 
   return (
-    <div>
-      <div className="">
+    <div className="pt-16 bg-black-100">
+      <Center className="flex py-8">
         <div className="">
-          <div className="">
-            <Sidebar nodes={nodes} location={location} />
+          <Sidebar nodes={nodes} location={location} />
+        </div>
+        <div className="bg-white rounded shadow-lg px-12 py-8" style={{ width: 800 }}>
+          <div className="annals-body">
+            <h2
+              className="mb-8 p-2 text-3xl text-center font-kxzd"
+              style={{ backgroundSize: '32px', backgroundImage: `url(${Wave})` }}
+            >
+              {title}
+            </h2>
+            <PageContent className="" content={content} />
           </div>
-          <div className="">
-            <div>
-              <div className="annals-body">
-                <h2
-                  className="font-kxzd"
-                  style={{ backgroundSize: '32px', backgroundImage: `url(${Wave})` }}
-                >
-                  {title}
-                </h2>
-                <PageContent className="" content={content} />
-              </div>
-              <PrevNext nodes={nodes} location={location} />
-            </div>
-          </div>
-          <div className="">
-            <div className="fixed">
-              <Tocbot title={title} className="annals-tocbot" />
-              <span
-                className="back-to-top"
-                onClick={()=> {
-                  document.documentElement.scrollTop = 0
-                }}
-              >
-                回到顶部
-              </span>
-            </div>
+          <PrevNext nodes={nodes} location={location} />
+        </div>
+        <div className="">
+          <div className="fixed">
+            <Tocbot title={title} className="annals-tocbot" />
+            <span
+              className="back-to-top"
+              onClick={()=> {
+                document.documentElement.scrollTop = 0
+              }}
+            >
+              回到顶部
+            </span>
           </div>
         </div>
-      </div>
+      </Center>
     </div>
   )
 }
