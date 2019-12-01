@@ -25,7 +25,7 @@ function PrevNext({ nodes, location }) {
   const next = flatSidebar[currIndex + 1] || null
 
   return (
-    <div className="prev-next flex p-8">
+    <div className="prev-next flex px-5 py-8">
       {
         prev
           ? (
@@ -38,6 +38,7 @@ function PrevNext({ nodes, location }) {
             <div className=""></div>
           )
       }
+      <div className="flex-grow" />
       {
         next
           ? (

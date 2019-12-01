@@ -104,6 +104,13 @@
   color: #888;
 }
 
+.annals-content li {
+  margin-bottom: .5rem;
+  list-style: disc;
+  list-style-position: inside;
+  font-weight: 300;
+}
+
 /* sidebar */
 .sidebar-outline a {
   color: #666;
@@ -201,9 +208,8 @@
 }
 
 .prev-next .section {
-  flex-grow: 1;
-  padding: 0 48px;
-  margin: 0 8px;
+  padding: 0 32px;
+  margin: 0 4px;
   cursor: pointer;
   transition: margin .23s;
 }
