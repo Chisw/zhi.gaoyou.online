@@ -38,7 +38,7 @@
   .gyz-page .page-tocbot {
     display: none;
   }
-  
+
   .gyz-page .page-content {
     padding: 20px;
     width: 100%;
@@ -60,19 +60,45 @@
 }
 
 /* annals-page */
-.annals-body .anchor {
+.annals-content .anchor {
   margin-left: -28px;
   padding-right: 0;
 }
 
-.annals-body p {
-  font-weight: 400;
+.annals-content h3 {
+  margin: 1.2rem 0 .8rem 0;
+  font-size: 24px;
 }
 
-.annals-body p.T {
+.annals-content h4 {
+  margin: 1.1rem 0 .76rem 0;
+  font-size: 22px;
+}
+
+.annals-content h5 {
+  margin: 1rem 0 .72rem 0;
+  font-size: 20px;
+}
+
+.annals-content h6 {
+  margin: .9rem 0 .68rem 0;
+  font-size: 18px;
+}
+
+.annals-content p {
+  margin-bottom: .8rem;
+  font-weight: 300;
+  text-align: justify;
+}
+
+.annals-content p.text-center {
+  text-align: center;
+}
+
+.annals-content p.T {
   font-weight: 300;
   font-size: 14px;
-  color: #666;
+  color: #888;
 }
 
 /* sidebar */
@@ -118,7 +144,7 @@
 
 .annals-tocbot {
   width: 220px;
-  padding-left: 20px;
+  padding-left: 40px;
 }
 
 .annals-tocbot h3 {

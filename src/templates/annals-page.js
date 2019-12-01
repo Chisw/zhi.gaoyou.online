@@ -18,16 +18,11 @@ export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, lo
         <div className="page-side-bar w-2/12 pr-4">
           <Sidebar nodes={nodes} location={location} />
         </div>
-        <div className="page-content w-8/12 bg-white rounded-sm shadow-lg px-12 py-8">
-          <div className="annals-body">
-            <h2
-              className="mb-8 p-2 text-3xl text-center font-kxzd"
-              style={{ backgroundSize: '32px', backgroundImage: `url(${Wave})` }}
-            >
-              {title}
-            </h2>
-            <PageContent className="" content={content} />
-          </div>
+        <div className="page-content w-8/12 bg-white rounded-sm shadow-lg px-16 py-12">
+          <h2 className="mb-12 p-2 text-3xl text-center font-kxzd" style={{ backgroundSize: '32px', backgroundImage: `url(${Wave})` }}>
+            {title}
+          </h2>
+          <PageContent className="annals-content" content={content} />
           <PrevNext nodes={nodes} location={location} />
         </div>
         <div className="page-tocbot w-2/12">
@@ -45,7 +40,6 @@ AnnalsPageTemplate.propTypes = {
 }
 
 const AnnalsPage = ({ data, location }) => {
-  // console.log(data)
   const { markdownRemark: post } = data
 
   return (

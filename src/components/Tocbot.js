@@ -7,16 +7,15 @@ export default function TOC(props) {
     className,
     title,
     showHeading = true,
-    headingsOffset = 1,
   } = props
 
   useEffect(() => {
     tocbot.init({
       tocSelector: `.toc-list-container`,
-      contentSelector: `.annals-body`,
+      contentSelector: `.annals-content`,
       activeLinkClass: `active`,
       headingSelector: `h3, h4, h5, h6`,
-      headingsOffset: parseInt(headingsOffset),
+      headingsOffset: 20,
     })
   }, [])
 
