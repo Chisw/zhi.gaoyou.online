@@ -17,7 +17,7 @@
 }
 
 .gyz-center {
-  width: 1200px;
+  width: 1320px;
 }
 
 @media screen and (max-width: 1040px) {
@@ -32,6 +32,16 @@
   .gyz-logo-list .list-item {
     margin: 0;
     padding: 10px;
+  }
+
+  .gyz-page .page-side-bar,
+  .gyz-page .page-tocbot {
+    display: none;
+  }
+  
+  .gyz-page .page-content {
+    padding: 20px;
+    width: 100%;
   }
 }
 
@@ -49,8 +59,7 @@
   animation: animation-rotate-y 3s linear infinite;
 }
 
-
-/* --------------------------------- annals-page --------------------------------- */
+/* annals-page */
 .annals-body .anchor {
   margin-left: -28px;
   padding-right: 0;
@@ -66,8 +75,7 @@
   color: #666;
 }
 
-/* --------------------------------- sidebar --------------------------------- */
-
+/* sidebar */
 .sidebar-outline a {
   color: #666;
   font-size: 14px;
@@ -102,11 +110,15 @@
   font-weight: bold;
 }
 
-/* --------------------------------- tocbot --------------------------------- */
+/* tocbot */
+.toc-list-container .is-active-link {
+  color: #222;
+  font-weight: bold;
+}
 
 .annals-tocbot {
+  width: 220px;
   padding-left: 20px;
-  min-width: 220px;
 }
 
 .annals-tocbot h3 {
@@ -153,34 +165,15 @@
   color: #aaa;
 }
 
-.back-to-top {
-  display: block;
-  margin: 40px 20px;
-  padding: 6px 0;
-  color: #666;
-  font-size: 12px;
-  cursor: pointer;
-  border: 1px solid #ddd;
-  text-align: center;
-  border-radius: 4px;
-  width: 100px;
-}
-
-.back-to-top:hover {
-  background: #f2f2f2;
-}
-
-
-/* --------------------------------- prev-next --------------------------------- */
-
-.prev-next-container {
+/* prev-next */
+.prev-next {
   display: flex;
   padding: 32px;
   background: url('./img/stripe.png') repeat-x center top;
   background-size: 30px;
 }
 
-.prev-next-container .container-section {
+.prev-next .section {
   flex-grow: 1;
   padding: 0 48px;
   margin: 0 8px;
@@ -188,43 +181,43 @@
   transition: margin .23s;
 }
 
-.prev-next-container .container-section:hover {
+.prev-next .section:hover {
   margin: 0;
 }
 
-.prev-next-container .container-section span {
+.prev-next .section span {
   color: #ccc;
   font-size: 12px;
 }
 
-.prev-next-container .container-section p {
+.prev-next .section p {
   font-size: 18px;
   color: #777;
 }
 
-.prev-next-container .container-section:hover p {
+.prev-next .section:hover p {
   color: #222;
 }
 
-.prev-next-container .next {
+.prev-next .next {
   text-align: right;
 }
 
-.prev-next-container .prev {
+.prev-next .prev {
   content: "";
   display: block;
   background: url('./img/icon/arrow-prev.svg') no-repeat left center;
   background-size: 24px;
 }
 
-.prev-next-container .next {
+.prev-next .next {
   content: "";
   display: block;
   background: url('./img/icon/arrow-next.svg') no-repeat right center;
   background-size: 24px;
 }
 
-/* --------------------------------- list-icon --------------------------------- */
+/* list-icon */
 .annals-icon {
   background: url() no-repeat left center;
   background-size: 20px;

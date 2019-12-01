@@ -13,12 +13,12 @@ export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, lo
   const PageContent = contentComponent || Content
 
   return (
-    <div className="pt-16 bg-black-100">
+    <div className="gyz-page pt-16 bg-black-100">
       <Center className="flex py-8">
-        <div className="">
+        <div className="page-side-bar w-2/12 pr-4">
           <Sidebar nodes={nodes} location={location} />
         </div>
-        <div className="bg-white rounded-sm shadow-lg px-12 py-8" style={{ width: 800 }}>
+        <div className="page-content w-8/12 bg-white rounded-sm shadow-lg px-12 py-8">
           <div className="annals-body">
             <h2
               className="mb-8 p-2 text-3xl text-center font-kxzd"
@@ -30,17 +30,9 @@ export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, lo
           </div>
           <PrevNext nodes={nodes} location={location} />
         </div>
-        <div className="">
+        <div className="page-tocbot w-2/12">
           <div className="fixed">
             <Tocbot title={title} className="annals-tocbot" />
-            <span
-              className="back-to-top"
-              onClick={()=> {
-                document.documentElement.scrollTop = 0
-              }}
-            >
-              回到顶部
-            </span>
           </div>
         </div>
       </Center>

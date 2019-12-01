@@ -45,8 +45,6 @@ export default function Sidebar({location, nodes}) {
     }
   })
 
-  // console.log(groups)
-
   const SidebarLink = ({ link, title, linkClasses }) => {
     if (link) {
       if (link.match(/^\s?http(s?)/gi)) {
@@ -66,21 +64,22 @@ export default function Sidebar({location, nodes}) {
   const currentPageLink = decodeURIComponent(`/${arr[index+1]}/${arr[index]}/`)
 
   return (
-    <nav>
+    <div>
       {
         groups.map((group, i) => (
-          <div key={i} className="">
-            <h4 className={`annals-icon icon-${group.icon}`}>
-              { group.items[0] && (
+          <div key={i} className="mb-1 font-thin">
+            <h4 className={`text-sm text-gray-900 hover:text-gray-700 annals-icon icon-${group.icon}`}>
+              {
+                group.items[0] && (
                   <SidebarLink link={group.items[0].link} title={group.group}/>
                 )
               }
             </h4>
             {  // sub
               group.items.some(item => (item.link === currentPageLink )) && (
-                <ul className="" key={i}>
+                <ul className="my-2 ml-3 pl-4 border-l text-sm" key={i}>
                   {group.items.map((item, j) => (
-                    <li key={j}>
+                    <li key={j} className="text-gray-800 hover:text-gray-600">
                       <SidebarLink
                         link={item.link}
                         title={item.title}
@@ -94,6 +93,6 @@ export default function Sidebar({location, nodes}) {
           </div>
         ))
       }
-    </nav>
+    </div>
   )
 }
