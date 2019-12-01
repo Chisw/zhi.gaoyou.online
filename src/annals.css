@@ -39,9 +39,12 @@
     display: none;
   }
 
-  .gyz-page .page-content {
-    padding: 20px;
+  .gyz-page .page-center {
     width: 100%;
+  }
+
+  .gyz-page .page-center .center-content {
+    padding: 40px 20px;
   }
 }
 
@@ -193,8 +196,6 @@
 
 /* prev-next */
 .prev-next {
-  display: flex;
-  padding: 32px;
   background: url('./img/stripe.png') repeat-x center top;
   background-size: 30px;
 }
@@ -211,33 +212,13 @@
   margin: 0;
 }
 
-.prev-next .section span {
-  color: #ccc;
-  font-size: 12px;
-}
-
-.prev-next .section p {
-  font-size: 18px;
-  color: #777;
-}
-
-.prev-next .section:hover p {
-  color: #222;
-}
-
-.prev-next .next {
-  text-align: right;
-}
-
 .prev-next .prev {
-  content: "";
   display: block;
   background: url('./img/icon/arrow-prev.svg') no-repeat left center;
   background-size: 24px;
 }
 
 .prev-next .next {
-  content: "";
   display: block;
   background: url('./img/icon/arrow-next.svg') no-repeat right center;
   background-size: 24px;

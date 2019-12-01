@@ -25,13 +25,13 @@ function PrevNext({ nodes, location }) {
   const next = flatSidebar[currIndex + 1] || null
 
   return (
-    <div className="">
+    <div className="prev-next flex p-8">
       {
         prev
           ? (
-            <Link to={prev.link} className="font-kxzd">
-              <span>上一章</span>
-              <p>{prev.title}</p>
+            <Link to={prev.link} className="section prev font-kxzd">
+              <span className="text-xs text-gray-500">上一章</span>
+              <p className="text-gray-700 hover:text-gray-900">{prev.title}</p>
             </Link>
           )
           : (
@@ -41,9 +41,9 @@ function PrevNext({ nodes, location }) {
       {
         next
           ? (
-            <Link to={next.link} className="font-kxzd">
-              <span>下一章</span>
-              <p>{next.title}</p>
+            <Link to={next.link} className="section next text-right font-kxzd">
+              <span className="text-xs text-gray-500">下一章</span>
+              <p className="text-gray-700 hover:text-gray-900">{next.title}</p>
             </Link>
           )
           : (
