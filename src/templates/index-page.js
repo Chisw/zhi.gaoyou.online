@@ -9,6 +9,7 @@ import ImgWYT from '../img/link-wyt.png'
 import ImgJRGY from '../img/link-jrgy.png'
 import Loadable from 'react-loadable'
 import Center from '../components/Center'
+import FA from '../components/FA'
 
 const LoadableStatistics = Loadable({
   loader: () => import('../components/Statistics'),
@@ -21,6 +22,14 @@ const LoadableStatistics = Loadable({
   },
 })
 
+const links = [
+  { logo: ImgJI, url: 'http://jisuowei.com' },
+  { logo: ImgGYRB, url: 'http://epaper.gytoday.cn' },
+  { logo: Img720, url: '//720yun.com/t/567jz7ukvf2?scene_id=9813419' },
+  { logo: ImgWYT, url: 'http://www.wenyoutai.com' },
+  { logo: ImgJRGY, url: 'http://www.gytoday.cn/' },
+]
+
 export const IndexPageTemplate = () => {
 
   return (
@@ -32,12 +41,16 @@ export const IndexPageTemplate = () => {
           minHeight: 400,
           backgroundImage: `url(./img/banner.png)`,
           backgroundSize: '1480px',
+          boxShadow: '0 0 20px rgba(0,0,0, .2) inset',
         }}
       >
-        <Center className="w-full h-full flex justify-center items-center font-kxzd">
+        <Center className="relative w-full h-full flex justify-center items-center font-kxzd">
           <div className="-mt-20 text-center" style={{ textShadow: '0 0 8px rgba(255, 255, 255, .9)'}}>
             <h1 className="text-6xl">華夏一郵邑 神州無同類</h1>
             <h3 className="text-2xl mt-4">秦王嬴政二十四年 滅楚 築高臺 置郵亭</h3>
+          </div>
+          <div className="absolute bottom-0 pb-8 text-3xl text-gray-800">
+            <FA icon="angle-double-up" className="animation-rotate-y" />
           </div>
         </Center>
       </div>
@@ -84,47 +97,19 @@ export const IndexPageTemplate = () => {
       </div>
       <div className="py-16 pb-32">
         <Center>
-          <div className="-mx-2 flex">
-            <a
-              className="bg-white mx-2 p-8 hover:bg-gray-100"
-              href="http://jisuowei.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={ImgJI} alt="Placeholder" />
-            </a>
-            <a
-              className="bg-white mx-2 p-8 hover:bg-gray-100"
-              href="http://epaper.gytoday.cn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={ImgGYRB} alt="Placeholder" />
-            </a>
-            <a
-              className="bg-white mx-2 p-8 hover:bg-gray-100"
-              href="//720yun.com/t/567jz7ukvf2?scene_id=9813419"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={Img720} alt="Placeholder" />
-            </a>
-            <a
-              className="bg-white mx-2 p-8 hover:bg-gray-100"
-              href="http://www.wenyoutai.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={ImgWYT} alt="Placeholder" />
-            </a>
-            <a
-              className="bg-white mx-2 p-8 hover:bg-gray-100"
-              href="http://www.gytoday.cn/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={ImgJRGY} alt="Placeholder" />
-            </a>
+          <div className="gyz-logo-list -mx-2 flex">
+            {
+              links.map(link => (
+                <a
+                  className="list-item bg-white mx-2 p-8 hover:bg-black-100"
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={link.logo} alt="Placeholder" />
+                </a>
+              ))
+            }
           </div>
         </Center>
       </div>

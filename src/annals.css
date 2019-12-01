@@ -24,6 +24,29 @@
   .gyz-center {
     width: 100%;
   }
+
+  .gyz-logo-list {
+    margin: 0;
+  }
+
+  .gyz-logo-list .list-item {
+    margin: 0;
+    padding: 10px;
+  }
+}
+
+@keyframes animation-rotate-y {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.animation-rotate-y {
+  animation: animation-rotate-y 3s linear infinite;
 }
 
 

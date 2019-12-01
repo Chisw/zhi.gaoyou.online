@@ -18,7 +18,7 @@ export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, lo
         <div className="">
           <Sidebar nodes={nodes} location={location} />
         </div>
-        <div className="bg-white rounded shadow-lg px-12 py-8" style={{ width: 800 }}>
+        <div className="bg-white rounded-sm shadow-lg px-12 py-8" style={{ width: 800 }}>
           <div className="annals-body">
             <h2
               className="mb-8 p-2 text-3xl text-center font-kxzd"

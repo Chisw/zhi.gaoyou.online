@@ -25,22 +25,22 @@ function Footer() {
     <>
       <div className="py-8 border-t bg-white">
         <Center className="flex items-center text-gray-500 text-sm">
-          <div className="w-1/4">
-            <Link to="/">首页</Link>
-            <span
-              className="ml-4 cursor-pointer"
-              onClick={()=>{ setQRCodeShow(true) }}
-            >
-              微信打赏
-            </span>
+          <div className="w-1/4 font-thin">
+            <span>©gaoyou.online</span>&emsp;<span>Email: i@jisuowei.com</span>
           </div>
           <div className="w-1/2 flex justify-center">
             <Link to="/">
               <img alt="logo" src={logo} style={{width: '120px'}} />
             </Link>
           </div>
-          <div className="w-1/4 text-right font-thin">
-            <span>Email: i@jisuowei.com</span>&emsp;<span>©gaoyou.online</span>
+          <div className="w-1/4 text-right">
+            <a href="https://gaoyou.online" target="_blank" rel="noopener noreferrer">高邮揽影</a>
+            <span
+              className="ml-4 cursor-pointer"
+              onClick={() => { setQRCodeShow(true) }}
+            >
+              微信打赏
+            </span>
           </div>
         </Center>
       </div>
