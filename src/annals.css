@@ -25,6 +25,32 @@
     width: 100%;
   }
 
+  .gyz-center.mobile-padding {
+    padding: 0 1rem;
+  }
+
+  .gyz-nav .nav-wrapper {
+    position: fixed;
+    top: 4rem;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #efefef;
+  }
+
+  .gyz-nav .nav-item {
+    width: 100vw;
+    justify-items: center;
+  }
+
+  .gyz-nav .nav-menu {
+    display: block;
+  }
+
   .gyz-logo-list {
     margin: 0;
   }

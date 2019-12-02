@@ -24,24 +24,24 @@ export default function Navbar() {
 
   return (
     <div className="fixed z-10 w-full border-b bg-white">
-      <Center>
-        <div className="h-16 flex items-center">
+      <Center mobilePadding>
+        <div className="gyz-nav h-16 flex items-center">
           <Link to="/" className="" title="Logo">
             <img src={logo} alt="gaoyouzhi" className="w-20" />
           </Link>
-          <div className={`ml-10 flex items-center flex-grow ${navBarActiveClass ? '' : ''}`}>
+          <div className={`nav-wrapper ml-10 flex items-center flex-grow ${navBarActiveClass ? '' : ''}`}>
             {
               navList.map(nav => (
                 <Link
                   key={nav.url}
                   to={nav.url}
-                  className="mr-4 font-thin text-base text-gray-600 hover:text-gray-900"
+                  className="nav-item mr-4 font-thin text-base text-gray-600 hover:text-gray-900"
                 >
                   {nav.name}
                 </Link>
               ))
             }
-            <span className="flex justify-end flex-grow">
+            <span className="nav-item flex justify-end flex-grow">
               <a
                 href="https://github.com/chisw/gaoyou-annals"
                 target="_blank"
@@ -52,10 +52,10 @@ export default function Navbar() {
             </span>
           </div>
           <div
-            className={`${navBarActiveClass ? '' : ''}`}
+            className={`nav-menu hidden ${navBarActiveClass ? '' : ''}`}
             onClick={toggleHamburger}
           >
-            {/* 三 */}
+            三
           </div>
         </div>
       </Center>

@@ -24,7 +24,7 @@ function Footer() {
   return (
     <>
       <div className="py-8 border-t bg-white">
-        <Center className="flex items-center text-gray-500 text-sm">
+        <Center mobilePadding className="flex items-center text-gray-500 text-sm">
           <div className="w-1/4 font-thin">
             <span>©gaoyou.online</span>&emsp;<span>Email: i@jisuowei.com</span>
           </div>
