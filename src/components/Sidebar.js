@@ -8,7 +8,7 @@ export default function Sidebar({location, nodes}) {
   const currentAnnalsName = 'gyzz'
   const allAnnalsOutline = {
     "gyzz": [
-      { label: '高郵州志總目', value: 'vol-00', icon: 'list' },
+      { label: '高郵州志', value: 'vol-00', icon: 'list' },
       { label: '輿地志卷之一', value: 'vol-01', icon: 'layer' },
       { label: '河渠志卷之二', value: 'vol-02', icon: 'river' },
       { label: '民賦志卷之三', value: 'vol-03', icon: 'money' },
