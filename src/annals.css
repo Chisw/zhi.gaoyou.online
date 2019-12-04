@@ -137,6 +137,20 @@
   font-weight: 300;
 }
 
+.annals-content img {
+  border: 1px solid #e1e1e1;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.annals-content img:hover {
+  border-color: #d1d1d1;
+}
+
+.annals-content img+img {
+  margin-top: 10px;
+}
+
 /* sidebar */
 .sidebar-outline a {
   color: #666;

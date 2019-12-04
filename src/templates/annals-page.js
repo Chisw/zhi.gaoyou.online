@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
@@ -8,9 +8,16 @@ import Tocbot from '../components/Tocbot'
 import PrevNext from '../components/PrevNext'
 import Wave from '../img/wave.png'
 import Center from '../components/Center'
+import Viewer from 'viewerjs'
+import 'viewerjs/dist/viewer.css'
 
-export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, location }) => {
+export function AnnalsPageTemplate({ title, content, contentComponent, nodes, location }) {
   const PageContent = contentComponent || Content
+
+  useEffect(() => {
+    new Viewer(document.getElementById('viewerjs-box'))
+    window.Viewer = Viewer
+  }, [])
 
   return (
     <div className="gyz-page pt-16 bg-black-100">
@@ -19,7 +26,7 @@ export const AnnalsPageTemplate = ({ title, content, contentComponent, nodes, lo
           <Sidebar nodes={nodes} location={location} />
         </div>
         <div className="page-center w-8/12 bg-white rounded-sm shadow-lg">
-          <div className="center-content px-16 py-12">
+          <div id="viewerjs-box" className="center-content px-16 py-12">
             <h2 className="mb-12 p-2 text-3xl text-center font-kxzd" style={{ backgroundSize: '32px', backgroundImage: `url(${Wave})` }}>
               {title}
             </h2>

@@ -15493,6 +15493,11 @@ vfile@^3.0.0:
     unist-util-stringify-position "^1.0.0"
     vfile-message "^1.0.0"
 
+viewerjs@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/viewerjs/-/viewerjs-1.5.0.tgz#debea9492189fa41223cc567de915d79435899d0"
+  integrity sha512-ZiJ0vrXDvomLSY3ixaZCJtmdenomsvPPQwZKwvtXUMCiO2HHtFGoB/KqpS9QzABSeKaRLfcENp1uRYJ7l1MkYQ==
+
 vlq@^0.2.2:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/vlq/-/vlq-0.2.3.tgz#8f3e4328cf63b1540c0d67e1b2778386f8975b26"
