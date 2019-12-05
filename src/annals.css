@@ -118,6 +118,7 @@
   margin-bottom: .8rem;
   font-weight: 300;
   text-align: justify;
+  font-size: 16px;
 }
 
 .annals-content p.text-center {
@@ -126,8 +127,10 @@
 
 .annals-content p.T {
   font-weight: 300;
-  font-size: 14px;
+  font-size: 12px;
   color: #888;
+  padding: 4px 8px;
+  background: #fafafa;
 }
 
 .annals-content li {
@@ -138,6 +141,7 @@
 }
 
 .annals-content img {
+  margin-bottom: 1rem;
   border: 1px solid #e1e1e1;
   cursor: pointer;
   border-radius: 2px;
@@ -147,8 +151,9 @@
   border-color: #d1d1d1;
 }
 
-.annals-content img+img {
-  margin-top: 10px;
+.annals-content sub {
+  bottom: 0;
+  color: #888;
 }
 
 /* sidebar */
