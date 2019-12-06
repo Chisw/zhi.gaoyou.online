@@ -95,22 +95,22 @@
 }
 
 .annals-content h3 {
-  margin: 1.2rem 0 .8rem 0;
-  font-size: 24px;
+  margin: 1.3rem 0 1rem 0;
+  font-size: 30px;
 }
 
 .annals-content h4 {
-  margin: 1.1rem 0 .76rem 0;
-  font-size: 22px;
+  margin: 1.2rem 0 .9rem 0;
+  font-size: 26px;
 }
 
 .annals-content h5 {
-  margin: 1rem 0 .72rem 0;
-  font-size: 20px;
+  margin: 1.1rem 0 .8rem 0;
+  font-size: 22px;
 }
 
 .annals-content h6 {
-  margin: .9rem 0 .68rem 0;
+  margin: 1rem 0 .7rem 0;
   font-size: 18px;
 }
 
@@ -131,6 +131,7 @@
   color: #888;
   padding: 4px 8px;
   background: #fafafa;
+  font-family: FangSong, STFangsong;
 }
 
 .annals-content li {
@@ -153,6 +154,7 @@
 
 .annals-content sub {
   bottom: 0;
+  margin-left: 4px;
   color: #888;
 }
 
