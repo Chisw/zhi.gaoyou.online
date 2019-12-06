@@ -20,7 +20,7 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
   }, [])
 
   return (
-    <div className="gyz-page pt-16 bg-black-100">
+    <div className="gyz-page pt-12 bg-black-100">
       <Center className="flex py-8">
         <div className="page-side-bar w-2/12 pr-4">
           <Sidebar nodes={nodes} location={location} />

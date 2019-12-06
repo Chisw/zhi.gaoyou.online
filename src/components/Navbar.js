@@ -7,11 +7,9 @@ import Center from './Center'
 export default function Navbar() {
 
   const [active, setActive] = useState(false)
-  const [navBarActiveClass, setNavBarActiveClass] = useState('')
 
   const toggleHamburger = () => {
     setActive(!active)
-    setNavBarActiveClass(active ? 'active' : '')
   }
 
   const navList = [
@@ -23,13 +21,13 @@ export default function Navbar() {
   ]
 
   return (
-    <div className="fixed z-10 w-full border-b bg-white">
+    <div className="fixed z-20 w-full border-b bg-white">
       <Center mobilePadding>
-        <div className="gyz-nav h-16 flex items-center">
+        <div className="gyz-nav h-12 flex items-center">
           <Link to="/" className="" title="Logo">
             <img src={logo} alt="gaoyouzhi" className="w-20" />
           </Link>
-          <div className={`nav-wrapper ml-10 flex items-center flex-grow ${navBarActiveClass ? '' : ''}`}>
+          <div className={`nav-wrapper ml-10 flex items-center flex-grow ${active ? 'open' : ''}`}>
             {
               navList.map(nav => (
                 <Link
@@ -41,21 +39,22 @@ export default function Navbar() {
                 </Link>
               ))
             }
-            <span className="nav-item flex justify-end flex-grow">
+            <span className="nav-item github flex justify-end flex-grow">
               <a
                 href="https://github.com/chisw/gaoyou-annals"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={github} alt="Github" className="w-6" />
+                <img src={github} alt="Github" className="w-6 h-6" />
               </a>
             </span>
           </div>
-          <div
-            className={`nav-menu hidden ${navBarActiveClass ? '' : ''}`}
-            onClick={toggleHamburger}
-          >
-            {/* 三 */}
+          <div className={`nav-menu hidden flex-grow flex justify-end items-center`}>
+            <div className={`menu-icon relative ${active ? 'open' : ''}`} onClick={toggleHamburger}>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
         </div>
       </Center>

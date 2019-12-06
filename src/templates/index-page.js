@@ -55,12 +55,12 @@ export const IndexPageTemplate = () => {
         </Center>
       </div>
       <div className="py-16">
-        <Center className="flex">
+        <Center mobilePadding className="flex">
           <div className="font-hairline pr-4">
             古代高邮史称江左名区，广陵首邑，由宋置军至清设州，有九百多年中等行政区划的经历。高邮历史上曾唤作过秦邮、三阿、幽州、神农、广邺、高沙、承州、珠湖、盂城、散州等地名。代表江淮地区东部史前龙虬文化的龙虬庄遗址，表明七千多年前境内便有人类璀璨文明。
           </div>
           <div className="pl-4">
-            <div className="overflow-y-scroll font-kai" style={{ height: 200 }}>
+            <div className="font-kai">
               <p>春秋，吴邗沟地，越国并吴国后属越国。</p>
               <p>战国，楚并越属楚。</p>
               <p>公元前220年秦始皇筑驰道通海滨，经过高邮。</p>
@@ -91,17 +91,22 @@ export const IndexPageTemplate = () => {
         </Center>
       </div>
       <div className="py-16">
-        <Center className="rounded-lg shadow">
+        <Center mobilePadding className="rounded-lg shadow">
           <LoadableStatistics />
         </Center>
       </div>
-      <div className="py-16 pb-32">
+      <div className="py-12 pb-16">
         <Center>
-          <div className="gyz-logo-list -mx-2 flex">
+          <div className="gyz-logo-list -mx-2 flex flex-wrap justify-center">
             {
               links.map(link => (
                 <a
+                  key={link.url}
                   className="list-item bg-white mx-2 p-8 hover:bg-black-100"
+                  style={{
+                    minWidth: 100,
+                    maxWidth: '18%',
+                  }}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"

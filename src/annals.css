@@ -29,9 +29,18 @@
     padding: 0 1rem;
   }
 
+  .gyz-page .gyz-center {
+    padding: 0;
+  }
+
+  .gyz-page .page-center {
+    box-shadow: none;
+  }
+
   .gyz-nav .nav-wrapper {
     position: fixed;
-    top: 4.1rem;
+    z-index: 10;
+    top: 49px;
     right: 0;
     left: 0;
     display: flex;
@@ -39,16 +48,52 @@
     margin: 0;
     text-align: center;
     background-color: #fff;
+    max-height: 0;
+    transition: max-height .4s;
+    overflow: hidden;
+  }
+
+  .gyz-nav .nav-wrapper.open {
     border-bottom: 1px solid #efefef;
+    max-height: 500px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .05);
   }
 
   .gyz-nav .nav-item {
+    margin: 0;
+    padding: .5rem 0;
     width: 100vw;
     justify-items: center;
   }
 
+  .gyz-nav .nav-item.github a {
+    width: 100%;
+  }
+
+  .gyz-nav .nav-item.github a img {
+    margin: 0 auto;
+  }
+
   .gyz-nav .nav-menu {
-    display: block;
+    display: flex;
+  }
+
+  .gyz-nav .nav-menu .menu-icon {
+    width: 20px;
+    height: 15px;
+    transition: all .4s;
+  }
+
+  .gyz-nav .nav-menu .menu-icon.open {
+    transform: rotate(90deg);
+  }
+
+  .gyz-nav .nav-menu .menu-icon>div {
+    margin-bottom: 4px;
+    width: 20px;
+    height: 3px;
+    border-radius: 2px;
+    background: #444;
   }
 
   .gyz-logo-list {
