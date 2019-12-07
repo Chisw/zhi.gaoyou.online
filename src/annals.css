@@ -179,6 +179,10 @@
   font-family: FangSong, STFangsong;
 }
 
+.annals-content ul {
+  margin-bottom: 1.2rem;
+}
+
 .annals-content li {
   margin-bottom: .5rem;
   list-style: disc;
