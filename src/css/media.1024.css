@@ -1,0 +1,131 @@
+@media screen and (max-width: 1024px) {
+  .gyz-center {
+    width: 100%;
+  }
+
+  .gyz-center.mobile-padding {
+    padding: 0 1rem;
+  }
+
+  .gyz-page .gyz-center {
+    padding: 0;
+  }
+
+  .gyz-page .page-center {
+    box-shadow: none;
+  }
+
+  .gyz-nav .nav-wrapper {
+    position: fixed;
+    z-index: 10;
+    top: 49px;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    text-align: center;
+    background-color: #fff;
+    max-height: 0;
+    transition: max-height .4s;
+    overflow: hidden;
+  }
+
+  .gyz-nav .nav-wrapper.open {
+    border-bottom: 1px solid #efefef;
+    max-height: 500px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .05);
+  }
+
+  .gyz-nav .nav-item {
+    margin: 0;
+    padding: .5rem 0;
+    width: 100vw;
+    justify-items: center;
+  }
+
+  .gyz-nav .nav-item.github a {
+    width: 100%;
+  }
+
+  .gyz-nav .nav-item.github a img {
+    margin: 0 auto;
+  }
+
+  .gyz-nav .nav-menu {
+    display: flex;
+  }
+
+  .gyz-nav .nav-menu .menu-icon {
+    width: 20px;
+    height: 15px;
+    transition: all .4s;
+  }
+
+  .gyz-nav .nav-menu .menu-icon.open {
+    transform: rotate(90deg);
+  }
+
+  .gyz-nav .nav-menu .menu-icon>div {
+    margin-bottom: 4px;
+    width: 20px;
+    height: 3px;
+    border-radius: 2px;
+    background: #444;
+  }
+
+  .gyz-logo-list {
+    margin: 0;
+  }
+
+  .gyz-logo-list .list-item {
+    margin: 0;
+    padding: 10px;
+  }
+
+  .gyz-page .page-tocbot {
+    display: none;
+  }
+
+  .gyz-page .page-center {
+    width: 100%;
+  }
+
+  .gyz-page .page-side-bar {
+    position: fixed;
+    z-index: 21;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    padding: 0;
+    transition: left .4s;
+  }
+
+  .gyz-page .page-side-bar.open {
+    left: 0%;
+  }
+
+  .gyz-page .page-side-bar .side-bar-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    width: 75%;
+    background: #fff;
+    box-shadow: 40px 0 40px rgba(0, 0, 0, .1);
+    overflow-y: auto;
+  }
+
+  .gyz-page .page-side-bar-switch {
+    display: flex;
+    transition: margin .4s;
+  }
+
+  .gyz-page .page-center .center-content {
+    padding: 40px 20px;
+  }
+
+}

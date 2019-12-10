@@ -64,7 +64,10 @@ export default function Sidebar({location, nodes}) {
   const currentPageLink = decodeURIComponent(`/${arr[index+1]}/${arr[index]}/`)
 
   return (
-    <div>
+    <div
+      className="side-bar-inner"
+      onClick={event => event.stopPropagation() }
+    >
       {
         groups.map((group, i) => (
           <div key={i} className="mb-1 font-thin">

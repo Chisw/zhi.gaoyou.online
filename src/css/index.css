@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: 'kxzd';
-  src: url('./fonts/kxzd.woff') format('woff');
+  src: url('../fonts/kxzd.woff') format('woff');
 }
 
 .font-kxzd {
@@ -18,105 +18,6 @@
 
 .gyz-center {
   width: 1320px;
-}
-
-@media screen and (max-width: 1040px) {
-  .gyz-center {
-    width: 100%;
-  }
-
-  .gyz-center.mobile-padding {
-    padding: 0 1rem;
-  }
-
-  .gyz-page .gyz-center {
-    padding: 0;
-  }
-
-  .gyz-page .page-center {
-    box-shadow: none;
-  }
-
-  .gyz-nav .nav-wrapper {
-    position: fixed;
-    z-index: 10;
-    top: 49px;
-    right: 0;
-    left: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    text-align: center;
-    background-color: #fff;
-    max-height: 0;
-    transition: max-height .4s;
-    overflow: hidden;
-  }
-
-  .gyz-nav .nav-wrapper.open {
-    border-bottom: 1px solid #efefef;
-    max-height: 500px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .05);
-  }
-
-  .gyz-nav .nav-item {
-    margin: 0;
-    padding: .5rem 0;
-    width: 100vw;
-    justify-items: center;
-  }
-
-  .gyz-nav .nav-item.github a {
-    width: 100%;
-  }
-
-  .gyz-nav .nav-item.github a img {
-    margin: 0 auto;
-  }
-
-  .gyz-nav .nav-menu {
-    display: flex;
-  }
-
-  .gyz-nav .nav-menu .menu-icon {
-    width: 20px;
-    height: 15px;
-    transition: all .4s;
-  }
-
-  .gyz-nav .nav-menu .menu-icon.open {
-    transform: rotate(90deg);
-  }
-
-  .gyz-nav .nav-menu .menu-icon>div {
-    margin-bottom: 4px;
-    width: 20px;
-    height: 3px;
-    border-radius: 2px;
-    background: #444;
-  }
-
-  .gyz-logo-list {
-    margin: 0;
-  }
-
-  .gyz-logo-list .list-item {
-    margin: 0;
-    padding: 10px;
-  }
-
-  .gyz-page .page-side-bar,
-  .gyz-page .page-tocbot {
-    display: none;
-  }
-
-  .gyz-page .page-center {
-    width: 100%;
-  }
-
-  .gyz-page .page-center .center-content {
-    padding: 40px 20px;
-  }
 }
 
 @keyframes animation-rotate-y {
@@ -283,7 +184,7 @@
 .toc-list .is-active-li a.active {
   color: #222 !important;
   font-weight: bold;
-  background: url('./img/link.png') no-repeat left center;
+  background: url('../img/link.png') no-repeat left center;
   background-size: contain;
 }
 
@@ -299,7 +200,7 @@
 
 /* prev-next */
 .prev-next {
-  background: url('./img/stripe.png') repeat-x center top;
+  background: url('../img/stripe.png') repeat-x center top;
   background-size: 30px;
 }
 
@@ -316,13 +217,13 @@
 
 .prev-next .prev {
   display: block;
-  background: url('./img/icon/arrow-prev.svg') no-repeat left center;
+  background: url('../img/icon/arrow-prev.svg') no-repeat left center;
   background-size: 24px;
 }
 
 .prev-next .next {
   display: block;
-  background: url('./img/icon/arrow-next.svg') no-repeat right center;
+  background: url('../img/icon/arrow-next.svg') no-repeat right center;
   background-size: 24px;
 }
 
@@ -334,53 +235,53 @@
 }
 
 .annals-icon.icon-list {
-  background-image: url(./img/icon/list-list.png);
+  background-image: url(../img/icon/list-list.png);
 }
 
 .annals-icon.icon-layer {
-  background-image: url(./img/icon/list-layer.png);
+  background-image: url(../img/icon/list-layer.png);
 }
 
 .annals-icon.icon-river {
-  background-image: url(./img/icon/list-river.png);
+  background-image: url(../img/icon/list-river.png);
 }
 
 .annals-icon.icon-money {
-  background-image: url(./img/icon/list-money.png);
+  background-image: url(../img/icon/list-money.png);
 }
 
 .annals-icon.icon-bowl {
-  background-image: url(./img/icon/list-bowl.png);
+  background-image: url(../img/icon/list-bowl.png);
 }
 
 .annals-icon.icon-school {
-  background-image: url(./img/icon/list-school.png);
+  background-image: url(../img/icon/list-school.png);
 }
 
 .annals-icon.icon-pray {
-  background-image: url(./img/icon/list-pray.png);
+  background-image: url(../img/icon/list-pray.png);
 }
 
 .annals-icon.icon-sword {
-  background-image: url(./img/icon/list-sword.png);
+  background-image: url(../img/icon/list-sword.png);
 }
 
 .annals-icon.icon-chair {
-  background-image: url(./img/icon/list-chair.png);
+  background-image: url(../img/icon/list-chair.png);
 }
 
 .annals-icon.icon-column {
-  background-image: url(./img/icon/list-column.png);
+  background-image: url(../img/icon/list-column.png);
 }
 
 .annals-icon.icon-people {
-  background-image: url(./img/icon/list-people.png);
+  background-image: url(../img/icon/list-people.png);
 }
 
 .annals-icon.icon-book {
-  background-image: url(./img/icon/list-book.png);
+  background-image: url(../img/icon/list-book.png);
 }
 
 .annals-icon.icon-taiji {
-  background-image: url(./img/icon/list-taiji.png);
+  background-image: url(../img/icon/list-taiji.png);
 }

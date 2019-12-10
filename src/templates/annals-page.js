@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
@@ -10,9 +10,12 @@ import Wave from '../img/wave.png'
 import Center from '../components/Center'
 import Viewer from 'viewerjs'
 import 'viewerjs/dist/viewer.css'
+import FA from '../components/FA'
 
 export function AnnalsPageTemplate({ title, content, contentComponent, nodes, location }) {
   const PageContent = contentComponent || Content
+
+  const [barOpen, setBarOpen] = useState(false)
 
   useEffect(() => {
     new Viewer(document.getElementById('viewerjs-box'))
@@ -22,8 +25,17 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
   return (
     <div className="gyz-page pt-12 bg-black-100">
       <Center className="flex py-8">
-        <div className="page-side-bar w-2/12 pr-4">
+        <div
+          className={`page-side-bar ${barOpen ? 'open' : ''} w-2/12 pr-4`}
+          onClick={() => { setBarOpen(false) }}
+        >
           <Sidebar nodes={nodes} location={location} />
+        </div>
+        <div
+          className={`page-side-bar-switch hidden fixed z-20 left-0 bottom-0 ml-8 ${barOpen ? '-ml-8' : ''} mb-8 w-12 h-12 bg-white rounded-full flex justify-center items-center shadow shadow-lg`}
+          onClick={() => { setBarOpen(true) }}
+        >
+          <FA icon="list" />
         </div>
         <div className="page-center w-8/12 bg-white rounded-sm shadow-lg">
           <div id="viewerjs-box" className="center-content px-16 py-12">

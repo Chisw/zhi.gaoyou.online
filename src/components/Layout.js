@@ -4,7 +4,8 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
-import '../annals.css'
+import '../css/index.css'
+import '../css/media.1024.css'
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
