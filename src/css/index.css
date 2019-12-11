@@ -65,6 +65,7 @@
   font-weight: 300;
   text-align: justify;
   font-size: 16px;
+  line-height: 1.8;
 }
 
 .annals-content p.text-center {
@@ -105,7 +106,7 @@
 .annals-content sub {
   bottom: 0;
   margin-left: 4px;
-  color: #888;
+  color: #999;
 }
 
 /* sidebar */
