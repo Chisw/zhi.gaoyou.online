@@ -16,6 +16,10 @@
   font-family: 'kai';
 }
 
+.write-vertical {
+  writing-mode: vertical-rl;
+}
+
 .gyz-center {
   width: 1320px;
 }

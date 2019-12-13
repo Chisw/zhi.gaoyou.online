@@ -54,6 +54,33 @@ export const IndexPageTemplate = () => {
           </div>
         </Center>
       </div>
+      <div>
+        <Center>
+          <div className="flex justify-center">
+            {
+              [
+                { name: '高郵州志', period: '乾隆四十八年', year: 1783 },
+                { name: '續增高郵州志', period: '道光二十三年', year: 1843 },
+                { name: '再續高郵州志', period: '光緒九年', year: 1883 },
+                { name: '三續高郵州志', period: '民國十一年', year: 1922 },
+                { name: '更多 ··', period: '敬请期待' },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className={`py-4 flex justify-center items-center flex-grow font-kxzd border-r cursor-pointer hover:bg-gray-100 ${index === 0 ? 'border-l' : ''}`}
+                  style={{ height: 320, maxWidth: 200 }}
+                >
+                  <p className="write-vertical text-3xl">{item.name}</p>
+                  <p className="write-vertical text-gray-400 text-sm">
+                    {item.period} &nbsp;
+                    <span className="ml-2 text-white bg-red-600">{item.year}</span>
+                  </p>
+                </div>
+              ))
+            }
+          </div>
+        </Center>
+      </div>
       <div className="py-16">
         <Center mobilePadding className="flex">
           <div className="font-hairline pr-4">
