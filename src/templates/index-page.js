@@ -67,11 +67,11 @@ export const IndexPageTemplate = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className={`py-4 flex justify-center items-center flex-grow font-kxzd border-r cursor-pointer hover:bg-gray-100 ${index === 0 ? 'border-l' : ''}`}
+                  className={`pt-12 flex justify-center flex-grow font-kxzd border-r cursor-pointer hover:bg-gray-100 ${index === 0 ? 'border-l' : ''}`}
                   style={{ height: 320, maxWidth: 200 }}
                 >
                   <p className="write-vertical text-3xl">{item.name}</p>
-                  <p className="write-vertical text-gray-400 text-sm">
+                  <p className="write-vertical text-gray-500 text-sm">
                     {item.period} &nbsp;
                     <span className="ml-2 text-white bg-red-600">{item.year}</span>
                   </p>

@@ -14,9 +14,9 @@ export default function Navbar() {
 
   const navList = [
     { name: '高郵州志', url: '/gyzz/' },
-    { name: '续增高郵州志', url: '/xzgyzz/' },
-    { name: '再续高郵州志', url: '/zxgyzz/' },
-    { name: '三续高郵州志', url: '/sxgyzz/' },
+    { name: '續增高郵州志', url: '/xzgyzz/' },
+    { name: '再續高郵州志', url: '/zxgyzz/' },
+    { name: '三續高郵州志', url: '/sxgyzz/' },
     { name: '集志', url: '/jz/' },
   ]
 
