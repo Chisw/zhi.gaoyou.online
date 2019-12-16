@@ -290,3 +290,33 @@
 .annals-icon.icon-taiji {
   background-image: url(../img/icon/list-taiji.png);
 }
+
+.gyz-vertical-nav .nav-item {
+  background: url() no-repeat left bottom;
+  background-size: 180%;
+  transition: background-size .23s;
+}
+
+.gyz-vertical-nav .nav-item:nth-child(1) {
+  background-image: url("http://q1gbvecrx.bkt.clouddn.com/gyz/nav-bg-1.png");
+}
+
+.gyz-vertical-nav .nav-item:nth-child(2) {
+  background-image: url("http://q1gbvecrx.bkt.clouddn.com/gyz/nav-bg-2.png");
+}
+
+.gyz-vertical-nav .nav-item:nth-child(3) {
+  background-image: url("http://q1gbvecrx.bkt.clouddn.com/gyz/nav-bg-3.png");
+}
+
+.gyz-vertical-nav .nav-item:nth-child(4) {
+  background-image: url("http://q1gbvecrx.bkt.clouddn.com/gyz/nav-bg-4.png");
+}
+
+.gyz-vertical-nav .nav-item:nth-child(5) {
+  background-image: url("http://q1gbvecrx.bkt.clouddn.com/gyz/nav-bg-5.png");
+}
+
+.gyz-vertical-nav .nav-item:hover {
+  background-size: 200%;
+}

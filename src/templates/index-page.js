@@ -10,6 +10,7 @@ import ImgJRGY from '../img/link-jrgy.png'
 import Loadable from 'react-loadable'
 import Center from '../components/Center'
 import FA from '../components/FA'
+import { Link } from 'gatsby'
 
 const LoadableStatistics = Loadable({
   loader: () => import('../components/Statistics'),
@@ -56,26 +57,27 @@ export const IndexPageTemplate = () => {
       </div>
       <div>
         <Center>
-          <div className="flex justify-center">
+          <div className="gyz-vertical-nav flex justify-center">
             {
               [
-                { name: '高郵州志', period: '乾隆四十八年', year: 1783 },
-                { name: '續增高郵州志', period: '道光二十三年', year: 1843 },
-                { name: '再續高郵州志', period: '光緒九年', year: 1883 },
-                { name: '三續高郵州志', period: '民國十一年', year: 1922 },
-                { name: '更多 ··', period: '敬请期待' },
+                { name: '高郵州志', to: '/gyzz/', period: '乾隆四十八年', year: 1783 },
+                { name: '續增高郵州志', to: '/xzgyzz/', period: '道光二十三年', year: 1843 },
+                { name: '再續高郵州志', to: '/zxgyzz/', period: '光緒九年', year: 1883 },
+                { name: '三續高郵州志', to: '/sxgyzz/', period: '民國十一年', year: 1922 },
+                { name: '更多 ··', to: '/jz/', period: '敬请期待' },
               ].map((item, index) => (
-                <div
+                <Link
+                  to={item.to}
                   key={index}
-                  className={`pt-12 flex justify-center flex-grow font-kxzd border-r cursor-pointer hover:bg-gray-100 ${index === 0 ? 'border-l' : ''}`}
-                  style={{ height: 320, maxWidth: 200 }}
+                  className={`nav-item pt-12 flex justify-center flex-grow font-kxzd border-r cursor-pointer ${index === 0 ? 'border-l' : ''}`}
+                  style={{ height: 360, maxWidth: 200 }}
                 >
                   <p className="write-vertical text-3xl">{item.name}</p>
                   <p className="write-vertical text-gray-500 text-sm">
                     {item.period} &nbsp;
                     <span className="ml-2 text-white bg-red-600">{item.year}</span>
                   </p>
-                </div>
+                </Link>
               ))
             }
           </div>
