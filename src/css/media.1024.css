@@ -128,4 +128,17 @@
     padding: 40px 20px;
   }
 
+  .gyz-footer .gyz-center {
+    display: block;
+  }
+
+  .gyz-footer .gyz-center .footer-info {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .gyz-footer .gyz-center .footer-logo {
+    display: none;
+  }
 }
