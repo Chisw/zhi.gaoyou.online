@@ -32,7 +32,7 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
           <Sidebar nodes={nodes} location={location} />
         </div>
         <div
-          className={`page-side-bar-switch hidden fixed z-20 left-0 bottom-0 ml-8 ${barOpen ? '-ml-8' : ''} mb-8 w-12 h-12 bg-white rounded-full flex justify-center items-center shadow shadow-lg`}
+          className={`page-side-bar-switch hidden fixed z-20 left-0 bottom-0 ml-8 ${barOpen ? '-ml-8' : ''} mb-8 w-12 h-12 text-white rounded-full flex justify-center items-center shadow shadow-lg`}
           onClick={() => { setBarOpen(true) }}
         >
           <FA icon="list" />
