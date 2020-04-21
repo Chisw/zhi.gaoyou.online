@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+  <center>
+    <p>未正式上线，请移步 <a href="https://gaoyouzhi.jisuowei.com">https://gaoyouzhi.jisuowei.com</a></p>
+    <p><span id="time">10</span> 秒后自动跳转</p>
+  </center>
+</body>
+<script>
+  const time = document.querySelector('#time');
+  let seconds = 10;
+  setInterval(() => {
+    seconds--;
+    if (seconds === 0) location.href = 'https://gaoyouzhi.jisuowei.com';
+    time.innerHTML = seconds;
+  }, 1000);
+</script>
+</html>
