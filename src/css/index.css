@@ -102,13 +102,8 @@
 
 .annals-content img {
   margin-bottom: 1rem;
-  border: 1px solid #e1e1e1;
   cursor: pointer;
   border-radius: 2px;
-}
-
-.annals-content img:hover {
-  border-color: #d1d1d1;
 }
 
 .annals-content sub {

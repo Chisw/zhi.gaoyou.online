@@ -18,8 +18,15 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
   const [barOpen, setBarOpen] = useState(false)
 
   useEffect(() => {
-    new Viewer(document.getElementById('viewerjs-box'))
+    new Viewer(document.getElementById('viewerjs-box'), { toolbar: false, navbar: false })
     window.Viewer = Viewer
+  }, [])
+
+  useEffect(() => {
+    const imgs = document.querySelectorAll('img')
+    imgs && imgs.forEach(img => {
+      img.onclick = e => e.preventDefault()
+    })
   }, [])
 
   return (
@@ -38,7 +45,7 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
           <FA icon="list" />
         </div>
         <div className="page-center w-8/12 bg-white rounded-sm shadow-lg">
-          <div id="viewerjs-box" className="center-content px-16 py-12">
+          <div id="viewerjs-box" className="center-content px-16 py-12" style={{ minHeight: 640 }}>
             <h2 className="mb-12 p-2 text-3xl text-center font-kxzd" style={{ backgroundSize: '32px', backgroundImage: `url(${Wave})` }}>
               {title}
             </h2>
