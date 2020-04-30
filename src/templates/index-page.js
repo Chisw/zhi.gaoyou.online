@@ -36,22 +36,19 @@ export const IndexPageTemplate = () => {
   return (
     <div>
       <div
-        className="bg-center bg-fixed"
+        className="bg-cover bg-center bg-fixed"
         style={{
           height: '100vh',
-          minHeight: 400,
-          backgroundImage: `url(./img/banner.png)`,
-          backgroundSize: '1480px',
-          boxShadow: '0 0 20px rgba(0,0,0, .2) inset',
+          backgroundImage: `url(./img/banner.jpg)`,
         }}
       >
         <Center className="relative w-full h-full flex justify-center items-center font-kxzd">
-          <div className="-mt-20 text-center" style={{ textShadow: '0 0 8px rgba(255, 255, 255, .9)'}}>
+          <div className="-mt-20 text-center">
             <h1 className="text-6xl">華夏一郵邑 神州無同類</h1>
             <h3 className="text-2xl mt-4">秦王嬴政二十四年 滅楚 築高臺 置郵亭</h3>
           </div>
           <div className="absolute bottom-0 pb-8 text-3xl text-gray-800">
-            <FA icon="angle-double-up" className="animation-rotate-y" />
+            <FA icon="angle-double-up" className="animation-bounce" />
           </div>
         </Center>
       </div>
