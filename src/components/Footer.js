@@ -12,10 +12,10 @@ function Footer() {
     return (
       <div className={`fixed z-20 top-0 right-0 bottom-0 left-0 flex justify-center items-center ${QRCodeShow ? '' : 'hidden'}`} style={{ background: 'rgba(0,0,0, .4)' }}>
         <div className="inline-block p-8 relative bg-white rounded-lg">
-          <span className="absolute top-0 right-0 w-8 h-8 text-center cursor-pointer" onClick={()=>{setQRCodeShow(false)}}>&times;</span>
-          <center>
+          <button className="absolute top-0 right-0 w-8 h-8 text-center cursor-pointer" onClick={() => setQRCodeShow(false)}>&times;</button>
+          <div className="text-center">
             <img alt="weixin" src={QRCode} className="w-64" />
-          </center>
+          </div>
         </div>
       </div>
     )
@@ -27,12 +27,12 @@ function Footer() {
         <Center mobilePadding className="flex items-center text-gray-500 text-sm">
           <div className="footer-info w-1/4 text-gray-700">
             <a href="https://gaoyou.online" target="_blank" rel="noopener noreferrer">高郵攬影</a>
-            <span
+            <button
               className="ml-4 cursor-pointer"
-              onClick={() => { setQRCodeShow(true) }}
+              onClick={() => setQRCodeShow(true)}
             >
               微信打賞
-            </span>
+            </button>
           </div>
           <div className="footer-logo w-1/2 flex justify-center">
             <Link to="/">

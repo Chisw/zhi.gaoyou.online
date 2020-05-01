@@ -50,11 +50,11 @@ export default function Navbar() {
             </span>
           </div>
           <div className={`nav-menu hidden flex-grow flex justify-end items-center`}>
-            <div className={`menu-icon relative ${active ? 'open' : ''}`} onClick={toggleHamburger}>
+            <button className={`menu-icon relative ${active ? 'open' : ''}`} onClick={toggleHamburger}>
               <div></div>
               <div></div>
               <div></div>
-            </div>
+            </button>
           </div>
         </div>
       </Center>

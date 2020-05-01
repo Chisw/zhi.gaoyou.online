@@ -34,16 +34,17 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
       <Center className="flex py-8">
         <div
           className={`page-side-bar ${barOpen ? 'open' : ''} w-2/12 pr-4`}
-          onClick={() => { setBarOpen(false) }}
+          onClick={() => setBarOpen(false) }
+          role="presentation"
         >
           <Sidebar nodes={nodes} location={location} />
         </div>
-        <div
+        <button
           className={`page-side-bar-switch hidden fixed z-20 left-0 bottom-0 ml-8 ${barOpen ? '-ml-8' : ''} mb-8 w-12 h-12 text-white rounded-full flex justify-center items-center shadow shadow-lg`}
-          onClick={() => { setBarOpen(true) }}
+          onClick={() => setBarOpen(true) }
         >
           <FA icon="list" />
-        </div>
+        </button>
         <div className="page-center w-8/12 bg-white rounded-sm shadow-lg">
           <div id="viewerjs-box" className="center-content px-16 py-12" style={{ minHeight: 640 }}>
             <h2 className="mb-12 p-2 text-3xl text-center font-kxzd" style={{ backgroundSize: '32px', backgroundImage: `url(${Wave})` }}>
