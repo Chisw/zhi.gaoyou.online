@@ -7,21 +7,10 @@ import Img720 from '../img/link-720.png'
 import ImgJI from '../img/link-ji.png'
 import ImgWYT from '../img/link-wyt.png'
 import ImgJRGY from '../img/link-jrgy.png'
-import Loadable from 'react-loadable'
 import Center from '../components/Center'
 import FA from '../components/FA'
+import Statistics from '../components/Statistics'
 import { Link } from 'gatsby'
-
-const LoadableStatistics = Loadable({
-  loader: () => import('../components/Statistics'),
-  loading: (props) => {
-    if(props.error) {
-      return <div>Something wrong</div>
-    } else {
-      return <div>Loading..</div>
-    }
-  },
-})
 
 const links = [
   { logo: ImgJI, url: 'http://jisuowei.com' },
@@ -117,8 +106,8 @@ export const IndexPageTemplate = () => {
         </Center>
       </div>
       <div className="py-16">
-        <Center mobilePadding className="rounded-lg shadow">
-          <LoadableStatistics />
+        <Center mobilePadding className="rounded-lg">
+          <Statistics />
         </Center>
       </div>
       <div className="py-12 pb-16">

@@ -1,7 +1,8 @@
 import React from 'react'
-import { Chart, Geom, Axis, Tooltip } from 'bizcharts'
+import { Line } from 'react-chartjs-2'
+import { Interval, DateTime } from 'luxon'
 
-const data = [
+const counts = [
   { date: '2019/07/28', count: 297 },
   { date: '2019/07/29', count: 307 },
   { date: '2019/07/30', count: 366 },
@@ -77,20 +78,54 @@ const data = [
   { date: '2020/02/17', count: 446 },
 ]
 
-const cols = {
-  count: { alias: '整理字数' },
-  date: { alias: '日期' }
-};
+const allCounts = Interval
+  .fromDateTimes(
+    DateTime.fromFormat('2019/07/28', 'yyyy/MM/dd'),
+    DateTime.local()
+  )
+  .splitBy({ days: 1 })
+  .map(d => {
+    const date = d.start.toFormat('yyyy/MM/dd')
+    const exist = counts.find(i => i.date === date)
+    const count = exist ? exist.count : 0
+    return {
+      date,
+      count,
+    }
+  })
+
+const data = {
+  labels: allCounts.map(d => d.date),
+  datasets: [
+    {
+      label: '整理字数',
+      fill: true,
+      lineTension: 0.1,
+      backgroundColor: 'rgba(75,192,192,0.4)',
+      borderColor: 'rgba(75,192,192,1)',
+      borderCapStyle: 'butt',
+      borderDash: [],
+      borderDashOffset: 0.0,
+      borderJoinStyle: 'miter',
+      pointBorderColor: 'rgba(75,192,192,1)',
+      pointBackgroundColor: '#fff',
+      pointBorderWidth: 1,
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+      pointHoverBorderColor: 'rgba(220,220,220,1)',
+      pointHoverBorderWidth: 2,
+      pointRadius: 1,
+      pointHitRadius: 10,
+      scaleSteps: 10,
+      data: allCounts.map(d => d.count)
+    }
+  ]
+}
 
 export default function Statistics() {
   return (
     <div>
-      <Chart forceFit height={200} data={data} scale={cols}>
-        <Axis name="count" />
-        <Axis name="date" />
-        <Tooltip />
-        <Geom type="interval" position="date*count" color="#f55857" size={3} />
-      </Chart>
+      <Line data={data} width={4} height={1} />
     </div>
   )
 }
