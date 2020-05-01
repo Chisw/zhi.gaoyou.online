@@ -21,11 +21,7 @@ const TemplateWrapper = ({ children }) => {
           href={`${withPrefix("/")}img/favicon-32x32-.png`}
           sizes="32x32"
         />
-        <meta name="theme-color" content="#fff" />
-        <meta property="og:type" content="business.business" />
         <meta property="og:title" content={title} />
-        <meta property="og:url" content="/" />
-        <meta property="og:image" content={`${withPrefix("/")}img/og-image.jpg`} />
       </Helmet>
       <Navbar />
       <div>{children}</div>
