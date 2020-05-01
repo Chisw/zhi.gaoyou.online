@@ -1,5 +1,3 @@
-var proxy = require('http-proxy-middleware')
-
 module.exports = {
   pathPrefix: `/gaoyou-annals`,  // npm run clean && gatsby build --prefix-paths
   siteMetadata: {
@@ -69,26 +67,6 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
-    'gatsby-plugin-netlify', // make sure to keep it last in the array
     `gatsby-plugin-postcss`,
   ],
-  // for avoiding CORS while developing Netlify Functions locally
-  // read more: https://www.gatsbyjs.org/docs/api-proxy/#advanced-proxying
-  developMiddleware: app => {
-    app.use(
-      '/.netlify/functions/',
-      proxy({
-        target: 'http://localhost:9000',
-        pathRewrite: {
-          '/.netlify/functions/': '',
-        },
-      })
-    )
-  },
 }
