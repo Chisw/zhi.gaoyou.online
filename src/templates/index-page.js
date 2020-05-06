@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import ImgGYRB from '../img/link-gyrb.png'
@@ -133,11 +132,6 @@ export const IndexPageTemplate = () => {
   )
 }
 
-IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  subheading: PropTypes.string,
-}
-
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
   return (
@@ -145,14 +139,6 @@ const IndexPage = ({ data }) => {
       <IndexPageTemplate image={frontmatter.image} />
     </Layout>
   )
-}
-
-IndexPage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
 }
 
 export default IndexPage

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
@@ -18,7 +17,7 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
   const [barOpen, setBarOpen] = useState(false)
 
   useEffect(() => {
-    new Viewer(document.getElementById('viewerjs-box'), { toolbar: false, navbar: false })
+    new Viewer(document.getElementById('viewerjs-box'), { toolbar: false, navbar: false, maxZoomRatio: 3, minZoomRatio: .1 })
     window.Viewer = Viewer
   }, [])
 
@@ -62,10 +61,6 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
       </Center>
     </div>
   )
-}
-
-AnnalsPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
 }
 
 const AnnalsPage = ({ data, location }) => {

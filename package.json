@@ -30,7 +30,6 @@
     "luxon": "^1.23.0",
     "node-sass": "^4.14.0",
     "parcel-bundler": "^1.12.4",
-    "prop-types": "^15.6.0",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.9.0",
     "react-dom": "^16.13.1",
@@ -40,7 +39,7 @@
     "viewerjs": "^1.5.0"
   },
   "keywords": [
-    "gatsby"
+    "gaoyou"
   ],
   "license": "MIT",
   "main": "n/a",
