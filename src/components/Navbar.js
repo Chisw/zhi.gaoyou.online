@@ -1,56 +1,35 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
 import logo from '../img/logo.png'
 import Center from './Center'
+import { NAV_LIST } from '../utils'
 
 export default function Navbar() {
 
   const [active, setActive] = useState(false)
 
-  const toggleHamburger = () => {
-    setActive(!active)
-  }
-
-  const navList = [
-    { name: '高郵州志', url: '/gyzz/' },
-    { name: '續增高郵州志', url: '/xzgyzz/' },
-    { name: '再續高郵州志', url: '/zxgyzz/' },
-    { name: '三續高郵州志', url: '/sxgyzz/' },
-    { name: '集志', url: '/jz/' },
-  ]
+  const toggleHamburger = () => setActive(!active)
 
   return (
-    <div className="fixed z-20 w-full border-b bg-white">
-      <Center mobilePadding>
+    <div className="fixed z-20 w-full border-b bg-white opacity-75">
+      <Center>
         <div className="gyz-nav h-12 flex items-center">
           <Link to="/" className="" title="Logo">
             <img src={logo} alt="gaoyouzhi" className="w-20" />
           </Link>
-          <div className={`nav-wrapper ml-10 flex items-center flex-grow ${active ? 'open' : ''}`}>
-            {
-              navList.map(nav => (
-                <Link
-                  key={nav.url}
-                  to={nav.url}
-                  className="nav-item mr-4 font-thin text-base text-gray-600 hover:text-gray-900"
-                >
-                  {nav.name}
-                </Link>
-              ))
-            }
-            <span className="nav-item github flex justify-end flex-grow">
-              <a
-                href="https://github.com/chisw/gaoyou-annals"
-                target="_blank"
-                rel="noopener noreferrer"
+          <div className={`ml-10 flex items-center flex-grow ${active ? 'open' : ''}`}>
+            {NAV_LIST.map(({ name, to }) => (
+              <Link
+                key={to}
+                to={to}
+                className="nav-item mr-4 font-thin text-base text-gray-600 hover:text-gray-900 font-kxzd"
               >
-                <img src={github} alt="Github" className="w-6 h-6" />
-              </a>
-            </span>
+                {name}
+              </Link>
+            ))}
           </div>
-          <div className={`nav-menu hidden flex-grow flex justify-end items-center`}>
-            <button className={`menu-icon relative ${active ? 'open' : ''}`} onClick={toggleHamburger}>
+          <div className={`hidden flex-grow flex justify-end items-center`}>
+            <button className={`relative ${active ? 'open' : ''}`} onClick={toggleHamburger}>
               <div></div>
               <div></div>
               <div></div>
@@ -58,6 +37,36 @@ export default function Navbar() {
           </div>
         </div>
       </Center>
+      {/* <Center>
+        <VerticalNav />
+      </Center> */}
+    </div>
+  )
+}
+
+export function VerticalNav() {
+  return (
+    <div className="w-full flex justify-around items-start">
+      {NAV_LIST.map((item, index) => (
+        <Link
+          key={index}
+          to={item.to}
+          className="h-72 flex flex-col justify-center items-start font-kxzd cursor-pointer hover:opacity-75 transition duration-200"
+        >
+          <div className="h-1/5 w-full flex justify-center items-center">
+            <div className="w-10 h-10 rounded-full text-white flex justify-center items-center" style={{ backgroundColor: 'rgba(0,0,0,.15)' }}>
+              {`壹貳叁肆`[index]}
+            </div>
+          </div>
+          <div className="h-4/5 flex justify-center">
+            <p className="write-vertical text-3xl">{item.name}</p>
+            <p className="write-vertical text-gray-500 text-sm">
+              {item.period} &nbsp;
+            <span className="ml-2 text-white bg-red-600">{item.year}</span>
+            </p>
+          </div>
+        </Link>
+      ))}
     </div>
   )
 }

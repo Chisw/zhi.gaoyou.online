@@ -63,7 +63,7 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
   )
 }
 
-const AnnalsPage = ({ data, location }) => {
+export default function AnnalsPage({ data, location }) {
   const { markdownRemark: post } = data
 
   return (
@@ -79,8 +79,6 @@ const AnnalsPage = ({ data, location }) => {
   )
 }
 
-export default AnnalsPage
-
 export const AnnalsPageQuery = graphql`
   query AnnalsPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
@@ -95,16 +93,16 @@ export const AnnalsPageQuery = graphql`
       filter: {frontmatter: {templateKey: {eq: "annals-page"}}},
     ) {
       edges {
-          node {
-              fields {
-                  slug
-              }
-              frontmatter {
-                  title
-                  vol
-                  order
-              }
+        node {
+          fields {
+            slug
           }
+          frontmatter {
+            title
+            vol
+            order
+          }
+        }
       }
     }
   }

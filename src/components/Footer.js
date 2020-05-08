@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import logo from '../img/logo.png'
 import QRCode from '../img/QRCode.png'
 import Center from '../components/Center'
+import github from '../img/github-icon.svg'
 
 function Footer() {
 
@@ -24,7 +25,7 @@ function Footer() {
   return (
     <>
       <div className="gyz-footer py-8 border-t bg-white">
-        <Center mobilePadding className="flex items-center text-gray-500 text-sm">
+        <Center className="flex items-center text-gray-500 text-sm">
           <div className="footer-info w-1/4 text-gray-700">
             <a href="https://gaoyou.online" target="_blank" rel="noopener noreferrer">高郵攬影</a>
             <button
@@ -42,6 +43,15 @@ function Footer() {
           <div className="footer-info w-1/4 font-thin text-right">
             <span>© gaoyou.online</span>&emsp;<span>Email: i@jisuowei.com</span>
           </div>
+          <span className="nav-item github flex justify-end flex-grow">
+            <a
+              href="https://github.com/Chisw/zhi.gaoyou.online"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={github} alt="Github" className="w-6 h-6" />
+            </a>
+          </span>
         </Center>
       </div>
       <Modal />

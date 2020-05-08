@@ -1,16 +1,17 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 import '../css/index.css'
-import '../css/media.1024.css'
 
-const TemplateWrapper = ({ children }) => {
+export default function Layout({ children, hideNavbar }) {
+
   const { title, description } = useSiteMetadata()
+
   return (
-    <div>
+    <>
       <Helmet>
         <html lang="zh-CN" />
         <title>{title}</title>
@@ -23,11 +24,9 @@ const TemplateWrapper = ({ children }) => {
         />
         <meta property="og:title" content={title} />
       </Helmet>
-      <Navbar />
+      {!hideNavbar && <Navbar />}
       <div>{children}</div>
       <Footer />
-    </div>
+    </>
   )
 }
-
-export default TemplateWrapper

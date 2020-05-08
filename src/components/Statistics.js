@@ -125,7 +125,7 @@ const data = {
 export default function Statistics() {
   return (
     <div>
-      <Line data={data} width={4} height={1} />
+      <Line data={data} width={3} height={1} />
     </div>
   )
 }
