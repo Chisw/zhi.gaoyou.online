@@ -24,26 +24,27 @@ function Footer() {
 
   return (
     <>
-      <div className="gyz-footer py-8 border-t bg-white">
-        <Center className="flex items-center text-gray-500 text-sm">
-          <div className="footer-info w-1/4 text-gray-700">
-            <a href="https://gaoyou.online" target="_blank" rel="noopener noreferrer">高郵攬影</a>
-            <button
-              className="ml-4 cursor-pointer"
-              onClick={() => setQRCodeShow(true)}
-            >
-              微信打賞
-            </button>
-          </div>
-          <div className="footer-logo w-1/2 flex justify-center">
-            <Link to="/">
-              <img alt="logo" src={logo} style={{ width: '120px' }} />
-            </Link>
-          </div>
-          <div className="footer-info w-1/4 font-thin text-right">
-            <span>© gaoyou.online</span>&emsp;<span>Email: i@jisuowei.com</span>
-          </div>
-          <span className="nav-item github flex justify-end flex-grow">
+      <Center
+        className="py-8 border-t"
+        innerClassName="flex items-center text-gray-500 text-sm"
+      >
+        <div className="w-1/4 text-gray-700">
+          <a href="https://gaoyou.online" target="_blank" rel="noopener noreferrer">高郵攬影</a>
+          <button
+            className="ml-4 cursor-pointer"
+            onClick={() => setQRCodeShow(true)}
+          >
+            微信打賞
+          </button>
+        </div>
+        <div className="w-1/2 flex justify-center">
+          <Link to="/">
+            <img alt="logo" src={logo} className="w-24" />
+          </Link>
+        </div>
+        <div className="w-1/4 font-thin flex justify-end items-center">
+          <span>© gaoyou.online</span>&emsp;
+          <span>
             <a
               href="https://github.com/Chisw/zhi.gaoyou.online"
               target="_blank"
@@ -52,8 +53,8 @@ function Footer() {
               <img src={github} alt="Github" className="w-6 h-6" />
             </a>
           </span>
-        </Center>
-      </div>
+        </div>
+      </Center>
       <Modal />
     </>
   )
