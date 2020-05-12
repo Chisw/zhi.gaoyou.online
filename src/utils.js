@@ -19,6 +19,14 @@ export const LINK_LIST = [
   { logo: Img720, url: '//720yun.com/t/567jz7ukvf2?scene_id=9813419' },
 ]
 
+export const PDF_LIST = [
+  { url: '', code: '', origin: '维基共享资源', name: '高郵州志 乾隆四十八年 1783' },
+  { url: '', code: '', origin: '维基共享资源', name: '續增高郵州志 道光二十三年 1843' },
+  { url: '', code: '', origin: '维基共享资源', name: '高郵州志 重鍥本 道光二十五年 1845' },
+  { url: '', code: '', origin: '维基共享资源', name: '再續高郵州志 光緒九年 1883' },
+  { url: '', code: '', origin: '维基共享资源', name: '三續高郵州志 民國十一年 1922' },
+]
+
 export const HISTORY_LIST = [
   ['春秋', '吴邗沟地，越国并吴国后属越国'],
   ['战国', '楚并越属楚'],

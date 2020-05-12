@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import Center from '../components/Center'
 import FA from '../components/FA'
 import Statistics from '../components/Statistics'
-import { LINK_LIST, HISTORY_LIST } from '../utils'
+import { LINK_LIST, HISTORY_LIST, PDF_LIST } from '../utils'
 import logo from '../img/logo.png'
 import { VerticalNav } from '../components/Navbar'
 
@@ -37,19 +37,41 @@ export default function IndexPage() {
       <Center className="py-12" innerClassName={`${historySlideDown ? 'h-auto' : 'h-100vh overflow-hidden'}`}>
         <h2 className="pb-8 text-center text-4xl font-light">历代沿革</h2>
         {HISTORY_LIST.map(([title, info], index) => (
-          <div key={index} className="mb-6 text-center">
-            <span className="mb-2 text-base font-light bg-gray-500 text-white">{title}</span>
-            <p className="font-kai">{info}</p>
+          <div key={index} className="mb-8 text-center">
+            <span className="mt-2 text-base font-light bg-gray-500 text-white">{title}</span>
+            <p className="mt-4 font-kai text-xl">{info}</p>
           </div>
         ))}
         {!historySlideDown && (
           <div
             className="absolute right-0 bottom-0 left-0 h-12 flex justify-center items-center bg-white-900 border-t cursor-pointer text-sm text-gray-600 hover:text-gray-800"
             onClick={() => setHistorySlideDown(true)}
+            role="presentation"
           >
             展开
           </div>
         )}
+      </Center>
+
+      <Center className="py-12">
+        <h2 className="pb-8 text-center text-4xl font-light">资源下载</h2>
+        <div className="flex flex-wrap -mx-2">
+          {PDF_LIST.map(({ url, code, origin, name }, index) => (
+            <div
+              key={index}
+              className="w-1/4 p-2"
+            >
+              <a
+                href={url}
+                target="_blank"
+                className="block w-full h-full p-2 bg-gray-200 text-xs rounded-md hover:bg-gray-300"
+              >
+                <p>{name}.pdf</p>
+                <p className="text-gray-500">{origin}</p>
+              </a>
+            </div>
+          ))}
+        </div>
       </Center>
 
       <Center className="py-12 bg-black-10">
