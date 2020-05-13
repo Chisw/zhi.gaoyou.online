@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import Layout from '../components/Layout'
 import Center from '../components/Center'
+import { VerticalNav } from '../components/Navbar'
 import Statistics from '../components/Statistics'
 import { LINK_LIST, HISTORY_LIST, PDF_LIST } from '../utils'
 import logo from '../img/logo.png'
-import arrow from '../img/arrow.svg'
-import { VerticalNav } from '../components/Navbar'
+import arrow from '../img/icon/arrow.svg'
+import pdf from '../img/icon/pdf.svg'
 
 export default function IndexPage() {
 
@@ -15,7 +16,7 @@ export default function IndexPage() {
     <Layout hideNavbar>
 
       <Center
-        className="h-100vh bg-cover bg-center bg-fixed"
+        className="h-100vh bg-cover bg-center bg-fixed bg-no-repeat"
         style={{ backgroundImage: `url(./img/banner.jpg)`, }}
         innerClassName="flex flex-col"
       >
@@ -34,48 +35,61 @@ export default function IndexPage() {
         </div>
       </Center>
 
-      <Center className="py-12" innerClassName={`${historySlideDown ? 'h-auto' : 'h-100vh overflow-hidden'}`}>
+      <Center
+        className="py-12 bg-bottom bg-fixed bg-left-bottom bg-no-repeat"
+        style={{ backgroundImage: `url(./img/yizhan.jpg)`, backgroundSize: '64%' }}
+        innerClassName={`${historySlideDown ? 'h-auto' : 'h-100vh overflow-hidden'}`}
+      >
         <h2 className="pb-8 text-center text-4xl font-light">历代沿革</h2>
         {HISTORY_LIST.map(([title, info], index) => (
           <div key={index} className="mb-8 text-center">
-            <span className="mt-2 text-base font-light bg-gray-500 text-white">{title}</span>
-            <p className="mt-4 font-kai text-xl">{info}</p>
+            <span className="mt-2 text-base font-kai bg-gray-600 text-white">{title}</span>
+            <p className="mt-4 font-light text-xl" dangerouslySetInnerHTML={{ __html: info }} />
           </div>
         ))}
         {!historySlideDown && (
           <div
-            className="absolute right-0 bottom-0 left-0 h-12 flex justify-center items-center bg-white-900 border-t cursor-pointer text-sm text-gray-600 hover:text-gray-800"
-            onClick={() => setHistorySlideDown(true)}
-            role="presentation"
+            className="absolute right-0 bottom-0 left-0 pb-5 flex justify-center items-center"
           >
-            展开
+            <div
+              className="w-1/2 h-12 bg-white-900 border cursor-pointer text-sm text-gray-600 hover:text-gray-800 shadow-lg rounded-full flex justify-center items-center"
+              onClick={() => setHistorySlideDown(true)}
+              role="presentation"
+            >
+              展开
+            </div>
           </div>
         )}
       </Center>
 
-      <Center className="py-12">
+      <Center className="py-12 bg-gray-100">
         <h2 className="pb-8 text-center text-4xl font-light">资源下载</h2>
         <div className="flex flex-wrap -mx-2">
           {PDF_LIST.map(({ url, code, origin, name }, index) => (
             <div
               key={index}
-              className="w-1/4 p-2"
+              className="w-full md:w-1/2 lg:w-1/4 h-24 p-2"
             >
               <a
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full h-full p-2 bg-gray-200 text-xs rounded-md hover:bg-gray-300"
+                className="block w-full h-full p-2 bg-white rounded-md shadow hover:shadow-lg transition duration-200 flex"
               >
-                <p>{name}.pdf</p>
-                <p className="text-gray-500">{origin}</p>
+                <div>
+                  <img src={pdf} alt="pdf" className="w-12" />
+                </div>
+                <div className="ml-2">
+                  <p className="text-sm">{name}.pdf</p>
+                  <p className="text-xs text-gray-500">{origin}</p>
+                </div>
               </a>
             </div>
           ))}
         </div>
       </Center>
 
-      <Center className="py-12 bg-black-10">
+      <Center className="py-12">
         <h2 className="pb-8 text-center text-4xl font-light">整理统计</h2>
         <Statistics />
       </Center>

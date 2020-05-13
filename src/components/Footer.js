@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import logo from '../img/logo.png'
 import QRCode from '../img/QRCode.png'
 import Center from '../components/Center'
-import github from '../img/github-icon.svg'
+import github from '../img/icon/github.svg'
 
 function Footer() {
 
