@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import Layout from '../components/Layout'
 import Center from '../components/Center'
-import FA from '../components/FA'
 import Statistics from '../components/Statistics'
 import { LINK_LIST, HISTORY_LIST, PDF_LIST } from '../utils'
 import logo from '../img/logo.png'
+import arrow from '../img/arrow.svg'
 import { VerticalNav } from '../components/Navbar'
 
 export default function IndexPage() {
@@ -29,8 +29,8 @@ export default function IndexPage() {
         <div className="md:px-40 h-2/5 flex justify-center items-center">
           <VerticalNav />
         </div>
-        <div className="h-1/5 flex justify-center items-end text-2xl text-gray-800">
-          <FA icon="angle-double-up" className="animation-bounce" />
+        <div className="h-1/5 flex justify-center items-end">
+          <img src={arrow} alt="arrow" className="animation-bounce w-4" />
         </div>
       </Center>
 
@@ -64,6 +64,7 @@ export default function IndexPage() {
               <a
                 href={url}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="block w-full h-full p-2 bg-gray-200 text-xs rounded-md hover:bg-gray-300"
               >
                 <p>{name}.pdf</p>

@@ -9,7 +9,6 @@ import Wave from '../img/wave.png'
 import Center from '../components/Center'
 import Viewer from 'viewerjs'
 import 'viewerjs/dist/viewer.css'
-import FA from '../components/FA'
 
 export function AnnalsPageTemplate({ title, content, contentComponent, nodes, location }) {
   const PageContent = contentComponent || Content
@@ -42,7 +41,7 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
           className={`page-side-bar-switch hidden fixed z-20 left-0 bottom-0 ml-8 ${barOpen ? '-ml-8' : ''} mb-8 w-12 h-12 text-white rounded-full flex justify-center items-center shadow shadow-lg`}
           onClick={() => setBarOpen(true) }
         >
-          <FA icon="list" />
+          <span>三</span>
         </button>
         <div className="page-center w-full md:w-8/12 bg-white rounded-sm shadow-none md:shadow-lg">
           <div id="viewerjs-box" className="center-content px-0 md:px-16 py-12" style={{ minHeight: 640 }}>
