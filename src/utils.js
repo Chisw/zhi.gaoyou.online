@@ -20,11 +20,15 @@ export const LINK_LIST = [
 ]
 
 export const PDF_LIST = [
-  { url: 'https://pan.baidu.com/', code: '', origin: '维基共享资源', name: '高郵州志 乾隆四十八年 1783' },
-  { url: 'https://pan.baidu.com/', code: '', origin: '维基共享资源', name: '續增高郵州志 道光二十三年 1843' },
-  { url: 'https://pan.baidu.com/', code: '', origin: '维基共享资源', name: '高郵州志 重鍥本 道光二十五年 1845' },
-  { url: 'https://pan.baidu.com/', code: '', origin: '维基共享资源', name: '再續高郵州志 光緒九年 1883' },
-  { url: 'https://pan.baidu.com/', code: '', origin: '维基共享资源', name: '三續高郵州志 民國十一年 1922' },
+  { origin: '维基共享', name: '高郵州志_乾隆四十八年', size: '560.68 MB' },
+  { origin: '维基共享', name: '續增高郵州志_道光二十三年', size: '206.24 MB' },
+  { origin: '维基共享', name: '高郵州志_重鍥本_道光二十五年', size: '251.08 MB' },
+  { origin: '维基共享', name: '再續高郵州志_光緒九年', size: '888.97 MB' },
+  { origin: '维基共享', name: '三續高郵州志_民國十一年', size: '477.29 MB' },
+  { origin: '网络', name: '高邮州志_乾隆四十八年重修本', size: '222.57 MB' },
+  { origin: '网络', name: '续增高邮州志_道光二十三年刊本', size: '63.66 MB' },
+  { origin: '网络', name: '再续高邮州志_光绪九年刊本', size: '95.86 MB' },
+  { origin: '网络', name: '三续高邮州志_民国十年刊本', size: '156.39 MB' },
 ]
 
 export const HISTORY_LIST = [

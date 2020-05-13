@@ -43,7 +43,7 @@ export default function IndexPage() {
         <h2 className="pb-8 text-center text-4xl font-light">历代沿革</h2>
         {HISTORY_LIST.map(([title, info], index) => (
           <div key={index} className="mb-8 text-center">
-            <span className="mt-2 text-base font-kai bg-gray-600 text-white">{title}</span>
+            <span className="mt-2 text-base font-kai border text-gray-900 border-gray-900">{title}</span>
             <p className="mt-4 font-light text-xl" dangerouslySetInnerHTML={{ __html: info }} />
           </div>
         ))}
@@ -64,24 +64,25 @@ export default function IndexPage() {
 
       <Center className="py-12 bg-gray-100">
         <h2 className="pb-8 text-center text-4xl font-light">资源下载</h2>
+        <p className="mb-1 text-xs text-gray-500 text-center">提取码：47ru</p>
         <div className="flex flex-wrap -mx-2">
-          {PDF_LIST.map(({ url, code, origin, name }, index) => (
+          {PDF_LIST.map(({ origin, name, size }, index) => (
             <div
               key={index}
-              className="w-full md:w-1/2 lg:w-1/4 h-24 p-2"
+              className="w-full md:w-1/2 lg:w-1/4 p-2"
             >
               <a
-                href={url}
+                href="https://pan.baidu.com/s/1u4y576B5-GeSWnDtQxIJ0Q"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full h-full p-2 bg-white rounded-md shadow hover:shadow-lg transition duration-200 flex"
+                className="block w-full h-full p-4 bg-white rounded-md shadow hover:shadow-lg transition duration-200 flex"
               >
                 <div>
                   <img src={pdf} alt="pdf" className="w-12" />
                 </div>
                 <div className="ml-2">
                   <p className="text-sm">{name}.pdf</p>
-                  <p className="text-xs text-gray-500">{origin}</p>
+                  <p className="mt-1 text-xs text-gray-500">{size}&emsp;来源：{origin}</p>
                 </div>
               </a>
             </div>
