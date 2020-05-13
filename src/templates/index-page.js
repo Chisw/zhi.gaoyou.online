@@ -21,7 +21,7 @@ export default function IndexPage() {
       >
         <div className="h-2/5 flex justify-center items-center">
           <div className="text-center">
-            <img src={logo} alt="logo" className="inline-block w-40" />
+            <img src={logo} alt="logo" className="inline-block w-32" />
             <h1 className="mt-2 text-xl text-gray-600 font-kxzd">華夏一郵邑 神州無同類</h1>
             <input className="mt-6 w-80 md:w-128 h-12 px-6 rounded-full bg-white-600 shadow outline-none" placeholder="在高郵志中搜索" />
           </div>

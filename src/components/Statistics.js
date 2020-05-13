@@ -125,7 +125,21 @@ const data = {
 export default function Statistics() {
   return (
     <div>
-      <Line data={data} width={3} height={1} />
+      <Line
+        data={data}
+        width={4}
+        height={1}
+        options={{
+          scales: {
+            xAxes: [{
+              ticks: {
+                maxTicksLimit: 5,
+                maxRotation: 0,
+              }
+            }]
+          },
+        }}
+      />
     </div>
   )
 }
