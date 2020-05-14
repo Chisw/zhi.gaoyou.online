@@ -7,6 +7,7 @@ import { LINK_LIST, HISTORY_LIST, PDF_LIST } from '../utils'
 import logo from '../img/logo.png'
 import arrow from '../img/icon/arrow.svg'
 import pdf from '../img/icon/pdf.svg'
+import github from '../img/icon/github.svg'
 
 export default function IndexPage() {
 
@@ -63,36 +64,55 @@ export default function IndexPage() {
       </Center>
 
       <Center className="py-12 bg-gray-100">
+        <h2 className="pb-8 text-center text-4xl font-light">整理统计</h2>
+        <Statistics />
+      </Center>
+
+      <Center className="py-12">
+        <h2 className="pb-8 text-center text-4xl font-light">关于</h2>
+        <div>
+          <p>
+            项目仓库：
+            <a
+              href="https://github.com/Chisw/zhi.gaoyou.online"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={github} alt="Github" className="inline-block w-6 h-6" />
+              https://github.com/Chisw/zhi.gaoyou.online
+            </a>
+          </p>
+          <p><a>为什么做这个项目？</a></p>
+        </div>
+      </Center>
+
+      <Center className="py-12 bg-gray-100">
         <h2 className="pb-8 text-center text-4xl font-light">资源下载</h2>
         <p className="mb-1 text-xs text-gray-500 text-center">提取码：47ru</p>
         <div className="flex flex-wrap -mx-2">
           {PDF_LIST.map(({ origin, name, size }, index) => (
             <div
               key={index}
-              className="w-full md:w-1/2 lg:w-1/4 p-2"
+              className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-2"
             >
               <a
                 href="https://pan.baidu.com/s/1u4y576B5-GeSWnDtQxIJ0Q"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full h-full p-4 bg-white rounded-md shadow hover:shadow-lg transition duration-200 flex"
+                className="block w-full h-full p-4 bg-white rounded-md shadow hover:shadow-lg transition duration-200 flex items-center"
               >
                 <div>
                   <img src={pdf} alt="pdf" className="w-12" />
                 </div>
                 <div className="ml-2">
-                  <p className="text-sm">{name}.pdf</p>
-                  <p className="mt-1 text-xs text-gray-500">{size}&emsp;来源：{origin}</p>
+                  <p className="text-xs">{name}.pdf</p>
+                  <p className="text-xs text-gray-500">来源：{origin}</p>
+                  <p className="text-xs text-gray-500">{size}</p>
                 </div>
               </a>
             </div>
           ))}
         </div>
-      </Center>
-
-      <Center className="py-12">
-        <h2 className="pb-8 text-center text-4xl font-light">整理统计</h2>
-        <Statistics />
       </Center>
 
       <Center className="py-12">

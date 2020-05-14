@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 import logo from '../img/logo.png'
 import QRCode from '../img/QRCode.png'
 import Center from '../components/Center'
-import github from '../img/icon/github.svg'
 
 function Footer() {
 
@@ -42,17 +41,8 @@ function Footer() {
             <img alt="logo" src={logo} className="w-24" />
           </Link>
         </div>
-        <div className="w-1/4 font-thin flex justify-end items-center">
-          <span>© gaoyou.online</span>&emsp;
-          <span>
-            <a
-              href="https://github.com/Chisw/zhi.gaoyou.online"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={github} alt="Github" className="w-6 h-6" />
-            </a>
-          </span>
+        <div className="w-1/4 font-light flex justify-end items-center">
+          <span>© gaoyou.online</span>
         </div>
       </Center>
       <Modal />
