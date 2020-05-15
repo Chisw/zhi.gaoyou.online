@@ -29,7 +29,7 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
 
   return (
     <>
-      <Center className="md:pt-12 md:bg-black-10" innerClassName="flex py-8">
+      <Center className="md:pt-12 md:bg-black-100" innerClassName="flex py-8">
         <div
           className={`page-side-bar ${barOpen ? 'open' : ''} w-2/12 pr-4 hidden md:block`}
           onClick={() => setBarOpen(false) }

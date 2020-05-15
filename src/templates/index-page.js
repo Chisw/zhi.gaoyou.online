@@ -3,11 +3,12 @@ import Layout from '../components/Layout'
 import Center from '../components/Center'
 import { VerticalNav } from '../components/Navbar'
 import Statistics from '../components/Statistics'
-import { LINK_LIST, HISTORY_LIST, PDF_LIST } from '../utils'
+import { LINK_LIST, HISTORY_LIST, PDF_LIST, ABOUT_LIST } from '../LIST'
 import logo from '../img/logo.png'
 import arrow from '../img/icon/arrow.svg'
 import pdf from '../img/icon/pdf.svg'
-import github from '../img/icon/github.svg'
+import banner from '../img/banner.jpg'
+import yizhan from '../img/yizhan.jpg'
 
 export default function IndexPage() {
 
@@ -18,13 +19,13 @@ export default function IndexPage() {
 
       <Center
         className="h-100vh bg-cover bg-center bg-fixed bg-no-repeat"
-        style={{ backgroundImage: `url(./img/banner.jpg)`, }}
+        style={{ backgroundImage: `url(${banner})` }}
         innerClassName="flex flex-col"
       >
         <div className="h-2/5 flex justify-center items-center">
           <div className="text-center">
-            <img src={logo} alt="logo" className="inline-block w-32" />
-            <h1 className="mt-2 text-xl text-gray-600 font-kxzd">華夏一郵邑 神州無同類</h1>
+            <img src={logo} alt="logo" className="inline-block w-24 md:w-32" />
+            <h1 className="mt-2 text-lg md:text-xl text-gray-600 font-kxzd">華夏一郵邑 神州無同類</h1>
             <input className="mt-6 w-80 md:w-128 h-12 px-6 rounded-full bg-white-600 shadow outline-none" placeholder="在高郵志中搜索" />
           </div>
         </div>
@@ -37,8 +38,8 @@ export default function IndexPage() {
       </Center>
 
       <Center
-        className="py-12 bg-bottom bg-fixed bg-left-bottom bg-no-repeat"
-        style={{ backgroundImage: `url(./img/yizhan.jpg)`, backgroundSize: '64%' }}
+        className="py-24 bg-bottom bg-fixed bg-left-bottom bg-no-repeat"
+        style={{ backgroundImage: `url(${yizhan})`, backgroundSize: '64%' }}
         innerClassName={`${historySlideDown ? 'h-auto' : 'h-100vh overflow-hidden'}`}
       >
         <h2 className="pb-8 text-center text-4xl font-light">历代沿革</h2>
@@ -63,32 +64,35 @@ export default function IndexPage() {
         )}
       </Center>
 
-      <Center className="py-12 bg-gray-100">
+      <Center className="py-24 bg-gray-100">
         <h2 className="pb-8 text-center text-4xl font-light">整理统计</h2>
         <Statistics />
       </Center>
 
-      <Center className="py-12">
+      <Center className="py-24">
         <h2 className="pb-8 text-center text-4xl font-light">关于</h2>
-        <div>
-          <p>
-            项目仓库：
-            <a
-              href="https://github.com/Chisw/zhi.gaoyou.online"
-              target="_blank"
-              rel="noopener noreferrer"
+        <div className="flex flex-wrap -mx-2">
+          {ABOUT_LIST.map(({name, url}, index) => (
+            <div
+              key={index}
+              className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-2"
             >
-              <img src={github} alt="Github" className="inline-block w-6 h-6" />
-              https://github.com/Chisw/zhi.gaoyou.online
-            </a>
-          </p>
-          <p><a>为什么做这个项目？</a></p>
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full h-full p-4 border rounded-md hover:bg-gray-100 transition duration-200 flex justify-center items-center font-thin hover:text-blue-500"
+              >
+                {name}
+              </a>
+            </div>
+          ))}
         </div>
       </Center>
 
-      <Center className="py-12 bg-gray-100">
-        <h2 className="pb-8 text-center text-4xl font-light">资源下载</h2>
-        <p className="mb-1 text-xs text-gray-500 text-center">提取码：47ru</p>
+      <Center className="py-24 bg-gray-100">
+        <h2 className="pb-8 text-center text-4xl font-light">资源共享</h2>
+        <p className="mb-1 text-xs text-gray-500">提取码：47ru</p>
         <div className="flex flex-wrap -mx-2">
           {PDF_LIST.map(({ origin, name, size }, index) => (
             <div
@@ -115,13 +119,13 @@ export default function IndexPage() {
         </div>
       </Center>
 
-      <Center className="py-12">
+      <Center className="py-24">
         <h2 className="pb-8 text-center text-4xl font-light">友情链接</h2>
         <div className="flex flex-wrap justify-center">
           {LINK_LIST.map(({ url, logo }, index) => (
             <a
               key={index}
-              className="inline-block p-6 w-1/2 md:w-1/4 xl:w-1/5 hover:bg-black-30"
+              className="inline-block p-6 w-1/3 md:p-8 md:w-1/4 xl:p-10 xl:w-1/5 hover:bg-black-30 rounded-md"
               href={url}
               target="_blank"
               rel="noopener noreferrer"

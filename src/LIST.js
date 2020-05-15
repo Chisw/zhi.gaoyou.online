@@ -58,3 +58,9 @@ export const HISTORY_LIST = [
   ['1991 年 2 月', '经国务院批准撤县设市（县级）'],
   ['1991 年 4 月 1 日', '正式建高邮市，实行计划单列'],
 ]
+
+export const ABOUT_LIST = [
+  { name: '建站始末', url: '' },
+  { name: '高邮地方志考录', url: 'https://jisuowei.com/post/rv60m5'},
+  { name: 'GitHub 仓库', url: 'https://github.com/Chisw/zhi.gaoyou.online' },
+]

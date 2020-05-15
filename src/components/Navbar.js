@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import logo from '../img/logo.png'
 import Center from './Center'
-import { NAV_LIST } from '../utils'
+import { NAV_LIST } from '../LIST'
 
 export default function Navbar() {
 
