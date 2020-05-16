@@ -130,13 +130,17 @@ export default function Statistics() {
         width={4}
         height={1}
         options={{
+          tooltips: {
+            intersect: false,
+          },
           scales: {
             xAxes: [{
               ticks: {
                 maxTicksLimit: 5,
                 maxRotation: 0,
+                callback: label => label ? label.substring(0, 7) : label
               }
-            }]
+            }],
           },
         }}
       />

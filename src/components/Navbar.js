@@ -51,18 +51,21 @@ export function VerticalNav() {
         <Link
           key={index}
           to={item.to}
-          className="h-72 flex flex-col justify-center items-start font-kxzd cursor-pointer hover:opacity-75 hover:scale-105 transform transition duration-200"
+          className="h-72 flex flex-col justify-center items-start font-kxzd cursor-pointer hover:opacity-75 hover:-translate-y-1 transform transition duration-200"
         >
-          <div className="h-1/5 w-full flex justify-center items-start">
-            <div className="w-8 h-8 md:w-10 md:h-10 rounded-full text-white flex justify-center items-center" style={{ backgroundColor: 'rgba(0,0,0,.2)' }}>
+          <div className="h-1/5 w-full flex justify-center items-center md:items-start">
+            <div
+              className="w-6 md:w-8 h-6 md:w-8 md:w-10 md:h-10 rounded-full text-white flex justify-center items-center"
+              style={{ backgroundColor: 'rgba(0,0,0, .2)' }}
+            >
               {`壹貳叁肆`[index]}
             </div>
           </div>
           <div className="h-4/5 flex justify-center">
-            <p className="write-vertical text-2xl md:text-3xl">{item.name}</p>
+            <p className="write-vertical text-xl md:text-3xl">{item.name}</p>
             <p className="write-vertical text-gray-500 text-xs md:text-sm">
               {item.period} &nbsp;
-              <span className="ml-2 text-white bg-red-600">{item.year}</span>
+              <span className="ml-2 py-1 text-white bg-red-600 font-din">{item.year}</span>
             </p>
           </div>
         </Link>

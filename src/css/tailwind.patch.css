@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'kxzd';
+  src: url('../fonts/kxzd.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'din';
+  src: url('../fonts/din.woff2') format('woff2');
+}
+
+.font-kxzd {
+  font-family: 'kxzd';
+}
+
+.font-din {
+  font-family: 'din';
+}
+
+.font-kai {
+  font-family: 'kai';
+}
+
+.write-vertical {
+  writing-mode: vertical-rl;
+}
