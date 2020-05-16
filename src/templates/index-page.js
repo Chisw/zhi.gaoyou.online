@@ -51,7 +51,7 @@ export default function IndexPage() {
       <Center
         className="py-12 md:py-24 bg-bottom bg-fixed bg-center bg-no-repeat bg-cover"
         style={{ backgroundImage: `url(${yizhan})` }}
-        innerClassName={`${historySlideDown ? 'h-auto' : 'max-h-80 md:max-h-128 overflow-hidden'}`}
+        innerClassName={`${historySlideDown ? 'h-auto' : 'h-100vh overflow-hidden'}`}
       >
         <h2 id="history" className="pb-8 text-center text-2xl md:text-4xl font-light">历代沿革</h2>
         {HISTORY_LIST.map(([title, info], index) => (

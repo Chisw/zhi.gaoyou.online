@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import useSiteMetadata from './SiteMetadata'
-import { withPrefix } from 'gatsby'
+import favicon from '../img/favicon.png'
 import '../css/index.css'
 
 export default function Layout({ children, hideNavbar }) {
@@ -16,12 +16,7 @@ export default function Layout({ children, hideNavbar }) {
         <html lang="zh-CN" />
         <title>{title}</title>
         <meta name="description" content={description} />
-        <link
-          rel="icon"
-          type="image/png"
-          href={`${withPrefix("/")}img/favicon-32x32-.png`}
-          sizes="32x32"
-        />
+        <link rel="icon" type="image/png" href={favicon} sizes="32x32" />
         <meta property="og:title" content={title} />
       </Helmet>
       {!hideNavbar && <Navbar />}

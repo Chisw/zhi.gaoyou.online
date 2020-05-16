@@ -65,6 +65,6 @@ export const HISTORY_LIST = [
 export const ABOUT_LIST = [
   { icon: article, name: '建站始末', info: '本站创建历程', url: 'https://jisuowei.com/post/i7a46r' },
   { icon: article, name: '高邮地方志考录', info: '高邮方志可考记录', url: 'https://jisuowei.com/post/rv60m5'},
-  { icon: github, name: 'GitHub', info: '本站项目托管仓库', url: 'https://github.com/Chisw/zhi.gaoyou.online' },
+  { icon: github, name: 'GitHub', info: '本站代码仓库', url: 'https://github.com/Chisw/zhi.gaoyou.online' },
   { icon: email, name: 'i@jisuowei.com', info: '联系、支持与建议', url: 'mailto:i@jisuowei.com' },
 ]
