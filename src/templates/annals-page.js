@@ -21,7 +21,7 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
   }, [])
 
   useEffect(() => {
-    const imgs = document.querySelectorAll('img')
+    const imgs = document.querySelectorAll('.annals-content img')
     imgs && imgs.forEach(img => {
       img.onclick = e => e.preventDefault()
     })

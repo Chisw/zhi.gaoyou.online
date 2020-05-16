@@ -18,14 +18,14 @@ export default function IndexPage() {
     <Layout hideNavbar>
 
       <Center
-        className="h-100vh min-h-480px md:min-h-640px bg-cover bg-center bg-fixed bg-no-repeat border-t-4 border-b-4"
+        className="h-100vh min-h-480px md:min-h-640px bg-cover bg-center bg-fixed bg-no-repeat"
         style={{ backgroundImage: `url(${banner})` }}
         innerClassName="flex flex-col"
       >
         <div className="absolute z-10 bottom-0 right-0 left-0 py-3 text-xs md:text-sm text-gray-500 flex justify-center">
-          <a className="mx-1 md:mx-4" href="#history">历代沿革</a>
-          <a className="mx-1 md:mx-4" href="#pdf">资源共享</a>
           <a className="mx-1 md:mx-4" href="#about">关于本站</a>
+          <a className="mx-1 md:mx-4" href="#pdf">资源共享</a>
+          <a className="mx-1 md:mx-4" href="#history">历代沿革</a>
           <a className="mx-1 md:mx-4" href="#statistics">整理统计</a>
           <a className="mx-1 md:mx-4" href="#links">友情链接</a>
         </div>
@@ -36,7 +36,7 @@ export default function IndexPage() {
             <input
               readOnly
               className="mt-3 md:mt-6 w-80 md:w-128 h-10 md:h-12 px-4 md:px-6 rounded-full bg-white-700 shadow-lg outline-none text-sm"
-              placeholder="在高郵志中搜索"
+              placeholder="在「高郵志」中搜索"
             />
           </div>
         </div>
@@ -45,6 +45,60 @@ export default function IndexPage() {
         </div>
         <div className="h-1/5 flex justify-center items-center opacity-25">
           <img src={arrow} alt="arrow" className="animation-bounce w-3 md:w-4" />
+        </div>
+      </Center>
+
+      <Center className="py-12 md:py-24">
+        <h2 id="about" className="pb-8 text-center text-2xl md:text-4xl font-light">关于本站</h2>
+        <div className="flex flex-wrap -mx-2">
+          {ABOUT_LIST.map(({ icon, name, info, url }, index) => (
+            <div
+              key={index}
+              className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 py-1 md:py-2"
+            >
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full h-full p-3 md:p-4 border rounded-md hover:bg-gray-100 transition duration-200 hover:border-blue-500"
+              >
+                <div className="flex justify-center items-center">
+                  <img src={icon} alt="icon" className="h-4" />
+                  <span className="ml-2 font-din font-thin">{name}</span>
+                </div>
+                <div className="text-gray-500 text-center text-xs">{info}</div>
+              </a>
+            </div>
+          ))}
+        </div>
+      </Center>
+
+      <Center className="py-12 md:py-24">
+        <h2 id="pdf" className="pb-8 text-center text-2xl md:text-4xl font-light">资源共享</h2>
+        <p className="mb-1 text-xs text-gray-500 text-center">提取码：47ru</p>
+        <div className="flex flex-wrap -mx-2">
+          {PDF_LIST.map(({ origin, name, size }, index) => (
+            <div
+              key={index}
+              className="w-1/2 md:w-1/3 xl:w-1/4 p-1 md:p-2"
+            >
+              <a
+                href="https://pan.baidu.com/s/1u4y576B5-GeSWnDtQxIJ0Q"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full h-full p-2 md:p-4 bg-black-30 rounded-md shadow hover:shadow-lg transition duration-200 flex items-start"
+              >
+                <div>
+                  <img src={pdf} alt="pdf" className="w-12" />
+                </div>
+                <div className="ml-2">
+                  <p className="text-xs">{name}.pdf</p>
+                  <p className="text-xs text-gray-500">来源：{origin}</p>
+                  <p className="text-xs text-gray-500 font-din">{size}</p>
+                </div>
+              </a>
+            </div>
+          ))}
         </div>
       </Center>
 
@@ -73,61 +127,7 @@ export default function IndexPage() {
         )}
       </Center>
 
-      <Center className="py-12 md:py-24 bg-gray-100">
-        <h2 id="pdf" className="pb-8 text-center text-2xl md:text-4xl font-light">资源共享</h2>
-        <p className="mb-1 text-xs text-gray-500 text-center">提取码：47ru</p>
-        <div className="flex flex-wrap -mx-2">
-          {PDF_LIST.map(({ origin, name, size }, index) => (
-            <div
-              key={index}
-              className="w-1/2 md:w-1/3 xl:w-1/4 p-1 md:p-2"
-            >
-              <a
-                href="https://pan.baidu.com/s/1u4y576B5-GeSWnDtQxIJ0Q"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full h-full p-2 md:p-4 bg-white rounded-md shadow hover:shadow-lg transition duration-200 flex items-start"
-              >
-                <div>
-                  <img src={pdf} alt="pdf" className="w-12" />
-                </div>
-                <div className="ml-2">
-                  <p className="text-xs">{name}.pdf</p>
-                  <p className="text-xs text-gray-500">来源：{origin}</p>
-                  <p className="text-xs text-gray-500 font-din">{size}</p>
-                </div>
-              </a>
-            </div>
-          ))}
-        </div>
-      </Center>
-
       <Center className="py-12 md:py-24">
-        <h2 id="about" className="pb-8 text-center text-2xl md:text-4xl font-light">关于本站</h2>
-        <div className="flex flex-wrap -mx-2">
-          {ABOUT_LIST.map(({icon, name, info, url}, index) => (
-            <div
-              key={index}
-              className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-2 py-1 md:py-2"
-            >
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full h-full p-3 md:p-4 border rounded-md hover:bg-gray-100 transition duration-200 hover:border-blue-500"
-              >
-                <div className="flex justify-center items-center">
-                  <img src={icon} alt="icon" className="h-4" />
-                  <span className="ml-2 font-din font-thin">{name}</span>
-                </div>
-                <div className="text-gray-500 text-center text-xs">{info}</div>
-              </a>
-            </div>
-          ))}
-        </div>
-      </Center>
-
-      <Center className="py-12 md:py-24 bg-gray-100">
         <h2 id="statistics" className="pb-8 text-center text-2xl md:text-4xl font-light font-din">整理统计</h2>
         <Statistics />
       </Center>

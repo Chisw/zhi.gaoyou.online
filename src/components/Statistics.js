@@ -127,7 +127,7 @@ export default function Statistics() {
     <div>
       <Line
         data={data}
-        width={4}
+        width={3}
         height={1}
         options={{
           tooltips: {
