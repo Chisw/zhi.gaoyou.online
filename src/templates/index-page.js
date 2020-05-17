@@ -25,7 +25,7 @@ export default function IndexPage() {
         <div className="absolute z-10 bottom-0 right-0 left-0 py-3 text-xs md:text-sm text-gray-500 flex justify-center">
           <a className="mx-1 md:mx-4" href="#about">关于本站</a>
           <a className="mx-1 md:mx-4" href="#pdf">资源共享</a>
-          <a className="mx-1 md:mx-4" href="#history">历代沿革</a>
+          <a className="mx-1 md:mx-4" href="#history">历代建置</a>
           <a className="mx-1 md:mx-4" href="#statistics">整理统计</a>
           <a className="mx-1 md:mx-4" href="#links">友情链接</a>
         </div>
@@ -107,7 +107,7 @@ export default function IndexPage() {
         style={{ backgroundImage: `url(${yizhan})` }}
         innerClassName={`${historySlideDown ? 'h-auto' : 'h-100vh overflow-hidden'}`}
       >
-        <h2 id="history" className="pb-8 text-center text-2xl md:text-4xl font-light">历代沿革</h2>
+        <h2 id="history" className="pb-8 text-center text-2xl md:text-4xl font-light">历代建置</h2>
         {HISTORY_LIST.map(([title, info], index) => (
           <div key={index} className="mb-8 text-center">
             <span className="mt-2 text-xs md:text-base font-kai text-gray-600">「 {title} 」</span>

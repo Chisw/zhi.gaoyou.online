@@ -30,19 +30,23 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
   return (
     <>
       <Center className="md:pt-12 md:bg-black-100" innerClassName="flex py-8">
+
         <div
-          className={`page-side-bar ${barOpen ? 'open' : ''} w-2/12 pr-4 hidden md:block`}
+          className={`${barOpen ? 'open' : ''} w-2/12 pr-4 hidden md:block`}
           onClick={() => setBarOpen(false) }
           role="presentation"
         >
           <Sidebar nodes={nodes} location={location} />
         </div>
-        <button
-          className={`page-side-bar-switch hidden fixed z-20 left-0 bottom-0 ml-8 ${barOpen ? '-ml-8' : ''} mb-8 w-12 h-12 text-white rounded-full flex justify-center items-center shadow shadow-lg`}
-          onClick={() => setBarOpen(true) }
+
+        <div
+          className={`hidden fixed z-20 left-0 bottom-0 ml-8 ${barOpen ? '-ml-8' : ''} mb-8 w-12 h-12 text-white rounded-full flex justify-center items-center shadow shadow-lg`}
+          onClick={() => setBarOpen(true)}
+          role="presentation"
         >
           <span>三</span>
-        </button>
+        </div>
+        
         <div className="page-center w-full md:w-8/12 bg-white rounded-sm shadow-none md:shadow-lg">
           <div id="viewerjs-box" className="center-content px-0 md:px-16 py-12" style={{ minHeight: 640 }}>
             <h2 className="mb-12 p-2 text-3xl text-center font-kxzd" style={{ backgroundSize: '32px', backgroundImage: `url(${Wave})` }}>
@@ -52,11 +56,13 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
           </div>
           <PrevNext nodes={nodes} location={location} />
         </div>
+
         <div className="page-tocbot w-2/12 hidden md:block">
           <div className="fixed">
             <Tocbot title={title} className="annals-tocbot" />
           </div>
         </div>
+
       </Center>
     </>
   )

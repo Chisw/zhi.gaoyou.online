@@ -3,6 +3,18 @@
   padding-right: 0;
 }
 
+.annals-content h2::before,
+.annals-content h3::before,
+.annals-content h4::before,
+.annals-content h5::before,
+.annals-content h6::before {
+  display: block;
+  content: " ";
+  height: 64px;
+  margin-top: -64px;
+  visibility: hidden;
+}
+
 .annals-content h3 {
   margin: 1.3rem 0 1rem 0;
   font-size: 30px;
