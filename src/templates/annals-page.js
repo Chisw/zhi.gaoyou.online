@@ -32,17 +32,17 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
 
   return (
     <>
-      <Center className="pt-12" innerClassName="flex py-8">
-
-        <div
-          className={`${barOpen ? 'block' : 'hidden'} lg:hidden fixed z-30 inset-0 bg-black-400`}
-          onClick={() => setBarOpen(false)}
-          role="presentation"
-        >
-          <div className="absolute top-0 bottom-0 left-0 w-8/12 p-6 pt-16 overflow-y-auto bg-white shadow-lg">
-            <Sidebar nodes={nodes} location={location} />
-          </div>
+      <div
+        className={`${barOpen ? 'block' : 'hidden'} lg:hidden fixed z-30 inset-0 bg-black-400`}
+        onClick={() => setBarOpen(false)}
+        role="presentation"
+      >
+        <div className="absolute top-0 bottom-0 left-0 w-8/12 p-6 overflow-y-auto bg-white shadow-lg">
+          <Sidebar nodes={nodes} location={location} />
         </div>
+      </div>
+
+      <Center className="pt-12 lg:pt-16" innerClassName="flex py-8">
 
         <div className="w-2/12 hidden lg:block">
           <div className="fixed">
@@ -64,8 +64,31 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
         </div>
         
         <div id="viewerjs-box" className="w-full lg:w-8/12">
-          <div className="mb-12 border-2 p-1">
-            <h2 className="p-2 text-2xl lg:text-3xl text-center font-kxzd border">
+          <div className="pb-4 flex justify-between items-center text-xs text-gray-700">
+            <div className="flex select-none">
+              <label className="mr-4 cursor-pointer flex items-center">
+                <input type="checkbox" checked />
+                <span className="ml-1">标点</span>
+              </label>
+              <label className="mr-4 cursor-pointer flex items-center">
+                <input type="checkbox" checked />
+                <span className="ml-1">注音</span>
+              </label>
+              <label className="mr-4 cursor-pointer flex items-center">
+                <input type="checkbox" checked />
+                <span className="ml-1">翻译</span>
+              </label>
+            </div>
+            <a
+              className="text-blue-700"
+              href={`https://github.com/Chisw/zhi.gaoyou.online/blob/master/src/pages${location.pathname.slice(0, -1)}.md`}
+              target="_blank"
+            >
+              编辑此页
+            </a>
+          </div>
+          <div className="mb-10 border-2 border-gray-500 p-1">
+            <h2 className="p-2 text-2xl lg:text-3xl text-center font-kxzd border border-gray-400">
               {title}
             </h2>
           </div>

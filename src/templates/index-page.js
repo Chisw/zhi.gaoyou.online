@@ -9,6 +9,7 @@ import arrow from '../img/icon/arrow.svg'
 import pdf from '../img/icon/pdf.svg'
 import banner from '../img/banner.jpg'
 import yizhan from '../img/yizhan.jpg'
+import { SUPPORT } from '../utils'
 
 export default function IndexPage() {
 
@@ -35,7 +36,7 @@ export default function IndexPage() {
             <h1 className="mt-1 md:mt-2 text-sm md:text-xl text-gray-600 font-kxzd">華夏一郵邑 神州無同類</h1>
             <input
               readOnly
-              className="mt-3 md:mt-6 w-80 md:w-128 h-10 md:h-12 px-4 md:px-6 rounded-full bg-white-700 shadow-lg outline-none text-sm"
+              className="mt-3 md:mt-6 w-72 md:w-128 h-10 md:h-12 px-4 md:px-6 rounded-full bg-white-700 shadow-lg outline-none text-sm"
               placeholder="在「高郵志」中搜索"
             />
           </div>
@@ -117,7 +118,7 @@ export default function IndexPage() {
         {!historySlideDown && (
           <div className="absolute right-0 bottom-0 left-0 flex justify-center items-center">
             <div
-              className="w-32 h-10 bg-black-300 cursor-pointer text-xs text-white hover:bg-black-400 rounded-full flex justify-center items-center transition duration-200"
+              className={`w-32 h-10 ${SUPPORT.BackdropFilter ? 'bg-deep-25' : 'bg-black-400'} cursor-pointer text-xs text-white rounded-full flex justify-center items-center transition duration-200`}
               onClick={() => setHistorySlideDown(true)}
               role="presentation"
             >

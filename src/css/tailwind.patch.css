@@ -41,3 +41,52 @@
 .animation-bounce {
   animation: animation-bounce 1.5s linear infinite;
 }
+
+
+.bg-hazy-10 {
+  backdrop-filter: saturate(180%) blur(1px);
+  -webkit-backdrop-filter: saturate(180%) blur(1px);
+  background-color: rgba(255, 255, 255, .8);
+}
+
+.bg-hazy-25 {
+  backdrop-filter: saturate(180%) blur(2.5px);
+  -webkit-backdrop-filter: saturate(180%) blur(2.5px);
+  background-color: rgba(255, 255, 255, .8);
+}
+
+.bg-hazy-50 {
+  backdrop-filter: saturate(180%) blur(5px);
+  -webkit-backdrop-filter: saturate(180%) blur(5px);
+  background-color: rgba(255, 255, 255, .8);
+}
+
+.bg-hazy-100 {
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  background-color: rgba(255, 255, 255, .8);
+}
+
+.bg-hazy-200 {
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background-color: rgba(255, 255, 255, .8);
+}
+
+.bg-deep-10 {
+  backdrop-filter: saturate(180%) blur(1px);
+  -webkit-backdrop-filter: saturate(180%) blur(1px);
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.bg-deep-25 {
+  backdrop-filter: saturate(180%) blur(2.5px);
+  -webkit-backdrop-filter: saturate(180%) blur(2.5px);
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.bg-deep-50 {
+  backdrop-filter: saturate(180%) blur(5px);
+  -webkit-backdrop-filter: saturate(180%) blur(5px);
+  background-color: rgba(0, 0, 0, .4);
+}

@@ -3,6 +3,10 @@ import { Link } from 'gatsby'
 import logo from '../img/logo.png'
 import Center from './Center'
 import { NAV_LIST } from '../LIST'
+import icon_hamburger from '../img/icon/mobile-hamburger.svg'
+import icon_cancel from '../img/icon/mobile-cancel.svg'
+import icon_search from '../img/icon/search.svg'
+import { SUPPORT } from '../utils'
 
 export default function Navbar() {
 
@@ -11,35 +15,45 @@ export default function Navbar() {
   const toggleHamburger = () => setActive(!active)
 
   return (
-    <div className="fixed z-20 w-full border-b bg-white">
+    <div className={`fixed z-20 w-full ${SUPPORT.BackdropFilter ? 'bg-hazy-50' : 'bg-white-980'} ${active ? 'shadow-lg' : 'shadow'}`}>
       <Center>
-        <div className="gyz-nav h-12 flex items-center">
-          <Link to="/" className="" title="Logo">
-            <img src={logo} alt="gaoyouzhi" className="w-20" />
+        <div className="h-12 flex justify-between items-center">
+
+          <div className={`w-8 lg:hidden flex items-center`}>
+            <button className={`relative ${active ? 'open' : ''}`} onClick={toggleHamburger}>
+              <img src={active ? icon_cancel : icon_hamburger} alt="toggle" className="w-4" />
+            </button>
+          </div>
+          
+          <Link to="/" className="block w-16" title="Logo">
+            <img src={logo} alt="gaoyouzhi" className="w-16" />
           </Link>
-          <div className={`ml-10 flex items-center flex-grow ${active ? 'open' : ''}`}>
+
+          <div className="hidden lg:flex justify-center items-center flex-grow">
             {NAV_LIST.map(({ name, to }) => (
               <Link
                 key={to}
                 to={to}
-                className="nav-item mr-4 font-thin text-base text-gray-600 hover:text-gray-900 font-kxzd"
+                className="nav-item mx-2 xl:mx-4 font-thin text-sm text-gray-600 hover:text-gray-800 font-kxzd"
               >
                 {name}
               </Link>
             ))}
           </div>
-          <div className={`hidden flex-grow flex justify-end items-center`}>
-            <button className={`relative ${active ? 'open' : ''}`} onClick={toggleHamburger}>
-              <div></div>
-              <div></div>
-              <div></div>
-            </button>
+
+          <div className="w-8 lg:w-16">
+            <div className="w-full h-8 bg-black-50 rounded-full flex justify-center items-center hover:bg-black-100 transition duration-200 cursor-pointer">
+              <img src={icon_search} alt="search" className="w-3 opacity-50" />
+            </div>
           </div>
+
         </div>
       </Center>
-      {/* <Center>
-        <VerticalNav />
-      </Center> */}
+      {active && (
+        <div className="lg:hidden pt-12 border-t">
+          <VerticalNav />
+        </div>
+      )}
     </div>
   )
 }
