@@ -29,8 +29,8 @@ function Footer() {
   return (
     <>
       <Center
-        className="py-8 border-t"
-        style={{ backgroundImage: `url(${wave})` }}
+        className="relative z-0 py-8 border-t"
+        style={{ backgroundImage: `url(${wave})`, backgroundSize: '40px' }}
         innerClassName="flex flex-wrap items-center text-sm"
       >
         <div className="mb-6 w-full text-center lg:hidden">
@@ -39,9 +39,16 @@ function Footer() {
           </Link>
         </div>
         <div className="w-full lg:w-1/4 py-1 text-center lg:text-left text-gray-700">
-          <a href="https://gaoyou.online" target="_blank" rel="noopener noreferrer">高郵攬影</a>
+          <a
+            href="https://gaoyou.online"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-900"
+          >
+            高郵攬影
+          </a>
           <span
-            className="ml-4 cursor-pointer"
+            className="ml-4 cursor-pointer hover:text-gray-900"
             onClick={() => setQRCodeShow(true)}
             role="presentation"
           >

@@ -44,7 +44,7 @@ export default function IndexPage() {
           <VerticalNav />
         </div>
         <div className="h-1/5 flex justify-center items-center opacity-25">
-          <img src={arrow} alt="arrow" className="animation-bounce w-3 md:w-4" />
+          <img src={arrow} alt="arrow" className="animation-bounce w-6" />
         </div>
       </Center>
 

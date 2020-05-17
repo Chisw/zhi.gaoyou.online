@@ -66,27 +66,25 @@ export default function Sidebar({location, nodes}) {
   return (
     <div className="side-bar-inner">
       {groups.map((group, i) => (
-        <div key={i} className="mb-1 font-thin">
+        <div key={i} className="mb-2 lg:mb-1 font-thin">
           <h4 className={`text-sm text-gray-900 hover:font-normal annals-icon icon-${group.icon}`}>
             {group.items[0] && (
               <SidebarLink link={group.items[0].link} title={group.group}/>
             )}
           </h4>
-          {  // sub
-            group.items.some(item => (item.link === currentPageLink )) && (
-              <ul className="my-2 border-l text-sm" style={{ marginLeft: 10, paddingLeft: 17 }} key={i}>
-                {group.items.map((item, j) => (
-                  <li key={j} className="text-gray-600">
-                    <SidebarLink
-                      link={item.link}
-                      title={item.title}
-                      linkClasses={`hover:text-gray-900 ${item.link === currentPageLink ? 'text-black font-normal' : ''}`}
-                    />
-                  </li>
-                ))}
-              </ul>
-            )
-          }
+          {group.items.some(item => (item.link === currentPageLink )) && (
+            <ul className="my-2 border-l text-sm" style={{ marginLeft: 10, paddingLeft: 17 }} key={i}>
+              {group.items.map((item, j) => (
+                <li key={j} className="text-gray-600">
+                  <SidebarLink
+                    link={item.link}
+                    title={item.title}
+                    linkClasses={`hover:text-gray-900 ${item.link === currentPageLink ? 'text-black font-normal' : ''}`}
+                  />
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       ))}
     </div>

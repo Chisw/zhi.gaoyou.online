@@ -5,73 +5,10 @@
 @import "./tailwind.patch.css";
 @import "./annals-content.css";
 
-@keyframes animation-bounce {
-  0% {
-    transform: translateY(-10px);
-  }
-
-  50% {
-    transform: translateY(-24px);
-  }
-
-  100% {
-    transform: translateY(-10px);
-  }
-}
-
-.animation-bounce {
-  animation: animation-bounce 1.5s linear infinite;
-}
-
-/* sidebar */
-.sidebar-outline a {
-  color: #666;
-  font-size: 14px;
-}
-
-.sidebar-outline a:hover {
-  color: #222;
-}
-
-.sidebar-outline h4 {
-  line-height: 24px;
-}
-
-.sidebar-outline h4 a {
-  font-size: 14px;
-}
-
-.sidebar-outline-items {
-  margin: 8px 0;
-  border-left: 1px solid #ddd;
-  margin-left: 10px;
-  padding-left: 17px;
-}
-
-.sidebar-outline-items a {
-  color: #787878;
-  font-size: 14px;
-}
-
-.sidebar-outline-items a.active {
-  color: #222;
-  font-weight: bold;
-}
-
 /* tocbot */
 .toc-list-container .is-active-link {
   color: #222;
   font-weight: bold;
-}
-
-.annals-tocbot {
-  width: 220px;
-  padding-left: 40px;
-}
-
-.annals-tocbot h3 {
-  font-size: 14px;
-  margin-bottom: 12px;
 }
 
 .toc-list-container li {
@@ -79,8 +16,9 @@
 }
 
 .toc-list-container a {
-  color: #787878;
+  color: #aaa;
   font-size: 12px;
+  font-weight: 400;
 }
 
 .toc-list-container a:hover {
@@ -99,47 +37,12 @@
 .toc-list .is-active-li a.active {
   color: #222 !important;
   font-weight: bold;
-  background: url('../img/link.png') no-repeat left center;
+  background: url('../img/icon/link.svg') no-repeat left center;
   background-size: contain;
 }
 
 .toc-list .toc-list {
   padding-left: 20px;
-}
-
-.tocbot-title {
-  padding-bottom: 12px;
-  border-bottom: 1px solid #ddd;
-  color: #aaa;
-}
-
-/* prev-next */
-.prev-next {
-  background: url('../img/stripe.png') repeat-x center top;
-  background-size: 30px;
-}
-
-.prev-next .section {
-  padding: 0 32px;
-  margin: 0 4px;
-  cursor: pointer;
-  transition: margin .23s;
-}
-
-.prev-next .section:hover {
-  margin: 0;
-}
-
-.prev-next .prev {
-  display: block;
-  background: url('../img/icon/arrow-prev.svg') no-repeat left center;
-  background-size: 24px;
-}
-
-.prev-next .next {
-  display: block;
-  background: url('../img/icon/arrow-next.svg') no-repeat right center;
-  background-size: 24px;
 }
 
 /* list-icon */

@@ -5,8 +5,8 @@ import Content, { HTMLContent } from '../components/Content'
 import Sidebar from '../components/Sidebar'
 import Tocbot from '../components/Tocbot'
 import PrevNext from '../components/PrevNext'
-import Wave from '../img/wave.png'
 import Center from '../components/Center'
+import icon_list from '../img/icon/list.svg'
 import Viewer from 'viewerjs'
 import 'viewerjs/dist/viewer.css'
 
@@ -16,7 +16,10 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
   const [barOpen, setBarOpen] = useState(false)
 
   useEffect(() => {
-    new Viewer(document.getElementById('viewerjs-box'), { toolbar: false, navbar: false, maxZoomRatio: 3, minZoomRatio: .1 })
+    new Viewer(
+      document.getElementById('viewerjs-box'),
+      { toolbar: false, navbar: false, maxZoomRatio: 3, minZoomRatio: .1 }
+    )
     window.Viewer = Viewer
   }, [])
 
@@ -29,37 +32,50 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
 
   return (
     <>
-      <Center className="md:pt-12 md:bg-black-100" innerClassName="flex py-8">
+      <Center className="pt-12" innerClassName="flex py-8">
 
         <div
-          className={`${barOpen ? 'open' : ''} w-2/12 pr-4 hidden md:block`}
-          onClick={() => setBarOpen(false) }
+          className={`${barOpen ? 'block' : 'hidden'} lg:hidden fixed z-30 inset-0 bg-black-400`}
+          onClick={() => setBarOpen(false)}
           role="presentation"
         >
-          <Sidebar nodes={nodes} location={location} />
+          <div className="absolute top-0 bottom-0 left-0 w-8/12 p-6 pt-16 overflow-y-auto bg-white shadow-lg">
+            <Sidebar nodes={nodes} location={location} />
+          </div>
+        </div>
+
+        <div className="w-2/12 hidden lg:block">
+          <div className="fixed">
+            <Sidebar nodes={nodes} location={location} />
+          </div>
         </div>
 
         <div
-          className={`hidden fixed z-20 left-0 bottom-0 ml-8 ${barOpen ? '-ml-8' : ''} mb-8 w-12 h-12 text-white rounded-full flex justify-center items-center shadow shadow-lg`}
+          className={`
+            block lg:hidden transition duration-200
+            fixed z-20 left-0 bottom-0 mb-4 ml-4 cursor-pointer
+            w-10 h-10 rounded-full bg-black-700 hover:bg-black-800 text-white
+            flex justify-center items-center shadow shadow-lg
+          `}
           onClick={() => setBarOpen(true)}
           role="presentation"
         >
-          <span>三</span>
+          <img src={icon_list} alt="list" className="w-4" />
         </div>
         
-        <div className="page-center w-full md:w-8/12 bg-white rounded-sm shadow-none md:shadow-lg">
-          <div id="viewerjs-box" className="center-content px-0 md:px-16 py-12" style={{ minHeight: 640 }}>
-            <h2 className="mb-12 p-2 text-3xl text-center font-kxzd" style={{ backgroundSize: '32px', backgroundImage: `url(${Wave})` }}>
+        <div id="viewerjs-box" className="w-full lg:w-8/12">
+          <div className="mb-12 border-2 p-1">
+            <h2 className="p-2 text-2xl lg:text-3xl text-center font-kxzd border">
               {title}
             </h2>
-            <PageContent className="annals-content" content={content} />
           </div>
+          <PageContent className="annals-content min-h-640px" content={content} />
           <PrevNext nodes={nodes} location={location} />
         </div>
 
-        <div className="page-tocbot w-2/12 hidden md:block">
+        <div className="w-2/12 hidden lg:block pl-8">
           <div className="fixed">
-            <Tocbot title={title} className="annals-tocbot" />
+            <Tocbot />
           </div>
         </div>
 

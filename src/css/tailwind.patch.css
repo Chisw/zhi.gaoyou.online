@@ -23,3 +23,21 @@
 .write-vertical {
   writing-mode: vertical-rl;
 }
+
+@keyframes animation-bounce {
+  0% {
+    transform: translateY(-10px);
+  }
+
+  50% {
+    transform: translateY(-24px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.animation-bounce {
+  animation: animation-bounce 1.5s linear infinite;
+}
