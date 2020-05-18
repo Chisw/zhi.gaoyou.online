@@ -67,15 +67,15 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
           <div className="pb-4 flex justify-between items-center text-xs text-gray-700">
             <div className="flex select-none">
               <label className="mr-4 cursor-pointer flex items-center">
-                <input type="checkbox" checked />
+                <input readOnly type="checkbox" checked />
                 <span className="ml-1">标点</span>
               </label>
               <label className="mr-4 cursor-pointer flex items-center">
-                <input type="checkbox" checked />
+                <input readOnly type="checkbox" checked />
                 <span className="ml-1">注音</span>
               </label>
               <label className="mr-4 cursor-pointer flex items-center">
-                <input type="checkbox" checked />
+                <input readOnly type="checkbox" checked />
                 <span className="ml-1">翻译</span>
               </label>
             </div>
@@ -83,6 +83,7 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
               className="text-blue-700"
               href={`https://github.com/Chisw/zhi.gaoyou.online/blob/master/src/pages${location.pathname.slice(0, -1)}.md`}
               target="_blank"
+              rel="noreferrer"
             >
               编辑此页
             </a>
@@ -111,7 +112,7 @@ export default function AnnalsPage({ data, location }) {
   const { markdownRemark: post } = data
 
   return (
-    <Layout>
+    <Layout location={location}>
       <AnnalsPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}

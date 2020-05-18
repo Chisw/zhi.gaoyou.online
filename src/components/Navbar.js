@@ -8,20 +8,28 @@ import icon_cancel from '../img/icon/mobile-cancel.svg'
 import icon_search from '../img/icon/search.svg'
 import { SUPPORT } from '../utils'
 
-export default function Navbar() {
+export default function Navbar({ location }) {
 
-  const [active, setActive] = useState(false)
+  let active = ''
+  if (location && location.pathname) {
+    const matchRes = location.pathname.match(/\/(g|y|z|x|s){4,6}\//g)
+    if (matchRes && matchRes[0]) {
+      active = matchRes[0]
+    }
+  }
 
-  const toggleHamburger = () => setActive(!active)
+  console.log(active)
+
+  const [opened, setOpened] = useState(false)
 
   return (
-    <div className={`fixed z-20 w-full ${SUPPORT.BackdropFilter ? 'bg-hazy-50' : 'bg-white-980'} ${active ? 'shadow-lg' : 'shadow'}`}>
+    <div className={`fixed z-20 w-full ${SUPPORT.BackdropFilter ? 'bg-hazy-50' : 'bg-white-980'} ${opened ? 'shadow-lg' : 'shadow'}`}>
       <Center>
         <div className="h-12 flex justify-between items-center">
 
           <div className={`w-8 lg:hidden flex items-center`}>
-            <button className={`relative ${active ? 'open' : ''}`} onClick={toggleHamburger}>
-              <img src={active ? icon_cancel : icon_hamburger} alt="toggle" className="w-4" />
+            <button className={`relative ${opened ? 'open' : ''}`} onClick={() => setOpened(!opened)}>
+              <img src={opened ? icon_cancel : icon_hamburger} alt="toggle" className="w-4" />
             </button>
           </div>
           
@@ -29,12 +37,16 @@ export default function Navbar() {
             <img src={logo} alt="gaoyouzhi" className="w-16" />
           </Link>
 
-          <div className="hidden lg:flex justify-center items-center flex-grow">
+          <div className="hidden h-full lg:flex justify-center items-center flex-grow">
             {NAV_LIST.map(({ name, to }) => (
               <Link
                 key={to}
                 to={to}
-                className="nav-item mx-2 xl:mx-4 font-thin text-sm text-gray-600 hover:text-gray-800 font-kxzd"
+                className={`
+                  h-full mx-2 xl:mx-4 font-thin text-sm text-gray-600 hover:text-gray-800 font-kxzd 
+                  flex items-center border-b-2
+                  ${active === to ? 'border-gray-900 text-gray-900' : 'border-white'}
+                `}
               >
                 {name}
               </Link>
@@ -42,14 +54,14 @@ export default function Navbar() {
           </div>
 
           <div className="w-8 lg:w-16">
-            <div className="w-full h-8 bg-black-50 rounded-full flex justify-center items-center hover:bg-black-100 transition duration-200 cursor-pointer">
+            <div className="w-full h-8 bg-gray-200 rounded-full flex justify-center items-center hover:bg-gray-300 transition duration-200 cursor-pointer">
               <img src={icon_search} alt="search" className="w-3 opacity-50" />
             </div>
           </div>
 
         </div>
       </Center>
-      {active && (
+      {opened && (
         <div className="lg:hidden pt-12 border-t">
           <VerticalNav />
         </div>

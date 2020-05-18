@@ -6,7 +6,7 @@ import useSiteMetadata from './SiteMetadata'
 import favicon from '../img/favicon.png'
 import '../css/index.css'
 
-export default function Layout({ children, hideNavbar }) {
+export default function Layout({ children, hideNavbar, location }) {
 
   const { title, description } = useSiteMetadata()
 
@@ -19,7 +19,7 @@ export default function Layout({ children, hideNavbar }) {
         <link rel="icon" type="image/png" href={favicon} sizes="32x32" />
         <meta property="og:title" content={title} />
       </Helmet>
-      {!hideNavbar && <Navbar />}
+      {!hideNavbar && <Navbar location={location} />}
       <div>{children}</div>
       <Footer />
     </>

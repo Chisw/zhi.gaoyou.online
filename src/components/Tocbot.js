@@ -14,7 +14,7 @@ export default function TOC() {
 
   return (
     <nav>
-      <h3 className="mb-2 pl-2 text-base text-gray-600 border-l-8 font-light">章节概要</h3>
+      <h3 className="mb-2 text-base text-gray-600 font-light">章节概要</h3>
       <div className="toc-list-container"></div>
     </nav>
   )
