@@ -53,7 +53,6 @@ module.exports.createMarkdownPages = async ({ graphql, actions }) => {
     })
 }
 
-
 exports.onCreateNode = ({ node, actions, getNode }) => {
     const { createNodeField } = actions
     fmImagesToRelative(node) // convert image paths for gatsby images

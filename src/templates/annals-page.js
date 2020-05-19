@@ -16,18 +16,25 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
   const [barOpen, setBarOpen] = useState(false)
 
   useEffect(() => {
+    const pList = document.querySelectorAll('.annals-content p')
+    pList && pList.forEach(p => {
+      if (!p.innerHTML.includes('</z>')) {
+        p.innerHTML = p.innerHTML
+          .split('')
+          .map(s => (`，。：；？！—《》、-■（）*[]·`.includes(s) || s === ' ') ? `<z dj>${s}</z>` : s)
+          .join('')
+      }
+    })
+
+    const imgList = document.querySelectorAll('.annals-content img')
+    imgList && imgList.forEach(img => {
+      img.onclick = e => e.preventDefault()
+    })
+
     new Viewer(
       document.getElementById('viewerjs-box'),
       { toolbar: false, navbar: false, maxZoomRatio: 3, minZoomRatio: .1 }
     )
-    window.Viewer = Viewer
-  }, [])
-
-  useEffect(() => {
-    const imgs = document.querySelectorAll('.annals-content img')
-    imgs && imgs.forEach(img => {
-      img.onclick = e => e.preventDefault()
-    })
   }, [])
 
   return (
@@ -64,23 +71,19 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
         </div>
         
         <div id="viewerjs-box" className="w-full lg:w-8/12">
-          <div className="pb-4 flex justify-between items-center text-xs text-gray-700">
+
+          <input className="hidden" type="checkbox" id="z-dj" defaultChecked />
+          <input className="hidden" type="checkbox" id="z-fy" />
+          <input className="hidden" type="checkbox" id="z-zy" />
+
+          <div className="z-container pb-4 flex justify-between items-center text-xs text-gray-700">
             <div className="flex select-none">
-              <label className="mr-4 cursor-pointer flex items-center">
-                <input readOnly type="checkbox" checked />
-                <span className="ml-1">标点</span>
-              </label>
-              <label className="mr-4 cursor-pointer flex items-center">
-                <input readOnly type="checkbox" checked />
-                <span className="ml-1">注音</span>
-              </label>
-              <label className="mr-4 cursor-pointer flex items-center">
-                <input readOnly type="checkbox" checked />
-                <span className="ml-1">翻译</span>
-              </label>
+              <label className="mr-4 cursor-pointer px-1" htmlFor="z-dj">点校</label>
+              <label className="mr-4 cursor-pointer px-1" htmlFor="z-fy">翻译</label>
+              <label className="mr-4 cursor-pointer px-1" htmlFor="z-zy">注音</label>
             </div>
             <a
-              className="text-blue-700"
+              className="px-1 text-white bg-blue-700"
               href={`https://github.com/Chisw/zhi.gaoyou.online/blob/master/src/pages${location.pathname.slice(0, -1)}.md`}
               target="_blank"
               rel="noreferrer"
@@ -88,11 +91,13 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
               编辑此页
             </a>
           </div>
+
           <div className="mb-10 border-2 border-gray-500 p-1">
             <h2 className="p-2 text-2xl lg:text-3xl text-center font-kxzd border border-gray-400">
               {title}
             </h2>
           </div>
+
           <PageContent className="annals-content min-h-640px" content={content} />
           <PrevNext nodes={nodes} location={location} />
         </div>

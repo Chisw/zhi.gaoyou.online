@@ -18,8 +18,6 @@ export default function Navbar({ location }) {
     }
   }
 
-  console.log(active)
-
   const [opened, setOpened] = useState(false)
 
   return (

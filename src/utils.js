@@ -1,3 +1,6 @@
+let G = null
+typeof window !== 'undefined' && (G = window)
+
 export const copy = (str) => {
   const input = document.createElement('input')
   document.body.appendChild(input)
@@ -8,5 +11,5 @@ export const copy = (str) => {
 }
 
 export const SUPPORT = {
-  BackdropFilter: CSS.supports('backdrop-filter', 'blur(0)'),
+  BackdropFilter: G && G.CSS.supports('backdrop-filter', 'blur(0)'),
 }
