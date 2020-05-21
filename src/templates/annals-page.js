@@ -73,13 +73,13 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
         <div id="viewerjs-box" className="w-full lg:w-8/12">
 
           <input className="hidden" type="checkbox" id="z-dj" defaultChecked />
-          <input className="hidden" type="checkbox" id="z-fy" />
+          <input className="hidden" type="checkbox" id="z-yw" />
           <input className="hidden" type="checkbox" id="z-zy" />
 
           <div className="z-container pb-4 flex justify-between items-center text-xs text-gray-700">
             <div className="flex select-none">
               <label className="mr-4 cursor-pointer px-1" htmlFor="z-dj">点校</label>
-              <label className="mr-4 cursor-pointer px-1" htmlFor="z-fy">翻译</label>
+              <label className="mr-4 cursor-pointer px-1" htmlFor="z-yw">译文</label>
               <label className="mr-4 cursor-pointer px-1" htmlFor="z-zy">注音</label>
             </div>
             <a

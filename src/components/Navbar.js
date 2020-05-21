@@ -41,9 +41,9 @@ export default function Navbar({ location }) {
                 key={to}
                 to={to}
                 className={`
-                  h-full mx-2 xl:mx-4 font-thin text-sm text-gray-600 hover:text-gray-800 font-kxzd 
-                  flex items-center border-b-2
-                  ${active === to ? 'border-gray-900 text-gray-900' : 'border-white'}
+                  relative h-full mx-2 xl:mx-4 font-thin text-sm text-gray-600 hover:text-gray-800 font-kxzd 
+                  flex items-center
+                  ${active === to ? 'active-nav-item text-gray-900' : ''}
                 `}
               >
                 {name}

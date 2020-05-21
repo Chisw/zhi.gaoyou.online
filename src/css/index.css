@@ -5,6 +5,18 @@
 @import "./tailwind.patch.css";
 @import "./annals-content.css";
 
+.active-nav-item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: #2d3748;
+  border-radius: 3px 3px 0 0;
+}
+
 /* tocbot */
 .toc-list-container .is-active-link {
   color: #222;
