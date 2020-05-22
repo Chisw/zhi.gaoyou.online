@@ -21,13 +21,13 @@ export const userOption = {
     Z_PY: false,
   },
   save(jsonObj) {
-    localStorage.setItem('USER_OPTIONS', JSON.stringify(jsonObj))
+    G && G.localStorage.setItem('USER_OPTIONS', JSON.stringify(jsonObj))
   },
   init() {
     this.save(this.defaultOptions)
   },
   get() {
-    const existJSONString = localStorage.getItem('USER_OPTIONS')
+    const existJSONString = G && G.localStorage.getItem('USER_OPTIONS')
     if (existJSONString) {
       return JSON.parse(existJSONString)
     } else {

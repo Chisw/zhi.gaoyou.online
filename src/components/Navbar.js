@@ -66,7 +66,7 @@ export default function Navbar({ location }) {
           </div>
         )}
       </div>
-      {opened && <div className="lg:hidden fixed z-20 inset-0 bg-black-200" onClick={() => setOpened(false)} />}
+      {opened && <div className="lg:hidden mt-12 fixed z-20 inset-0 bg-black-200" onClick={() => setOpened(false)} />}
     </>
   )
 }
