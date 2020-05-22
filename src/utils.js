@@ -13,3 +13,34 @@ export const copy = (str) => {
 export const SUPPORT = {
   BackdropFilter: G && G.CSS.supports('backdrop-filter', 'blur(0)'),
 }
+
+export const userOption = {
+  defaultOptions: {
+    Z_DJ: true,
+    Z_YW: false,
+    Z_PY: false,
+  },
+  save(jsonObj) {
+    localStorage.setItem('USER_OPTIONS', JSON.stringify(jsonObj))
+  },
+  init() {
+    this.save(this.defaultOptions)
+  },
+  get() {
+    const existJSONString = localStorage.getItem('USER_OPTIONS')
+    if (existJSONString) {
+      return JSON.parse(existJSONString)
+    } else {
+      this.init()
+      return this.defaultOptions
+    }
+  },
+  set(option) {
+    const oldOptions = this.get()
+    const newOptions = Object.assign(
+      oldOptions,
+      option
+    )
+    this.save(newOptions)
+  },
+}

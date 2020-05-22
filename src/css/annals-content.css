@@ -86,7 +86,7 @@
 /* <z> */
 .annals-content z[dj],
 .annals-content z[fy],
-.annals-content z[zy] {
+.annals-content z[py] {
   display: none;
 }
 
@@ -99,18 +99,10 @@
   font-family: FangSong, STFangsong;
 }
 
-.annals-content z[zy] {
+.annals-content z[py] {
   font-size: 12px;
   vertical-align: top;
   color: #888;
-}
-
-.annals-content z[zy]:before {
-  content: "(";
-}
-
-.annals-content z[zy]:after {
-  content: ")";
 }
 
 .annals-content u {
@@ -119,13 +111,13 @@
 
 #z-dj:checked ~ .z-container label[for=z-dj],
 #z-yw:checked ~ .z-container label[for=z-yw],
-#z-zy:checked ~ .z-container label[for=z-zy] {
+#z-py:checked ~ .z-container label[for=z-py] {
   color: #fff;
   background: #4a5568;
 }
 
 #z-dj:checked ~ .annals-content z[dj],
-#z-zy:checked ~ .annals-content z[zy] {
+#z-py:checked ~ .annals-content z[py] {
   display: inline;
 }
 

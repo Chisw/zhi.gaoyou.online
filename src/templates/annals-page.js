@@ -7,16 +7,21 @@ import Tocbot from '../components/Tocbot'
 import PrevNext from '../components/PrevNext'
 import Center from '../components/Center'
 import icon_list from '../img/icon/list.svg'
+import border from '../img/border.png'
 import Viewer from 'viewerjs'
 import 'viewerjs/dist/viewer.css'
-import { ZY_MAP } from '../LIST'
+import { PY_MAP } from '../LIST'
+import { userOption } from '../utils'
 
-const ZY_chars = Object.keys(ZY_MAP)
+const PY_chars = Object.keys(PY_MAP)
 
 export function AnnalsPageTemplate({ title, content, contentComponent, nodes, location }) {
   const PageContent = contentComponent || Content
 
+  const { Z_DJ, Z_YW, Z_PY } = userOption.get()
+
   const [barOpen, setBarOpen] = useState(false)
+  const [checkedList, setCheckedList] = useState([Z_DJ, Z_YW, Z_PY])
 
   useEffect(() => {
     const pList = document.querySelectorAll(`
@@ -31,10 +36,10 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
         p.innerHTML = p.innerHTML
           .split('')
           .map(s => {
-            if (`，。、·：；？！—（）《》■*`.includes(s) || s === ' ') {  // 点校
+            if (`，。、·：；？！—（）《》「」■*`.includes(s) || s === ' ') {  // 点校
               return `<z dj>${s}</z>`
-            } else if (ZY_chars.includes(s)) {  // 注音
-              return `${s}<z zy>${ZY_MAP[s]}</z>`
+            } else if (PY_chars.includes(s)) {  // 注音
+              return `${s}<z py>(${PY_MAP[s]})</z>`
             } else {
               return s
             }
@@ -53,6 +58,14 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
       { toolbar: false, navbar: false, maxZoomRatio: 3, minZoomRatio: .1 }
     )
   }, [])
+
+  const handleOption = (name, checked) => {
+    const option = {}
+    option[name] = checked
+    userOption.set(option)
+    const { Z_DJ, Z_YW, Z_PY } = userOption.get()
+    setCheckedList([Z_DJ, Z_YW, Z_PY])
+  }
 
   return (
     <>
@@ -89,18 +102,18 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
         
         <div id="viewerjs-box" className="w-full lg:w-8/12">
 
-          <input className="hidden" type="checkbox" id="z-dj" defaultChecked />
-          <input className="hidden" type="checkbox" id="z-yw" />
-          <input className="hidden" type="checkbox" id="z-zy" />
+          <input className="hidden" type="checkbox" id="z-dj" checked={checkedList[0]} onChange={() => handleOption('Z_DJ', !checkedList[0])} />
+          <input className="hidden" type="checkbox" id="z-yw" checked={checkedList[1]} onChange={() => handleOption('Z_YW', !checkedList[1])} />
+          <input className="hidden" type="checkbox" id="z-py" checked={checkedList[2]} onChange={() => handleOption('Z_PY', !checkedList[2])} />
 
           <div className="z-container pb-4 flex justify-between items-center text-xs text-gray-700">
             <div className="flex select-none">
-              <label className="mr-4 cursor-pointer px-1" htmlFor="z-dj">点校</label>
-              <label className="mr-4 cursor-pointer px-1" htmlFor="z-yw">译文</label>
-              <label className="mr-4 cursor-pointer px-1" htmlFor="z-zy">注音</label>
+              <label className="mr-3 cursor-pointer px-1" htmlFor="z-dj">点校</label>
+              <label className="mr-3 cursor-pointer px-1" htmlFor="z-yw">译文</label>
+              <label className="mr-3 cursor-pointer px-1" htmlFor="z-py">拼音</label>
             </div>
             <a
-              className="px-1 text-white bg-blue-700"
+              className="text-blue-700"
               href={`https://github.com/Chisw/zhi.gaoyou.online/blob/master/src/pages${location.pathname.slice(0, -1)}.md`}
               target="_blank"
               rel="noreferrer"
@@ -109,11 +122,12 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
             </a>
           </div>
 
-          <div className="mb-10 border-2 border-gray-500 p-1">
-            <h2 className="p-2 text-2xl lg:text-3xl text-center font-kxzd border border-gray-400">
-              {title}
-            </h2>
-          </div>
+          <h2
+            className="mb-10 p-2 border-2 border-gray-500 text-2xl lg:text-3xl text-center font-kxzd"
+            style={{ border: '13px double #eee', borderImage: `url(${border})`, borderImageSlice: 13 }}
+          >
+            {title}
+          </h2>
 
           <PageContent className="annals-content min-h-640px" content={content} />
           <PrevNext nodes={nodes} location={location} />

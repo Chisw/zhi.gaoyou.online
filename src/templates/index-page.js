@@ -49,8 +49,8 @@ export default function IndexPage() {
         </div>
       </Center>
 
-      <Center className="py-12 md:py-24">
-        <h2 id="about" className="pb-8 text-center text-2xl md:text-4xl font-light">关于本站</h2>
+      <Center id="about" className="py-12 md:py-24">
+        <h2 className="pb-8 text-center text-2xl md:text-4xl font-light">关于本站</h2>
         <div className="flex flex-wrap -mx-2">
           {ABOUT_LIST.map(({ icon, name, info, url }, index) => (
             <div
@@ -74,8 +74,8 @@ export default function IndexPage() {
         </div>
       </Center>
 
-      <Center className="py-12 md:py-24">
-        <h2 id="pdf" className="pb-8 text-center text-2xl md:text-4xl font-light">资源共享</h2>
+      <Center id="pdf" className="py-12 md:py-24">
+        <h2 className="pb-8 text-center text-2xl md:text-4xl font-light">资源共享</h2>
         <p className="mb-1 text-xs text-gray-500 text-center">提取码：47ru</p>
         <div className="flex flex-wrap -mx-2">
           {PDF_LIST.map(({ origin, name, size }, index) => (
@@ -104,11 +104,12 @@ export default function IndexPage() {
       </Center>
 
       <Center
+        id="history"
         className="py-12 md:py-24 bg-bottom bg-fixed bg-center bg-no-repeat bg-cover"
         style={{ backgroundImage: `url(${yizhan})` }}
         innerClassName={`${historySlideDown ? 'h-auto' : 'h-100vh overflow-hidden'}`}
       >
-        <h2 id="history" className="pb-8 text-center text-2xl md:text-4xl font-light">历代建置</h2>
+        <h2 className="pb-8 text-center text-2xl md:text-4xl font-light">历代建置</h2>
         {HISTORY_LIST.map(([title, info], index) => (
           <div key={index} className="mb-8 text-center">
             <span className="mt-2 text-xs md:text-base font-kai text-gray-600">「 {title} 」</span>
@@ -128,13 +129,13 @@ export default function IndexPage() {
         )}
       </Center>
 
-      <Center className="py-12 md:py-24">
-        <h2 id="statistics" className="pb-8 text-center text-2xl md:text-4xl font-light font-din">整理统计</h2>
+      <Center id="statistics" className="py-12 md:py-24">
+        <h2 className="pb-8 text-center text-2xl md:text-4xl font-light font-din">整理统计</h2>
         <Statistics />
       </Center>
 
-      <Center className="py-12 md:py-24">
-        <h2 id="links" className="pb-8 text-center text-2xl md:text-4xl font-light">友情链接</h2>
+      <Center id="links" className="py-12 md:py-24">
+        <h2 className="pb-8 text-center text-2xl md:text-4xl font-light">友情链接</h2>
         <div className="flex flex-wrap justify-center">
           {LINK_LIST.map(({ url, logo }, index) => (
             <a

@@ -65,7 +65,7 @@ module.exports = {
 
       }, base, extra, percent),
       maxHeight: Object.assign({
-        'half-view': '50vh',
+        '50vh': '50vh',
       }, base, extra, percent),
       borderRadius: {
         'xl': '0.75rem',

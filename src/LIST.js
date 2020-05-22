@@ -69,7 +69,7 @@ export const ABOUT_LIST = [
   { icon: email, name: 'i@jisuowei.com', info: '联系、支持与建议', url: 'mailto:i@jisuowei.com' },
 ]
 
-export const ZY_MAP = {
+export const PY_MAP = {
   '檕': 'jì',
   '栞': 'kān',
   '睂': 'méi',
