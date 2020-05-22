@@ -21,50 +21,53 @@ export default function Navbar({ location }) {
   const [opened, setOpened] = useState(false)
 
   return (
-    <div className={`fixed z-20 w-full ${SUPPORT.BackdropFilter ? 'bg-hazy-50' : 'bg-white-980'} ${opened ? 'shadow-lg' : 'shadow'}`}>
-      <Center>
-        <div className="h-12 flex justify-between items-center">
+    <>
+      <div className={`fixed z-30 w-full ${SUPPORT.BackdropFilter ? 'bg-hazy-50' : 'bg-white-980'} ${opened ? 'shadow-lg' : 'shadow'}`}>
+        <Center>
+          <div className="h-12 flex justify-between items-center">
 
-          <div className={`w-8 lg:hidden flex items-center`}>
-            <button className={`relative ${opened ? 'open' : ''}`} onClick={() => setOpened(!opened)}>
-              <img src={opened ? icon_cancel : icon_hamburger} alt="toggle" className="w-4" />
-            </button>
-          </div>
-          
-          <Link to="/" className="block w-16" title="Logo">
-            <img src={logo} alt="gaoyouzhi" className="w-16" />
-          </Link>
-
-          <div className="hidden h-full lg:flex justify-center items-center flex-grow">
-            {NAV_LIST.map(({ name, to }) => (
-              <Link
-                key={to}
-                to={to}
-                className={`
-                  relative h-full mx-2 xl:mx-4 font-thin text-sm text-gray-600 hover:text-gray-800 font-kxzd 
-                  flex items-center
-                  ${active === to ? 'active-nav-item text-gray-900' : ''}
-                `}
-              >
-                {name}
-              </Link>
-            ))}
-          </div>
-
-          <div className="w-8 lg:w-16">
-            <div className="w-full h-8 bg-gray-200 rounded-full flex justify-center items-center hover:bg-gray-300 transition duration-200 cursor-pointer">
-              <img src={icon_search} alt="search" className="w-3 opacity-50" />
+            <div className={`w-8 lg:hidden flex items-center`}>
+              <button className={`relative ${opened ? 'open' : ''}`} onClick={() => setOpened(!opened)}>
+                <img src={opened ? icon_cancel : icon_hamburger} alt="toggle" className="w-4" />
+              </button>
             </div>
-          </div>
+            
+            <Link to="/" className="block w-16" title="Logo">
+              <img src={logo} alt="gaoyouzhi" className="w-16" />
+            </Link>
 
-        </div>
-      </Center>
-      {opened && (
-        <div className="lg:hidden pt-12 border-t">
-          <VerticalNav />
-        </div>
-      )}
-    </div>
+            <div className="hidden h-full lg:flex justify-center items-center flex-grow">
+              {NAV_LIST.map(({ name, to }) => (
+                <Link
+                  key={to}
+                  to={to}
+                  className={`
+                    relative h-full mx-2 xl:mx-4 font-thin text-sm text-gray-600 hover:text-gray-800 font-kxzd 
+                    flex items-center
+                    ${active === to ? 'active-nav-item text-gray-900' : ''}
+                  `}
+                >
+                  {name}
+                </Link>
+              ))}
+            </div>
+
+            <div className="w-8 lg:w-16">
+              <div className="w-full h-8 bg-gray-200 rounded-full flex justify-center items-center hover:bg-gray-300 transition duration-200 cursor-pointer">
+                <img src={icon_search} alt="search" className="w-3 opacity-50" />
+              </div>
+            </div>
+
+          </div>
+        </Center>
+        {opened && (
+          <div className="lg:hidden pt-12 border-t">
+            <VerticalNav />
+          </div>
+        )}
+      </div>
+      {opened && <div className="lg:hidden fixed z-20 inset-0 bg-black-200" onClick={() => setOpened(false)} />}
+    </>
   )
 }
 
