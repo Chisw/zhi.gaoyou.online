@@ -68,3 +68,13 @@ export const ABOUT_LIST = [
   { icon: github, name: 'GitHub', info: '本站代码仓库', url: 'https://github.com/Chisw/zhi.gaoyou.online' },
   { icon: email, name: 'i@jisuowei.com', info: '联系、支持与建议', url: 'mailto:i@jisuowei.com' },
 ]
+
+export const ZY_MAP = {
+  '檕': 'jì',
+  '栞': 'kān',
+  '睂': 'méi',
+  '歬': 'qián',
+  '鍥': 'qiè',
+  '圩': 'wéi',
+  '柘': 'zhè',
+}

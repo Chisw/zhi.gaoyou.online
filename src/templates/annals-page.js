@@ -9,6 +9,9 @@ import Center from '../components/Center'
 import icon_list from '../img/icon/list.svg'
 import Viewer from 'viewerjs'
 import 'viewerjs/dist/viewer.css'
+import { ZY_MAP } from '../LIST'
+
+const ZY_chars = Object.keys(ZY_MAP)
 
 export function AnnalsPageTemplate({ title, content, contentComponent, nodes, location }) {
   const PageContent = contentComponent || Content
@@ -16,12 +19,26 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
   const [barOpen, setBarOpen] = useState(false)
 
   useEffect(() => {
-    const pList = document.querySelectorAll('.annals-content p')
+    const pList = document.querySelectorAll(`
+      .annals-content > h2,
+      .annals-content > h3,
+      .annals-content > h4,
+      .annals-content > p,
+      .annals-content > ul
+    `)
     pList && pList.forEach(p => {
       if (!p.innerHTML.includes('</z>')) {
         p.innerHTML = p.innerHTML
           .split('')
-          .map(s => (`，。：；？！—《》、-■（）*[]·`.includes(s) || s === ' ') ? `<z dj>${s}</z>` : s)
+          .map(s => {
+            if (`，。、·：；？！—（）《》■*`.includes(s) || s === ' ') {  // 点校
+              return `<z dj>${s}</z>`
+            } else if (ZY_chars.includes(s)) {  // 注音
+              return `${s}<z zy>${ZY_MAP[s]}</z>`
+            } else {
+              return s
+            }
+          })
           .join('')
       }
     })
