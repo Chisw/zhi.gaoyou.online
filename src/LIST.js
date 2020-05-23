@@ -70,11 +70,20 @@ export const ABOUT_LIST = [
 ]
 
 export const PY_MAP = {
+  '畢': 'bì',
+  '襯': 'chèn',
+  '椽': 'chuán',
+  '囘': 'huí',
   '檕': 'jì',
+  '醵': 'jǜ',
   '栞': 'kān',
+  '賚': 'lài',
   '睂': 'méi',
   '歬': 'qián',
   '鍥': 'qiè',
+  '濕': 'shī',
+  '歎': 'tàn',
+  '帑': 'tǎng',
   '圩': 'wéi',
   '柘': 'zhè',
 }

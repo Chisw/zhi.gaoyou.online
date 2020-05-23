@@ -36,7 +36,7 @@ export function AnnalsPageTemplate({ title, content, contentComponent, nodes, lo
         p.innerHTML = p.innerHTML
           .split('')
           .map(s => {
-            if (`，。、·：；？！—（）《》「」■*`.includes(s) || s === ' ') {  // 点校
+            if (`，。、·：；？！—（）《》「」●■*`.includes(s) || s === ' ') {  // 点校
               return `<z dj>${s}</z>`
             } else if (PY_chars.includes(s)) {  // 注音
               return `${s}<z py>(${PY_MAP[s]})</z>`
