@@ -12,7 +12,7 @@ function Footer() {
   const Modal = () => {
     return (
       <div
-        className={`fixed z-20 top-0 right-0 bottom-0 left-0 flex justify-center items-center text-gray-500 ${QRCodeShow ? '' : 'hidden'} bg-black-200`}
+        className={`fixed z-30 top-0 right-0 bottom-0 left-0 flex justify-center items-center text-gray-500 ${QRCodeShow ? '' : 'hidden'} bg-black-200`}
         onClick={() => setQRCodeShow(false)}
         role="presentation"
       >
