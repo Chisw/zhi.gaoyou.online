@@ -7,6 +7,7 @@ import icon_hamburger from '../img/icon/mobile-hamburger.svg'
 import icon_cancel from '../img/icon/mobile-cancel.svg'
 import icon_search from '../img/icon/search.svg'
 import { SUPPORT } from '../utils'
+import Search from './Search'
 
 export default function Navbar({ location }) {
 
@@ -19,6 +20,7 @@ export default function Navbar({ location }) {
   }
 
   const [opened, setOpened] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
 
   return (
     <>
@@ -53,7 +55,11 @@ export default function Navbar({ location }) {
             </div>
 
             <div className="w-8 lg:w-16">
-              <div className="w-full h-8 bg-gray-200 rounded-full flex justify-center items-center hover:bg-gray-300 transition duration-200 cursor-pointer">
+              <div
+                className="w-full h-8 bg-gray-200 rounded-full flex justify-center items-center hover:bg-gray-300 transition duration-200 cursor-pointer"
+                onClick={() => setSearchOpen(true)}
+                role="presentation"
+              >
                 <img src={icon_search} alt="search" className="w-3 opacity-50" />
               </div>
             </div>
@@ -67,6 +73,7 @@ export default function Navbar({ location }) {
         )}
       </div>
       {opened && <div className="lg:hidden mt-12 fixed z-20 inset-0 bg-black-200" onClick={() => setOpened(false)} role="presentation" />}
+      <Search isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </>
   )
 }

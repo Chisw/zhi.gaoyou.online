@@ -10,10 +10,12 @@ import pdf from '../img/icon/pdf.svg'
 import banner from '../img/banner.jpg'
 import yizhan from '../img/yizhan.jpg'
 import { SUPPORT } from '../utils'
+import Search from '../components/Search'
 
 export default function IndexPage() {
 
   const [historySlideDown, setHistorySlideDown] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
 
   return (
     <Layout hideNavbar>
@@ -36,8 +38,9 @@ export default function IndexPage() {
             <h1 className="mt-1 md:mt-2 text-sm md:text-xl text-gray-600 font-kxzd">華夏一郵邑 神州無同類</h1>
             <input
               readOnly
-              className="mt-3 md:mt-6 w-72 md:w-128 h-10 md:h-12 px-4 md:px-6 rounded-full bg-white-700 shadow-lg outline-none text-sm"
+              className="mt-3 md:mt-6 w-72 md:w-128 h-10 md:h-12 px-4 md:px-6 rounded-full bg-white-700 shadow-lg outline-none text-sm cursor-pointer hover:bg-white"
               placeholder="在「高郵志」中搜索"
+              onClick={() => setSearchOpen(true)}
             />
           </div>
         </div>
@@ -150,6 +153,8 @@ export default function IndexPage() {
           ))}
         </div>
       </Center>
+
+      <Search isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
 
     </Layout>
   )
