@@ -1,5 +1,6 @@
 import React, { useState, createRef, useEffect } from 'react'
 import { Link } from 'gatsby'
+import algoliasearch from 'algoliasearch/lite'
 import {
   InstantSearch,
   Index,
@@ -9,7 +10,7 @@ import {
   connectStateResults,
   connectSearchBox,
 } from 'react-instantsearch-dom'
-import algoliasearch from 'algoliasearch/lite'
+import logo from '../img/algolia.svg'
 
 const Results = connectStateResults(
   ({ searchState: state, searchResults: res, children }) =>
@@ -18,7 +19,7 @@ const Results = connectStateResults(
 
 const Stats = connectStateResults(
   ({ searchResults: res }) =>
-    res && res.nbHits > 0 && <div className="mb-2 text-center">{`${res.nbHits} 条记录`}</div>
+    res && res.nbHits > 0 && `${res.nbHits} 条记录`
 )
 
 const Input = connectSearchBox(({ refine, ...rest }) => (
@@ -58,7 +59,7 @@ export default function Search({ isOpen, onClose }) {
   )
 
   const indices = [
-    { name: `GaoYouZhouZhi`, hitComp: `PageHit` },
+    { name: `GaoYouZhouZhi` },
   ]
 
   useEffect(() => {
@@ -83,21 +84,24 @@ export default function Search({ isOpen, onClose }) {
           onSearchStateChange={({ query }) => setQuery(query)}
           root={{ Root: <div></div>, props: { ref } }}
         >
-          <div className="p-4 h-20 border-b">
+          <div className="pt-6 p-4 border-b bg-gray-100">
             <Input />
+            <div className="mt-2 px-1 flex justify-between items-center">
+              <div className="text-xs text-gray-500">
+                <Results>{query.length ? <Stats /> : '^_^'}</Results>
+              </div>
+              <div>
+                <img className="w-24" src={logo} alt="algolia" />
+              </div>
+            </div>
           </div>
           <div className={`p-4 h-96 overflow-y-auto p-2 ${query.length > 0 ? 'block' : 'hidden'}`}>
-            {indices.map(({ name, hitComp }) => (
+            {indices.map(({ name }) => (
               <Index
                 key={name}
                 indexName={name}
               >
-                <div className="text-xs text-gray-500">
-                  <Stats />
-                </div>
-                <Results>
-                  <Hits hitComponent={PageHit()} />
-                </Results>
+                <Hits hitComponent={PageHit()} />
               </Index>
             ))}
           </div>
