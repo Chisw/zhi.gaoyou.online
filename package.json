@@ -15,7 +15,6 @@
     "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-sass": "^2.3.1",
     "gatsby-plugin-sharp": "^2.6.3",
-    "gatsby-plugin-styled-components": "^3.3.3",
     "gatsby-remark-autolink-headers": "^2.3.2",
     "gatsby-remark-copy-linked-files": "^2.3.2",
     "gatsby-remark-images": "^3.3.3",
@@ -34,7 +33,6 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
     "react-instantsearch-dom": "^6.5.0",
-    "styled-components": "^5.1.1",
     "tailwindcss": "^1.4.6",
     "tocbot": "^4.11.1",
     "viewerjs": "^1.5.0"
