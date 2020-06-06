@@ -12,12 +12,17 @@ function Footer() {
   const Modal = () => {
     return (
       <div
-        className={`fixed z-30 top-0 right-0 bottom-0 left-0 flex justify-center items-center text-gray-500 ${QRCodeShow ? '' : 'hidden'} bg-black-200`}
+        className={`fixed z-30 top-0 right-0 bottom-0 left-0 flex justify-center items-center text-gray-500 ${QRCodeShow ? '' : 'hidden'} bg-hazy-25 bg-black-200`}
         onClick={() => setQRCodeShow(false)}
         role="presentation"
       >
         <div className="inline-block py-4 relative bg-white rounded-lg shadow-lg">
-          <button className="absolute top-0 right-0 w-8 h-8 text-center cursor-pointer font-din text-lg" onClick={() => setQRCodeShow(false)}>&times;</button>
+          <button
+            className="absolute top-0 right-0 w-8 h-8 text-center cursor-pointer font-din text-lg"
+            onClick={() => setQRCodeShow(false)}
+          >
+            &times;
+          </button>
           <div className="text-center">
             <img alt="weixin" src={QRCode} className="w-64" />
           </div>

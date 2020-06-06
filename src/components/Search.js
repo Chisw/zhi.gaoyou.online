@@ -18,8 +18,13 @@ const Results = connectStateResults(
 )
 
 const Stats = connectStateResults(
-  ({ searchResults: res }) =>
-    res && res.nbHits > 0 && `${res.nbHits} 条记录`
+  ({ searchResults: res, isSearchStalled: loading }) => {
+    if (loading) {
+      return '搜索中..'
+    } else {
+      return res && res.nbHits > 0 && `${res.nbHits} 条记录`
+    }
+  }
 )
 
 const Input = connectSearchBox(({ refine, ...rest }) => (
@@ -38,7 +43,7 @@ const PageHit = () => ({ hit }) => {
   // console.log(hit)
   return (
     <Link to={hit.fields.slug}>
-      <div className="px-4 py-2 hover:bg-gray-200 rounded cursor-pointer">
+      <div className="px-4 py-2 hover:bg-gray-200 cursor-pointer border-b border-gray-200">
         <h4>
           <Highlight attribute="title" hit={hit} tagName="mark" />
         </h4>
@@ -74,17 +79,23 @@ export default function Search({ isOpen, onClose }) {
       role="presentation"
     >
       <div
-        className="w-full md:w-128 mt-0 md:mt-16 bg-white md:rounded-lg overflow-hidden shadow-lg"
+        className="relative w-full md:w-128 mt-0 md:mt-16 bg-white md:rounded-lg overflow-hidden shadow-lg"
         onClick={e => e.stopPropagation()}
         role="presentation"
       >
+        <button
+          className="absolute z-20 top-0 right-0 m-1 w-8 h-8 text-center cursor-pointer font-din text-lg text-gray-500"
+          onClick={onClose}
+        >
+          &times;
+        </button>
         <InstantSearch
           searchClient={searchClient}
           indexName={indices[0].name}
           onSearchStateChange={({ query }) => setQuery(query)}
           root={{ Root: <div></div>, props: { ref } }}
         >
-          <div className="pt-6 p-4 border-b bg-gray-100">
+          <div className="relative z-10 pt-10 p-4 border-b bg-gray-100 shadow-lg">
             <Input />
             <div className="mt-2 px-1 flex justify-between items-center">
               <div className="text-xs text-gray-500">
@@ -95,7 +106,7 @@ export default function Search({ isOpen, onClose }) {
               </div>
             </div>
           </div>
-          <div className={`p-4 h-96 overflow-y-auto p-2 ${query.length > 0 ? 'block' : 'hidden'}`}>
+          <div className={`h-96 overflow-y-auto ${query.length > 0 ? 'block' : 'hidden'}`}>
             {indices.map(({ name }) => (
               <Index
                 key={name}
