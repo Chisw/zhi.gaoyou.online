@@ -27,7 +27,7 @@ const Stats = connectStateResults(
   }
 )
 
-const Input = connectSearchBox(({ refine, ...rest }) => (
+const Input = connectSearchBox(({ refine }) => (
   <input
     id="gaoyouzhi-search"
     className="px-4 w-full h-12 border-2 rounded-full text-sm outline-none"
@@ -35,7 +35,6 @@ const Input = connectSearchBox(({ refine, ...rest }) => (
     placeholder="在「高邮志」中搜索"
     aria-label="搜索"
     onChange={e => refine(e.target.value)}
-    {...rest}
   />
 ))
 
@@ -102,7 +101,9 @@ export default function Search({ isOpen, onClose }) {
                 <Results>{query.length ? <Stats /> : '^_^'}</Results>
               </div>
               <div>
-                <img className="w-24" src={logo} alt="algolia" />
+                <a href="https://algolia.com" target="_blank" rel="noopener noreferrer">
+                  <img className="w-24 hover:opacity-75 transition-all duration-200" src={logo} alt="algolia" />
+                </a>
               </div>
             </div>
           </div>
