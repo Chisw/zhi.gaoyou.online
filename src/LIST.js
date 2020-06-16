@@ -74,6 +74,7 @@ export const PY_MAP = {
   '襯': 'chèn',
   '椽': 'chuán',
   '迨': 'dài',
+  '埭': 'dài',
   '覿': 'dí',
   '弔': 'diào',
   '墳': 'fén',
