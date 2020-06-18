@@ -72,6 +72,7 @@ export const ABOUT_LIST = [
 export const PY_MAP = {
   '畢': 'bì',
   '襯': 'chèn',
+  '飭': 'chì',
   '椽': 'chuán',
   '迨': 'dài',
   '埭': 'dài',
