@@ -13,7 +13,7 @@ const pageQuery = `{
         frontmatter {
           title
         }
-        excerpt(pruneLength: 5000)
+        excerpt(pruneLength: 3322)
       }
     }
   }
