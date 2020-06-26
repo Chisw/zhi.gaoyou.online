@@ -15,6 +15,7 @@ export default function Layout({ children, hideNavbar, location }) {
       <Helmet>
         <html lang="zh-CN" />
         <title>{title}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
         <meta name="description" content={description} />
         <link rel="icon" type="image/png" href={favicon} sizes="32x32" />
         <meta property="og:title" content={title} />
