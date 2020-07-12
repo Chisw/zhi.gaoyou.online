@@ -141,6 +141,7 @@ export const PY_MAP = {
   '羣': 'qún',
   '勷': 'ráng|xiāng',
   '稔': 'rěn',
+  '堧': 'ruán',
   '詵': 'shēn',
   '濕': 'shī',
   '疎': 'shū',
