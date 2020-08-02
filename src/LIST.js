@@ -166,6 +166,7 @@ export const PY_MAP = {
   '憲': 'xiàn',
   '庠': 'xiáng',
   '篠': 'xiǎo',
+  '詗': 'xiòng',
   '脩': 'xiū',
   '䘏': 'xù',
   '絢': 'xuàn',
