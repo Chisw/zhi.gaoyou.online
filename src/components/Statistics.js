@@ -109,6 +109,7 @@ const counts = [
   { date: '2020/08/01', count: 458 },
   { date: '2020/08/02', count: 547 },
   { date: '2020/08/08', count: 460 },
+  { date: '2020/08/23', count: 465 },
 ]
 
 const allCounts = Interval
