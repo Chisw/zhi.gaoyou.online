@@ -79,7 +79,7 @@ export default function IndexPage() {
 
       <Center id="pdf" className="py-12 md:py-24">
         <h2 className="pb-8 text-center text-2xl md:text-4xl font-light">资源共享</h2>
-        <p className="mb-1 text-xs text-gray-500 text-center">提取码：47ru</p>
+        <p className="mb-1 text-xs text-gray-500 text-center">提取码：ykvn</p>
         <div className="flex flex-wrap -mx-2">
           {PDF_LIST.map(({ origin, name, size }, index) => (
             <div
@@ -87,7 +87,7 @@ export default function IndexPage() {
               className="w-1/2 md:w-1/3 xl:w-1/4 p-1 md:p-2"
             >
               <a
-                href="https://pan.baidu.com/s/1u4y576B5-GeSWnDtQxIJ0Q"
+                href="https://pan.baidu.com/s/1Dhph3qodpcNhbISgKfD-Zg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full h-full p-2 md:p-4 bg-black-30 rounded-md shadow hover:shadow-lg transition duration-200 flex items-start"
