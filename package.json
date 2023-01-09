@@ -33,7 +33,7 @@
     "gatsby-transformer-sharp": "^3.0.0",
     "graphql-tools": "^7.0.4",
     "lodash": "^4.17.21",
-    "luxon": "^1.26.0",
+    "luxon": "^1.28.1",
     "postcss": "^8.2.7",
     "react": "^17.0.1",
     "react-chartjs-2": "^2.11.1",
