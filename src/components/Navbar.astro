@@ -1,0 +1,50 @@
+---
+import Center from './Center.astro'
+import { NAV_LIST } from '../utils'
+
+const active = ''
+
+---
+<div class={`fixed z-30 w-full backdrop-blur-md ${false ? 'shadow-lg' : 'shadow'}`}>
+  <Center>
+    <div class="h-12 flex justify-between items-center">
+
+      <div class={`w-8 lg:hidden flex items-center`}>
+        <button class={`relative ${false ? 'open' : ''}`} >
+          <img src="/assets/icon/nav-hamburger.svg" alt="toggle" class="w-4" />
+        </button>
+      </div>
+      
+      <a href="/" class="block w-16" title="Logo">
+        <img src="/assets/img/logo.png" alt="gaoyouzhi" class="w-16" />
+      </a>
+
+      <div class="hidden h-full lg:flex justify-center items-center grow">
+        {NAV_LIST.map(({ name, to }) => (
+          <a
+            href={to}
+            class={`
+              relative h-full mx-2 xl:mx-4 font-thin text-sm text-gray-600 hover:text-gray-800 font-kxzd 
+              flex items-center
+              ${active === to ? 'active-nav-item text-gray-900' : ''}
+            `}
+          >
+            {name}
+          </a>
+        ))}
+      </div>
+
+      <div class="w-8 lg:w-16">
+        <div
+          class="w-full h-8 bg-gray-200 rounded-full flex justify-center items-center hover:bg-gray-300 transition duration-200 cursor-pointer"
+          role="presentation"
+        >
+          <img src="/assets/icon/search.svg" alt="search" class="w-3 opacity-50" />
+        </div>
+      </div>
+
+    </div>
+  </Center>
+
+</div>
+

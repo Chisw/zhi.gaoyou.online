@@ -1,0 +1,43 @@
+---
+import Center from './Center.astro'
+
+---
+
+<Center
+  className="relative z-0 py-8 border-t border-zinc-200"
+  style={{ backgroundImage: `url('/assets/img/wave.png')`, backgroundSize: '40px' }}
+  innerClassName="flex flex-wrap items-center text-sm"
+>
+  <div class="mb-6 w-full text-center lg:hidden">
+    <a href="/">
+      <img alt="logo" src="/assets/img/logo.png" class="inline-block w-24" />
+    </a>
+  </div>
+
+  <div class="w-full lg:w-1/4 py-1 text-center lg:text-right font-light text-gray-400">
+    © gaoyou.online
+  </div>
+  <div class="w-1/2 text-center hidden lg:block">
+    <a href="/">
+      <img alt="logo" src="/assets/img/logo.png" class="inline-block w-24" />
+    </a>
+  </div>
+  <div class="w-full lg:w-1/4 py-1 text-center lg:text-left text-gray-500">
+    <a
+      href="https://gaoyou.online"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hover:text-gray-700"
+    >
+      高郵攬影
+    </a>
+    <a
+      href="https://jisuowei.com/cola"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="ml-2 hover:text-gray-700"
+    >
+      请我喝可乐
+    </a>
+  </div>
+</Center>

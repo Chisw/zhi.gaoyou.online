@@ -1,0 +1,135 @@
+.article-content {
+  padding-bottom: 3rem;
+}
+
+.article-content .anchor {
+  margin-left: -28px;
+  padding-right: 0;
+}
+
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+  z-index: -1;
+}
+
+.article-content h2::before,
+.article-content h3::before,
+.article-content h4::before,
+.article-content h5::before,
+.article-content h6::before {
+  display: block;
+  content: " ";
+  height: 64px;
+  margin-top: -64px;
+  visibility: hidden;
+}
+
+.article-content h3 {
+  margin: 1.3rem 0 1rem 0;
+  font-size: 30px;
+}
+
+.article-content h4 {
+  margin: 1.2rem 0 .9rem 0;
+  font-size: 26px;
+}
+
+.article-content h5 {
+  margin: 1.1rem 0 .8rem 0;
+  font-size: 22px;
+}
+
+.article-content h6 {
+  margin: 1rem 0 .7rem 0;
+  font-size: 18px;
+}
+
+.article-content p {
+  margin-bottom: .8rem;
+  font-weight: 300;
+  text-align: justify;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.article-content p.text-center {
+  text-align: center;
+}
+
+.article-content ul {
+  margin-bottom: 1.2rem;
+}
+
+.article-content li {
+  margin-bottom: .5rem;
+  list-style: disc;
+  list-style-position: inside;
+  font-weight: 300;
+}
+
+.article-content img {
+  margin-bottom: 1rem;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.article-content sub {
+  bottom: 0;
+  margin-left: 4px;
+  color: #666;
+}
+
+
+/* <z> */
+.article-content z[dj],
+.article-content z[fy],
+.article-content z[py] {
+  display: none;
+}
+
+.article-content z[fy] {
+  font-weight: 300;
+  font-size: 14px;
+  color: #888;
+  padding: 4px 8px;
+  background: #fafafa;
+  font-family: FangSong, STFangsong;
+}
+
+.article-content z[py] {
+  font-size: 12px;
+  vertical-align: top;
+  color: #888;
+}
+
+.article-content u {
+  text-decoration: none;
+}
+
+#z-dj:checked ~ .z-container label[for=z-dj],
+#z-yw:checked ~ .z-container label[for=z-yw],
+#z-py:checked ~ .z-container label[for=z-py] {
+  color: #fff;
+  background: #4a5568;
+}
+
+#z-dj:checked ~ .article-content z[dj],
+#z-py:checked ~ .article-content z[py] {
+  display: inline;
+}
+
+.article-content p {
+  display: inline;
+}
+
+#z-dj:checked ~ .article-content p,
+#z-yw:checked ~ .article-content z[fy] {
+  display: block;
+}
+
+#z-dj:checked ~ .article-content u {
+  text-decoration: underline;
+}

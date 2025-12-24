@@ -1,0 +1,41 @@
+---
+import { getAllPages } from '../../utils'
+
+const allPages = getAllPages()
+
+const { pathname } = new URL(Astro.request.url)
+const [, activeAnnal] = pathname.split('/')
+
+const currentAnnalPages = allPages.filter(page => {
+  return page.url?.startsWith(`/${activeAnnal}/`)
+})
+
+const activeIndex = currentAnnalPages.findIndex(page => page.url === decodeURIComponent(pathname))
+
+const prev = currentAnnalPages[activeIndex - 1]
+const next = currentAnnalPages[activeIndex + 1]
+
+---
+
+<div
+  class="h-3 bg-repeat-x bg-top bg-contain border-l border-r border-gray-400"
+  style={{
+    backgroundImage: 'url("/assets/img/stripe.png")',
+    borderColor: '#e5e5e5',
+  }}
+/>
+  <div class="flex py-8 font-kxzd">
+  {prev && (
+    <a href={prev.url}>
+      <span class="text-xs text-gray-500">上一章</span>
+      <p class="text-gray-700 hover:text-gray-900">{prev.title}</p>
+    </a>
+  )}
+  <div class="grow" />
+  {next && (
+    <a href={next.url} class="text-right">
+      <span class="text-xs text-gray-500">下一章</span>
+      <p class="text-gray-700 hover:text-gray-900">{next.title}</p>
+    </a>
+  )}
+</div>

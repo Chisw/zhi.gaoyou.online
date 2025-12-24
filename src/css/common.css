@@ -1,0 +1,51 @@
+.active-nav-item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: #2d3748;
+  border-radius: 3px 3px 0 0;
+}
+
+/* tocbot */
+.toc-list-container .is-active-link {
+  color: #222;
+  font-weight: bold;
+}
+
+.toc-list-container li {
+  list-style: none;
+}
+
+.toc-list-container a {
+  color: #718096;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.toc-list-container a:hover {
+  color: #222;
+}
+
+.toc-list-container .is-active-link {
+  color: #222;
+  font-weight: bold;
+}
+
+.toc-list a {
+  padding-left: 24px;
+}
+
+.toc-list .is-active-li a.active {
+  color: #222 !important;
+  font-weight: bold;
+  background: url('../img/icon/link.svg') no-repeat left center;
+  background-size: contain;
+}
+
+.toc-list .toc-list {
+  padding-left: 20px;
+}

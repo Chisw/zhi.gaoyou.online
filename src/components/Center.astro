@@ -1,0 +1,17 @@
+---
+interface LayoutProps {
+  id: string,
+  className: string,
+  innerClassName: string,
+  style?: string
+}
+
+const { id, className, innerClassName, style } = Astro.props as LayoutProps
+
+---
+
+<div id={id} class={`relative w-full ${className || ''}`} style={style}>
+  <div class={`relative z-10 w-full h-full px-4 md:px-8 xl:w-330 mx-auto ${innerClassName || ''}`}>
+    <slot />
+  </div>
+</div>

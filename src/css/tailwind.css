@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.flex-center-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-between-center {
+  @apply flex justify-between items-center;
+}

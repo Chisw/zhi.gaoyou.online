@@ -1,0 +1,48 @@
+---
+import Page from '../../components/Page.astro'
+import Footer from '../../components/Footer.astro'
+import Navbar from '../../components/Navbar.astro'
+import Center from '../../components/Center.astro'
+import Outline from './Outline.astro'
+import PrevNext from './PrevNext.astro'
+
+const { frontmatter } = Astro.props
+
+---
+<Page title={frontmatter.title}>
+  <Navbar />
+
+  <Center className="pt-12 lg:pt-16" innerClassName="flex py-8">
+
+    <div class="w-2/12">
+      <Outline />
+    </div>
+
+    <div class="w-10/12">
+      <div
+        class="mb-10 p-2 border-2 border-gray-500 text-2xl lg:text-3xl text-center font-kxzd"
+        style={{
+          border: '13px double #eee',
+          borderImage: "url('/assets/img/border.png')",
+          borderImageSlice: 13,
+        }}
+      >
+        {frontmatter.title}
+      </div>
+
+      <div class="article-content unreset">
+        <slot />
+      </div>
+
+      <PrevNext />
+    </div>
+
+    <div class="w-2/12">
+
+    </div>
+
+  </Center>
+
+	<Footer />
+
+</Page>

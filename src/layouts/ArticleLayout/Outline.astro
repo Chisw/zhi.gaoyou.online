@@ -1,0 +1,55 @@
+---
+import { getAllPages, VOLUMES_MAP } from '../../utils'
+
+const allPages = getAllPages()
+
+const { pathname } = new URL(Astro.request.url)
+const [, activeAnnal, activeVol] = pathname.split('/')
+
+const currentAnnalPages = allPages.filter(page => {
+  return page.url?.startsWith(`/${activeAnnal}/`)
+})
+
+const volumes = VOLUMES_MAP[activeAnnal].map(volume => {
+  const pages = currentAnnalPages.filter(p => p.vol === volume.key)
+  return {
+    ...volume,
+    pages,
+  }
+})
+
+---
+
+<div class="sticky top-0">
+  {volumes.map((vol) => (
+    <div class="mb-2 lg:mb-1 font-light">
+      <a
+        href={vol.pages[0].url}
+        class="block pl-7 text-sm text-gray-900 hover:font-normal bg-no-repeat bg-left cursor-pointer leading-6"
+        style={`background-size: 20px; background-image: url("/assets/outline/${vol.icon}.png");`}
+      >
+        {vol.name}
+      </a>
+      {vol.key === activeVol && (
+        <ul
+          class="my-2 border-l border-zinc-200 text-sm"
+          style={{ marginLeft: '10px', paddingLeft: '17px' }}
+        >
+          {vol.pages.map((page) => {
+            const isActive = page.url === decodeURIComponent(pathname)
+            return (
+              <li class="text-gray-600">
+                <a
+                  href={page.url}
+                  class={`hover:text-gray-900 leading-6 ${isActive ? 'text-black font-normal' : ''}`}
+                >
+                  {page.title}{}
+                </a>
+              </li>
+            )
+          })}
+        </ul>
+      )}
+    </div>
+  ))}
+</div>
