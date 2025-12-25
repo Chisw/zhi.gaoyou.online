@@ -1,0 +1,111 @@
+---
+const { title } = Astro.props
+const { pathname } = new URL(Astro.request.url)
+
+---
+
+<input class="hidden" type="checkbox" id="z-dj-checkbox" />
+<input class="hidden" type="checkbox" id="z-yw-checkbox" />
+<input class="hidden" type="checkbox" id="z-py-checkbox" />
+
+<div class="z-container pb-4 flex justify-between items-center text-xs text-zinc-700">
+  <div class="flex select-none">
+    <label class="mr-3 cursor-pointer px-1 py-0.5" for="z-dj-checkbox">点校</label>
+    <label class="mr-3 cursor-pointer px-1 py-0.5" for="z-yw-checkbox">译文</label>
+    <label class="mr-3 cursor-pointer px-1 py-0.5" for="z-py-checkbox">拼音</label>
+  </div>
+  <a
+    target="_blank"
+    rel="noreferrer"
+    class="text-zinc-600"
+    href={`https://github.com/Chisw/zhi.gaoyou.online/blob/master/src/pages${pathname}.md`}
+  >
+    编辑此页
+  </a>
+</div>
+
+<div
+  class="mb-10 p-2 border-2 border-gray-500 text-2xl lg:text-3xl text-center font-kxzd"
+  style={{
+    border: '13px double #eee',
+    borderImage: 'url("/assets/img/border.png")',
+    borderImageSlice: 13,
+  }}
+>
+  {title}
+</div>
+
+<div
+  id="image-viewer-container"
+  class="article-content unreset min-h-160"
+>
+  <slot />
+</div>
+
+<script>
+  import Viewer from 'viewerjs'
+  import { PUNCTUATIONS, PINYIN_MAP, PINYIN_CHARS, UserOptionsStorage } from '@/utils'
+  import type { UserOptions } from '@/types'
+
+  // 加载用户选项
+  const userOptions = UserOptionsStorage.get()
+
+  Object.entries({
+    punctuationVisible: 'z-dj-checkbox',
+    translationVisible: 'z-yw-checkbox',
+    pinyinVisible: 'z-py-checkbox',
+  }).forEach(([optionKey, elementId]) => {
+
+    if (userOptions[optionKey as keyof UserOptions]) {
+      document.getElementById(elementId)!.setAttribute('checked', 'checked')
+    }
+
+    document.getElementById(elementId)!.addEventListener('change', event => {
+      const isChecked = (event.target as HTMLInputElement).checked
+      UserOptionsStorage.set({
+        ...UserOptionsStorage.get(),
+        [optionKey]: isChecked,
+      })
+    })
+  })
+
+  // 拼音注释
+  document
+    .querySelectorAll(`
+      .article-content > h2,
+      .article-content > h3,
+      .article-content > h4,
+      .article-content > p,
+      .article-content > ul
+    `)
+    .forEach(row => {
+      if (row.innerHTML.includes('</z>')) return
+
+      row.innerHTML = row.innerHTML
+        .split('')
+        .map(s => {
+          // 标记标点符号
+          if (PUNCTUATIONS.includes(s) || s === ' ') {
+            return `<z dj>${s}</z>`
+          // 插入拼音标记
+          } else if (PINYIN_CHARS.includes(s)) {
+            return `${s}<z py>(${PINYIN_MAP[s]})</z>`
+          } else {
+            return s
+          }
+        })
+        .join('')
+    })
+
+  // 图片查看
+  new Viewer(
+    document.getElementById('image-viewer-container')!,
+    {
+      toolbar: false,
+      navbar: false,
+      maxZoomRatio: 3,
+      minZoomRatio: .1,
+    },
+  )
+
+</script>

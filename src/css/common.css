@@ -1,3 +1,4 @@
+/* 导航选中 */
 .active-nav-item::after {
   content: "";
   display: block;
@@ -10,42 +11,56 @@
   border-radius: 3px 3px 0 0;
 }
 
-/* tocbot */
-.toc-list-container .is-active-link {
-  color: #222;
-  font-weight: bold;
+/* 移动端 导航 控制 */
+.mobile-nav-button {
+  background-image: url("/assets/icon/nav-hamburger.svg");
+  background-size: 1rem;
 }
 
-.toc-list-container li {
-  list-style: none;
+.mobile-nav {
+  transform: translateY(-150%);
 }
 
-.toc-list-container a {
-  color: #718096;
-  font-size: 12px;
-  font-weight: 400;
+.mobile-nav-mask {
+  display: none;
 }
 
-.toc-list-container a:hover {
-  color: #222;
+#mobile-nav-checkbox:checked ~ .mobile-nav {
+  transform: translateY(0);
 }
 
-.toc-list-container .is-active-link {
-  color: #222;
-  font-weight: bold;
+#mobile-nav-checkbox:checked ~ .mobile-nav-mask {
+  display: block;
 }
 
-.toc-list a {
-  padding-left: 24px;
+/* 移动端 大纲 控制 */
+.mobile-outline-button {
+  background-image: url("/assets/icon/list.svg");
+  background-size: 1rem;
 }
 
-.toc-list .is-active-li a.active {
-  color: #222 !important;
-  font-weight: bold;
-  background: url('../img/icon/link.svg') no-repeat left center;
-  background-size: contain;
+.mobile-outline {
+  transform: translateX(-150%);
 }
 
-.toc-list .toc-list {
-  padding-left: 20px;
+.mobile-outline-mask {
+  display: none;
+}
+
+#mobile-outline-checkbox:checked ~ .mobile-outline {
+  transform: translateX(0);
+}
+
+#mobile-outline-checkbox:checked ~ .mobile-outline-mask {
+  display: block;
+}
+
+/* PC 强制隐藏 */
+@media (width >= 64rem) {
+  .mobile-nav,
+  .mobile-nav-mask,
+  .mobile-outline,
+  .mobile-outline-mask {
+    display: none !important;
+  }
 }

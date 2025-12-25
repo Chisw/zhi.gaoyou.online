@@ -1,4 +1,4 @@
-import type { IVolume } from '../types'
+import type { IVolume } from '@/types'
 
 const GYZZ_VOLUMES: IVolume[] = [
   { key: 'vol-00', name: '高郵州志', icon: 'list' },

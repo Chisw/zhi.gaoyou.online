@@ -1,5 +1,5 @@
 ---
-import { getAllPages } from '../../utils'
+import { getAllPages } from '@/utils'
 
 const allPages = getAllPages()
 
@@ -18,24 +18,35 @@ const next = currentAnnalPages[activeIndex + 1]
 ---
 
 <div
-  class="h-3 bg-repeat-x bg-top bg-contain border-l border-r border-gray-400"
+  class="h-3 bg-repeat-x bg-top bg-contain border-l border-r border-zinc-400"
   style={{
     backgroundImage: 'url("/assets/img/stripe.png")',
     borderColor: '#e5e5e5',
   }}
 />
-  <div class="flex py-8 font-kxzd">
+
+<div class="flex py-8 font-kxzd">
   {prev && (
-    <a href={prev.url}>
-      <span class="text-xs text-gray-500">上一章</span>
-      <p class="text-gray-700 hover:text-gray-900">{prev.title}</p>
+    <a
+      href={prev.url}
+      class="shrink-0 min-w-24"
+    >
+      <div class="text-xs lg:text-sm text-zinc-400">上一章</div>
+      <div class="lg:text-xl text-zinc-700 hover:text-zinc-900">
+        {prev.title}
+      </div>
     </a>
   )}
   <div class="grow" />
   {next && (
-    <a href={next.url} class="text-right">
-      <span class="text-xs text-gray-500">下一章</span>
-      <p class="text-gray-700 hover:text-gray-900">{next.title}</p>
+    <a
+      href={next.url}
+      class="shrink-0 min-w-24 text-right"
+    >
+      <div class="text-xs lg:text-sm text-zinc-400">下一章</div>
+      <div class="lg:text-xl text-zinc-700 hover:text-zinc-900">
+        {next.title}
+      </div>
     </a>
   )}
 </div>

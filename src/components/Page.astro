@@ -1,24 +1,21 @@
 ---
-import '../css/index.css'
+import '@/css/index.css'
 
-interface LayoutProps {
-	title?: string;
-}
+const { title } = Astro.props
 
-const { title } = Astro.props as LayoutProps
 ---
 
 <!DOCTYPE html>
 <html lang="zh-CN">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
-		<link rel="icon" href="/assets/img/favicon.png" />
-		<meta name="version" content={import.meta.env.PUBLIC_VERSION} />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title} - 高邮志 - 华夏一邮邑，神州无同类</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+    <link rel="icon" href="/assets/img/favicon.png" />
+    <meta name="version" content={import.meta.env.PUBLIC_VERSION} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} - 高邮志 - 华夏一邮邑，神州无同类</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>

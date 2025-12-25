@@ -47,6 +47,10 @@
   font-size: 18px;
 }
 
+.article-content hr {
+  color: #e4e4e7;
+}
+
 .article-content p {
   margin-bottom: .8rem;
   font-weight: 300;
@@ -92,9 +96,9 @@
 
 .article-content z[fy] {
   font-weight: 300;
-  font-size: 14px;
+  font-size: 16px;
   color: #888;
-  padding: 4px 8px;
+  padding: 8px 12px;
   background: #fafafa;
   font-family: FangSong, STFangsong;
 }
@@ -109,27 +113,65 @@
   text-decoration: none;
 }
 
-#z-dj:checked ~ .z-container label[for=z-dj],
-#z-yw:checked ~ .z-container label[for=z-yw],
-#z-py:checked ~ .z-container label[for=z-py] {
+#z-dj-checkbox:checked ~ .z-container label[for=z-dj-checkbox],
+#z-yw-checkbox:checked ~ .z-container label[for=z-yw-checkbox],
+#z-py-checkbox:checked ~ .z-container label[for=z-py-checkbox] {
   color: #fff;
   background: #4a5568;
 }
 
-#z-dj:checked ~ .article-content z[dj],
-#z-py:checked ~ .article-content z[py] {
+#z-dj-checkbox:checked ~ .article-content z[dj],
+#z-py-checkbox:checked ~ .article-content z[py] {
   display: inline;
 }
 
-.article-content p {
-  display: inline;
-}
-
-#z-dj:checked ~ .article-content p,
-#z-yw:checked ~ .article-content z[fy] {
+#z-dj-checkbox:checked ~ .article-content p,
+#z-yw-checkbox:checked ~ .article-content z[fy] {
   display: block;
 }
 
-#z-dj:checked ~ .article-content u {
+#z-dj-checkbox:checked ~ .article-content u {
   text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
+/* tocbot */
+.toc-list-container .is-active-link {
+  color: #222;
+  font-weight: bold;
+}
+
+.toc-list-container li {
+  list-style: none;
+}
+
+.toc-list-container a {
+  color: #718096;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.toc-list-container a:hover {
+  color: #222;
+}
+
+.toc-list-container .is-active-link {
+  color: #222;
+  font-weight: bold;
+}
+
+.toc-list a {
+  padding-left: 24px;
+}
+
+.toc-list .is-active-li a.active {
+  color: #222 !important;
+  font-weight: bold;
+  background: url('/assets/icon/link.svg') no-repeat left center;
+  background-size: contain;
+}
+
+.toc-list .toc-list {
+  padding-left: 20px;
 }

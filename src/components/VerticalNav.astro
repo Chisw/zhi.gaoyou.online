@@ -1,0 +1,28 @@
+---
+import { NAV_LIST } from '@/utils'
+
+---
+
+<div class="px-4 w-full flex justify-around items-start">
+  {NAV_LIST.map((item, index) => (
+    <a
+      href={item.to}
+      class="h-72 flex flex-col justify-center items-start font-kxzd cursor-pointer hover:opacity-75 hover:-translate-y-1 transform transition duration-200"
+    >
+      <div class="h-1/5 w-full flex justify-center items-center md:items-start">
+        <div class="w-10 h-10 rounded-full text-white flex justify-center items-center bg-black/20">
+          {`壹貳叁肆`[index]}
+        </div>
+      </div>
+      <div class="h-4/5 flex justify-center">
+        <p class="write-vertical text-xl md:text-3xl">
+          {item.name}
+        </p>
+        <p class="ml-1 write-vertical text-zinc-400 text-xs md:text-sm">
+          {item.period} &nbsp;
+          <span class="ml-2 px-1 text-white bg-red-600 font-din">{item.year}</span>
+        </p>
+      </div>
+    </a>
+  ))}
+</div>

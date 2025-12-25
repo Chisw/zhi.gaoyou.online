@@ -1,5 +1,2 @@
-export interface IVolume {
-  key: string
-  name: string
-  icon: string
-}
+export * from './annal.type'
+export * from './user.type'

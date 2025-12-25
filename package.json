@@ -1,10 +1,13 @@
 {
-  "name": "gaoyouzhi",
+  "name": "zhi.gaoyou.online",
   "description": "The county annals of my hometown",
   "version": "2.0.1",
   "author": "Chisw",
   "keywords": [
-    "gaoyouzhi"
+    "高邮志",
+    "高邮州志",
+    "gaoyouzhi",
+    "gaoyou"
   ],
   "scripts": {
     "dev": "astro dev",
@@ -13,8 +16,18 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^4.4.2",
     "@tailwindcss/vite": "^4.1.18",
+    "@types/luxon": "^3.7.1",
+    "@types/react": "^19.2.7",
     "astro": "^5.16.6",
-    "tailwindcss": "^4.1.18"
+    "chart.js": "^4.5.1",
+    "luxon": "^3.7.2",
+    "react": "^19.2.3",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^19.2.3",
+    "tailwindcss": "^4.1.18",
+    "tocbot": "^4.36.4",
+    "viewerjs": "^1.11.7"
   }
 }

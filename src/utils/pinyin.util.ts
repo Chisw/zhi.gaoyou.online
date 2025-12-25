@@ -1,4 +1,4 @@
-export const PINYIN_MAP = {
+export const PINYIN_MAP: Record<string, string> = {
   '畢': 'bì',
   '濱': 'bīn',
   '弁': 'biàn',
@@ -122,3 +122,5 @@ export const PINYIN_MAP = {
   '纘': 'zuǎn',
   '': '',
 }
+  
+export const PINYIN_CHARS = Object.keys(PINYIN_MAP)

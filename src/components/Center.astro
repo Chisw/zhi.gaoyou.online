@@ -1,4 +1,6 @@
 ---
+import { line } from '@/utils'
+
 interface LayoutProps {
   id: string,
   className: string,
@@ -10,8 +12,18 @@ const { id, className, innerClassName, style } = Astro.props as LayoutProps
 
 ---
 
-<div id={id} class={`relative w-full ${className || ''}`} style={style}>
-  <div class={`relative z-10 w-full h-full px-4 md:px-8 xl:w-330 mx-auto ${innerClassName || ''}`}>
+<div
+  id={id}
+  class={`relative w-full ${className || ''}`}
+  style={style}
+>
+  <div
+    class={line(`
+      relative z-0 mx-auto px-4 w-full h-full
+      lg:w-5xl xl:px-0
+      ${innerClassName || ''}
+    `)}
+  >
     <slot />
   </div>
 </div>

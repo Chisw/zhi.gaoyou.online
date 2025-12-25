@@ -1,0 +1,15 @@
+<div class="fixed">
+  <h3 class="mb-2 text-base text-zinc-600 font-light">章节概要</h3>
+  <div class="toc-list-container"></div>
+</div>
+
+<script>
+  import tocbot from 'tocbot'
+
+  tocbot.init({
+    tocSelector: `.toc-list-container`,
+    contentSelector: `.article-content`,
+    activeLinkClass: `active`,
+    headingSelector: `h3, h4, h5, h6`,
+  })
+</script>

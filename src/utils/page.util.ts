@@ -1,5 +1,5 @@
 export const getAllPages = () => {
-  const allPageRecord = import.meta.glob('../pages/**/*.md', { eager: true })
+  const allPageRecord = import.meta.glob('@/pages/**/*.md', { eager: true })
 
   return Object.values(allPageRecord)
     .map((page: any) => {

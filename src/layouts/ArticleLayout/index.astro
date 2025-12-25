@@ -1,48 +1,76 @@
 ---
-import Page from '../../components/Page.astro'
-import Footer from '../../components/Footer.astro'
-import Navbar from '../../components/Navbar.astro'
-import Center from '../../components/Center.astro'
+import Page from '@/components/Page.astro'
+import Navbar from '@/components/Navbar.astro'
+import Center from '@/components/Center.astro'
+import Footer from '@/components/Footer.astro'
+import { line } from '@/utils'
 import Outline from './Outline.astro'
 import PrevNext from './PrevNext.astro'
+import Toc from './Toc.astro'
+import Article from './Article.astro'
 
 const { frontmatter } = Astro.props
 
 ---
+
 <Page title={frontmatter.title}>
   <Navbar />
 
-  <Center className="pt-12 lg:pt-16" innerClassName="flex py-8">
+  <Center
+    className="pt-12 lg:pt-16"
+    innerClassName="flex py-8"
+  >
 
-    <div class="w-2/12">
-      <Outline />
+    <div class="w-2/12 hidden lg:block">
+      <Outline fixed />
     </div>
 
-    <div class="w-10/12">
-      <div
-        class="mb-10 p-2 border-2 border-gray-500 text-2xl lg:text-3xl text-center font-kxzd"
-        style={{
-          border: '13px double #eee',
-          borderImage: "url('/assets/img/border.png')",
-          borderImageSlice: 13,
-        }}
-      >
-        {frontmatter.title}
-      </div>
+    <div class="w-full lg:w-8/12">
 
-      <div class="article-content unreset">
+      <Article title={frontmatter.title}>
         <slot />
-      </div>
+      </Article>
 
       <PrevNext />
     </div>
 
-    <div class="w-2/12">
-
+    <div class="w-2/12 hidden lg:block pl-8">
+      <Toc />
     </div>
 
   </Center>
 
-	<Footer />
+  <Footer />
+  
+  <input class="hidden" type="checkbox" id="mobile-outline-checkbox" />
+
+  <label
+    for="mobile-outline-checkbox"
+    class={line(`
+      mobile-outline-button
+      flex justify-center items-center lg:hidden select-none
+      fixed z-10 left-0 bottom-0
+      mb-8 -ml-1 w-12 h-12 border border-l-0 border-zinc-200 rounded-r-full shadow-lg
+      bg-white bg-no-repeat bg-center cursor-pointer
+      transition duration-200
+    `)}
+  />
+
+  <div
+    class={line(`
+      mobile-outline
+      fixed z-30 top-0 bottom-0 left-0
+      p-6 w-8/12 max-w-72 overflow-y-auto
+      bg-white/90 backdrop-blur-md shadow-xl
+      transition-all duration-200
+    `)}
+  >
+    <Outline />
+  </div>
+
+  <label
+    for="mobile-outline-checkbox"
+    class="mobile-outline-mask fixed z-20 inset-0 bg-black/10"
+  />
 
 </Page>
