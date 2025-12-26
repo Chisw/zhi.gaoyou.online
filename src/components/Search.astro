@@ -1,0 +1,61 @@
+<div id="doc-search" class="absolute z-10 inset-0 opacity-0"></div>
+
+<script>
+  import docsearch from '@docsearch/js'
+
+  docsearch({
+    container: '#doc-search',
+    appId: import.meta.env.PUBLIC_ALGOLIA_APP_ID,
+    apiKey: import.meta.env.PUBLIC_ALGOLIA_SEARCH_KEY,
+    indexName: import.meta.env.PUBLIC_ALGOLIA_INDEX,
+    transformItems(items) {
+      // console.log(items)
+      return items.map(item => {
+        item.content = item._snippetResult.content.value
+        return item
+      })
+    },
+    hitComponent({ hit }: any, { html }: any) {
+      // console.log('hit', hit.content)
+       return html`
+        <a href="${hit.url}">
+          <div class="px-3 py-3">
+            <div class="mb-1 text-xs text-zinc-400" innerHTML="${hit.url}"></div>
+            <div innerHTML="${hit.content}"></div>
+          </div>
+        </a>
+      `
+    },
+    translations: {
+      modal: {
+        searchBox: {
+          clearButtonTitle: '清空',
+          clearButtonAriaLabel: '清空',
+          closeButtonText: '关闭',
+          closeButtonAriaLabel: '关闭',
+          placeholderText: '在「高郵志」中搜索',
+          enterKeyHint: '搜索',
+        },
+        startScreen: {
+          recentSearchesTitle: '搜索历史',
+          noRecentSearchesText: '没有搜索历史',
+          saveRecentSearchButtonTitle: '保存至搜索历史',
+          removeRecentSearchButtonTitle: '从搜索历史删除',
+          favoriteSearchesTitle: '收藏',
+          removeFavoriteSearchButtonTitle: '从收藏删除',
+        },
+        footer: {
+          selectText: '选择',
+          navigateText: '切换',
+          closeText: '关闭',
+        },
+        noResultsScreen: {
+          noResultsText: '未找到结果',
+        },
+      },
+    },
+    keyboardShortcuts: {
+      '/': true,
+    },
+  })
+</script>

@@ -1,5 +1,6 @@
 ---
 import Center from './Center.astro'
+import Search from './Search.astro'
 import VerticalNav from './VerticalNav.astro'
 import { line, NAV_LIST } from '@/utils'
 
@@ -51,7 +52,7 @@ const [, activeAnnal] = pathname.split('/')
         <div
           class={line(`
             flex-center-center
-            w-full h-8 rounded-full
+            relative z-0 w-full h-8 rounded-full
             transition duration-200 cursor-pointer
             bg-zinc-100 hover:bg-zinc-200
           `)}
@@ -61,6 +62,7 @@ const [, activeAnnal] = pathname.split('/')
             alt="search"
             class="w-3 opacity-50"
           />
+          <Search />
         </div>
       </div>
 
@@ -72,7 +74,7 @@ const [, activeAnnal] = pathname.split('/')
 <div
   class={line(`
     mobile-nav
-    fixed z-30 px-8 pt-12 pb-4 w-full bg-white/90 backdrop-blur-md shadow-lg
+    fixed z-30 px-8 pt-8 w-full bg-white/90 backdrop-blur-md shadow-lg
     transition-all duration-200
   `)}
 >

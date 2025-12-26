@@ -2,6 +2,7 @@
 import Center from '@/components/Center.astro'
 import Footer from '@/components/Footer.astro'
 import Page from '@/components/Page.astro'
+import Search from '@/components/Search.astro'
 import Statistics from '@/components/Statistics'
 import VerticalNav from '@/components/VerticalNav.astro'
 import {
@@ -31,11 +32,18 @@ import {
         <h1 class="mt-1 md:mt-2 text-sm md:text-xl text-zinc-500 font-kxzd">
           華夏一郵邑 神州無同類
         </h1>
-        <input
-          readonly
-          class="mt-6 w-72 md:w-lg h-10 md:h-12 px-4 md:px-6 rounded-full bg-white/70 shadow-lg outline-none text-sm cursor-pointer hover:bg-white"
-          placeholder="在「高郵志」中搜索"
-        />
+        <div
+          class={line(`
+            flex-between-center
+            relative z-0 mt-6 w-72 md:w-lg h-10 md:h-12 px-4 md:px-6 rounded-full
+            text-sm cursor-pointer shadow-lg
+            bg-white/70 hover:bg-white
+          `)}
+        >
+          <span class="text-zinc-500">在「高郵志」中搜索</span>
+          <span class="text-zinc-400 hidden lg:inline-block">Press '/'</span>
+          <Search />
+        </div>
       </div>
     </div>
 

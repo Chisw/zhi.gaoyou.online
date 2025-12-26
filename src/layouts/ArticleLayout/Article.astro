@@ -89,7 +89,7 @@ const { pathname } = new URL(Astro.request.url)
             return `<z dj>${s}</z>`
           // 插入拼音标记
           } else if (PINYIN_CHARS.includes(s)) {
-            return `${s}<z py>(${PINYIN_MAP[s]})</z>`
+            return `<span data-pinyin="${PINYIN_MAP[s]}">${s}</span><z py>${PINYIN_MAP[s]}</z>`
           } else {
             return s
           }

@@ -1,3 +1,13 @@
+/* 搜索 */
+#doc-search button {
+  width: 100%;
+  height: 100%;
+}
+
+.DocSearch-Container {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 /* 导航选中 */
 .active-nav-item::after {
   content: "";

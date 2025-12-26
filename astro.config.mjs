@@ -18,4 +18,4 @@ export default defineConfig({
   redirects: {
     '/gyzz': '/gyzz/vol-00/01-序文',
   },
-});
+})
